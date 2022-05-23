@@ -1,0 +1,12 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/Bachue/Comunes/RegistrarConsumoUsuario" name="RegistrarConsumoUsuario-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="RegistrarConsumoUsuario.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/Bachue/Comunes/RegistrarConsumoUsuario"/>
+    <wsdl:binding name="RegistrarConsumoUsuario_ptt-binding" type="reg:RegistrarConsumoUsuario_ptt" xmlns:reg="http://xmlns.oracle.com/pcbpel/adapter/db/Bachue/Comunes/RegistrarConsumoUsuario">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="RegistrarConsumoUsuario">
+            <soap:operation soapAction="RegistrarConsumoUsuario"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

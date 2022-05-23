@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ConsumidosInternamente/Dispositivos/Resources/WSDLs/SUT_CI_Dispositivos"/>
+            <con:binding>
+                <con:name>BiometriaWSPortBinding</con:name>
+                <con:namespace>http://ws.servicios.corebachue.bachue.supernotariado.gov.co/</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57f581.N5d3ee611.0.170bff0b6f8.N7f18" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="actualizarClave">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ActualizarClave">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.N5d3ee611.0.170bff0b6f8.N7f14</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_ActualizarClave" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>actualizarClave</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7f25</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="agregarFirma">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_AgregarFirma">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.N5d3ee611.0.170bff0b6f8.N7e4b</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_AgregarFirma" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7ef2</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="borrarHuellas">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_BorrarHuellas">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7f8a</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_BorrarHuellas" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7ebf</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="consultarEstadisticas">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ConsultarEstadisticas">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7f56</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_ConsultarEstadisticas" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7e8c</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="consultarSesion">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ConsultarSesion">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7f22</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_ConsultarSesion" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7e59</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="crearUsuario">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_CrearUsuario">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7eee</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_CrearUsuario" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7e26</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="eliminarFirma">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_EliminarFirma">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7eba</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_EliminarFirma" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7df3</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="enrolarUsuario">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_EnrolarUsuario">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7e86</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_EnrolarUsuario" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7dc0</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="obtenerConstantes">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ObtenerConstantes">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7e52</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_ObtenerConstantes" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerConstantes</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7d8d</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="obtenerFirma">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ObtenerFirma">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7e1e</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_ObtenerFirma" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7d5a</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="obtenerTipoSegundoFactor">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ObtenerTipoSegundoFactor">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7dea</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_ObtenerTipoSegundoFactor" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7d27</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="obtenerUsuario">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ObtenerUsuario">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7db6</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_ObtenerUsuario" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7cf4</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="registrarEvento">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_RegistrarEvento">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7d82</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_RegistrarEvento" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7cc1</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="verificarClave">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_VerificarClave">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7d4e</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_VerificarClave" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7c8e</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="verificarUsuario">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_VerificarUsuario">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57f581.Nef544ba.0.170c4ff43da.N7d1a</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/Dispositivos/Pipelines/Local/PL_VerificarUsuario" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>obtenerTipoSegundoFactor</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.727b3d1a.0.17455d7dbac.N7c5b</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

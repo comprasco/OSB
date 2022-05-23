@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ValidarSolicitudAlertaIndividual"
+	targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/validarsolicitudalertaindividual/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/validarsolicitudalertaindividual/v1" elementFormDefault="qualified" version="1.3">
+<xsd:complexType name="tipoEntradaValidarSolicitudAlertaIndividual">
+	<xsd:sequence>
+		<xsd:element name="modulo"/>
+		<xsd:element name="orip" type="xsd:string"/>
+		<xsd:element name="numeroMatricula" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="tipoDocumento">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="CC"/>
+					<xsd:enumeration value="CE"/>
+					<xsd:enumeration value="NIT"/>
+					<xsd:enumeration value="PS"/>
+					<xsd:enumeration value="TI"/>
+					<xsd:enumeration value="NU"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="numeroDocumento" type="xsd:string"/>
+		<xsd:element name="primerNombre" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="segundoNombre" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="primerApellido" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="segundoApellido" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="razonSocial" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="entradaValidarSolicitudAlertaIndividual" type="bachue:tipoEntradaValidarSolicitudAlertaIndividual"/>
+
+<xsd:complexType name="tipoSalidaValidarSolicitudAlertaIndividual">
+<xsd:sequence>
+<xsd:element name="departamento" type="xsd:string"/>
+<xsd:element name="ciudad" type="xsd:string"/>
+<xsd:element name="direccion" type="xsd:string"/>
+<xsd:element name="codigoMensaje">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="200"/>
+<xsd:enumeration value="452"/>
+<xsd:enumeration value="453"/>
+<xsd:enumeration value="454"/>
+<xsd:enumeration value="455"/>
+<xsd:enumeration value="463"/>
+<xsd:enumeration value="465"/>
+<xsd:enumeration value="466"/>
+<xsd:enumeration value="467"/>
+<xsd:enumeration value="469"/>
+<xsd:enumeration value="470"/>
+<xsd:enumeration value="471"/>
+<xsd:enumeration value="472"/>
+<xsd:enumeration value="473"/>
+<xsd:enumeration value="474"/>
+<xsd:enumeration value="500"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element minOccurs="0" name="descripcionMensaje" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="salidaValidarSolicitudAlertaIndividual" type="bachue:tipoSalidaValidarSolicitudAlertaIndividual"/>
+</xsd:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="NotificarDigitalizacionContent"
+    targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/co/notificarDigitalizacionContent/notificarDigitalizacionContent/v1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/co/notificarDigitalizacionContent/notificarDigitalizacionContent/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaNotificarDigitalizacionContent">
+		<xsd:sequence>
+			<xsd:element name="sistemaOrigen" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="identificadorTramite" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="estado" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="docName" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="dID" type="xsd:integer" minOccurs="1"/>
+                        <xsd:element name="dDocType" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="fechaEnviado" type="xsd:date" minOccurs="1"/>
+                        <xsd:element name="idTurno" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="idTurnoVinculado" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="id_completitud" type="xsd:string" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="entradaNotificarDigitalizacionContent" type="bachue:tipoEntradaNotificarDigitalizacionContent"/>
+	<xsd:complexType name="tipoSalidaNotificarDigitalizacionContent">
+		<xsd:sequence minOccurs="1"> 
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="salidaNotificarDigitalizacionContent" type="bachue:tipoSalidaNotificarDigitalizacionContent"/>
+</xsd:schema>

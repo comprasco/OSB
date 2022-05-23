@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActivarAlertaTierras"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/anularConsecutivo/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/anularConsecutivo/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaAnularConsecutivo">
+    <xsd:sequence>
+      <xsd:element name="numeroConsecutivo" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="motivo" minOccurs="1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaAnularConsecutivo" type="bachue:tipoEntradaAnularConsecutivo"/>
+  <xsd:complexType name="tipoSalidaAnularConsecutivo">
+    <xsd:sequence>
+      <xsd:element name="codigoMensaje" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaAnularConsecutivo"
+               type="bachue:tipoSalidaAnularConsecutivo"/>
+</xsd:schema>

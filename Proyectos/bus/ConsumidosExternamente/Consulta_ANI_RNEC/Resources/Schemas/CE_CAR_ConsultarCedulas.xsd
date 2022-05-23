@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActivarAlertaTierras"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ce/consulta_ANI_RNEC/consultarCedulas/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ce/consulta_ANI_RNEC/consultarCedulas/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaConsultarCedulas">
+    <xsd:sequence>
+      <xsd:element name="nuip" type="xsd:string" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaConsultarCedulas" type="bachue:tipoEntradaConsultarCedulas"/>
+  <xsd:complexType name="tipoSalidaConsultarCedulas">
+    <xsd:sequence>
+      <xsd:element name="codigo" type="xsd:string" minOccurs="1" />
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="1" />
+      <xsd:element name="infoCedula" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="nuip" type="xsd:string"/>
+            <xsd:element name="primerApellido" type="xsd:string"/>
+            <xsd:element name="segundoApellido" type="xsd:string"/>
+            <xsd:element name="primerNombre" type="xsd:string"/>
+            <xsd:element name="segundoNombre" type="xsd:string"/>
+            <xsd:element name="estadoCedula" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaConsultarCedulas" type="bachue:tipoSalidaConsultarCedulas"/>
+</xsd:schema>

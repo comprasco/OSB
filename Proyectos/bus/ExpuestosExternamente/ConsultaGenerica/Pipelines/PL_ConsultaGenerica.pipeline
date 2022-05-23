@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/ConsultaGenerica/Resources/WSDLs/SDI_EE_ConsultaGenerica"/>
+            <con:binding>
+                <con:name>SDI_EE_ConsultaGenericaSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ee/consultagenerica/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fffe.20ca04b7.0.16dbda0cc04.N7139" name="ConsultaGenericaBranch">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="Consultar">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteTo_PL_Consultar">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.20ca04b7.0.16dbda0cc04.N7105</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/ConsultaGenerica/Pipelines/Local/PL_Consultar" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>Consultar</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con1:assign varName="clientaddress" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                                                <con2:id>_ActionId-N3f57fff6.N1df6e898.0.1745a321009.N76c4</con2:id>
+                                                <con5:expr>
+                                                    <con2:xqueryText>$header/*:endpoint/ctx:transport/ctx:request/http:client-address</con2:xqueryText>
+                                                </con5:expr>
+                                            </con1:assign>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

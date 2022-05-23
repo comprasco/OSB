@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ObtenerClavePDFLiquidacion"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/obtenerclavepdfliquidacion/v2"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/obtenerclavepdfliquidacion/v2" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaObtenerClavePDFLiquidacion">
+		<xsd:sequence>
+			<xsd:element name="numeroReferencia" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaObtenerClavePDFLiquidacion" type="bachue:tipoEntradaObtenerClavePDFLiquidacion"/>
+
+	<xsd:complexType name="tipoSalidaObtenerClavePDFLiquidacion">
+		<xsd:sequence >
+			<xsd:element name="claveDocumento" type="xsd:string" />
+			<xsd:element name="nombreDocumento" type="xsd:string" />
+			<xsd:element name="codigoMensaje" type="xsd:integer" />
+			<xsd:element maxOccurs="1" minOccurs="0" name="descripcionMensaje" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaObtenerClavePDFLiquidacion" type="bachue:tipoSalidaObtenerClavePDFLiquidacion"/>
+</xsd:schema>

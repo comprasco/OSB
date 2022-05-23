@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="RechazarCorreccionAlerta"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/rechazarCorreccionAlerta/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/rechazarCorreccionAlerta/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaRechazarCorreccionAlerta">
+    <xsd:sequence>
+      <xsd:element name="idAlerta" type="xsd:int" minOccurs="1" />
+      <xsd:element name="idUsuario" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="texto" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaRechazarCorreccionAlerta" type="bachue:tipoEntradaRechazarCorreccionAlerta"/>
+  <xsd:complexType name="tipoSalidaRechazarCorreccionAlerta">
+    <xsd:sequence>
+      <xsd:element name="codigo" type="xsd:string" minOccurs="1" />
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaRechazarCorreccionAlerta" type="bachue:tipoSalidaRechazarCorreccionAlerta"/>
+</xsd:schema>

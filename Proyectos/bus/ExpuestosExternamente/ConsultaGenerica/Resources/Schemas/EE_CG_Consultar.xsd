@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/consultagenerica/consultar/v1" 
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+          xmlns:con="https://www.supernotariado.gov.co/schemas/bachue/ee/consultagenerica/consultar/v1" elementFormDefault="qualified" version="1.3">
+	<xs:element name="entradaConsultar" type="con:tipoEntradaConsultar"/>
+	<xs:element name="salidaConsultar" type="con:tipoSalidaConsultar"/>
+	<xs:complexType name="parametrosType">
+		<xs:sequence>
+			<xs:element name="parametro" type="con:parametroType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="parametroType">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="valor" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaConsultar">
+		<xs:sequence>
+			<xs:element name="modulo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="funcionalidad" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="parametros" type="con:parametrosType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaConsultar">
+		<xs:sequence>
+			<xs:element name="respuesta" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

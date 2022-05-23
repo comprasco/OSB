@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ObtenerModulosPorRol"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenermodulosporrol/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenermodulosporrol/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaObtenerModulosPorRol">
+		<xsd:sequence>
+			<xsd:element name="codigoRol" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaObtenerModulosPorRol" type="bachue:tipoEntradaObtenerModulosPorRol"/>
+
+	<xsd:complexType name="tipoSalidaObtenerModulosPorRol">
+		<xsd:sequence>
+			<xsd:element name="modulos" minOccurs="0" type="bachue:tipoModulo" nillable="true" maxOccurs="unbounded"/>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tipoModulo">
+		<xsd:sequence>
+			<xsd:element name="idComponente" type="xsd:string"/>
+			<xsd:element name="nombre" type="xsd:string"/>
+			<xsd:element name="activo" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaObtenerModulosPorRol" type="bachue:tipoSalidaObtenerModulosPorRol"/>
+</xsd:schema>

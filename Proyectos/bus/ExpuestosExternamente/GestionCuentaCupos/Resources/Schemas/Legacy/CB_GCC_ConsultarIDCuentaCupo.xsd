@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ConsultarIDCuentaCupo"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultaridcuentacupo/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultaridcuentacupo/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaConsultarIDCuentaCupo">
+		<xsd:sequence>
+			<xsd:element name="modulo" type="xsd:string"/>
+			<xsd:element name="admin" type="bachue:tipoAdminCICCI"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoAdminCICCI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocAdmin" type="xsd:string"/>
+			<xsd:element name="numDocAdmin" type="xsd:string"/>
+			<xsd:element name="correoElectronicoCorporativoUsuario" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="entradaConsultarIDCuentaCupo" type="bachue:tipoEntradaConsultarIDCuentaCupo"/>
+
+	<xsd:complexType name="tipoSalidaConsultarIDCuentaCupo">
+		<xsd:sequence>
+			<xsd:element name="ID" type="xsd:string"/>
+			<xsd:element name="estado" type="xsd:string"/>
+			<xsd:element name="fechaCreacion" type="xsd:dateTime"/>
+			<xsd:element name="valorMinimo" type="xsd:decimal"/>
+			<xsd:element name="valorMaximo" type="xsd:decimal"/>
+			<xsd:element name="saldo" type="xsd:decimal"/>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaConsultarIDCuentaCupo" type="bachue:tipoSalidaConsultarIDCuentaCupo"/>
+</xsd:schema>

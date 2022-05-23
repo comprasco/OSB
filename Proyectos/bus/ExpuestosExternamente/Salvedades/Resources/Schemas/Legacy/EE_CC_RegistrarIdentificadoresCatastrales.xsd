@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="RegistrarIdentificadoresCatastrales"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/salvedades/registrarIdentificadoresCatastrales/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/salvedades/registrarIdentificadoresCatastrales/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaRegistrarIdentificadoresCatastrales">
+    <xsd:sequence>
+      <xsd:element name="listaPredios" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predio" minOccurs="0" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="tipoIdentificacionPredio" minOccurs="0">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="matricula"/>
+                        <xsd:enumeration value="numeroPredial"/>
+                        <xsd:enumeration value="numeroPredialAnterior"/>
+                        <xsd:enumeration value="NUPRE"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="numIdentificacionPredio" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="codCirculoRegistral" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="numMatriculaInmobiliaria" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="comentarioSalvedad" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="descripcionSalvedad" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="fechaSalvedad" type="xsd:dateTime" minOccurs="0"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="documentoSoporte" type="xsd:base64Binary" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaRegistrarIdentificadoresCatastrales"
+               type="bachue:tipoEntradaRegistrarIdentificadoresCatastrales"/>
+  <xsd:complexType name="tipoSalidaRegistrarIdentificadoresCatastrales">
+    <xsd:sequence>
+      <xsd:element name="codMensaje" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaRegistrarIdentificadoresCatastrales"
+               type="bachue:tipoSalidaRegistrarIdentificadoresCatastrales"/>
+</xsd:schema>

@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="https://www.supernotariado.gov.co/schemas/bachue/gis/mutacionesTercerOrden/consultaCambioTercerOrden/v1"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/gis/mutacionesTercerOrden/consultaCambioTercerOrden/v1"
+            elementFormDefault="qualified" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON"
+            nxsd:encoding="US-ASCII">
+  <xsd:element name="root">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="results" maxOccurs="unbounded" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element type="xsd:string" name="paramName"/>
+              <xsd:element type="xsd:string" name="dataType"/>
+              <xsd:element type="xsd:string" name="value"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="messages" maxOccurs="unbounded" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element type="xsd:string" name="type"/>
+              <xsd:element type="xsd:string" name="description"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

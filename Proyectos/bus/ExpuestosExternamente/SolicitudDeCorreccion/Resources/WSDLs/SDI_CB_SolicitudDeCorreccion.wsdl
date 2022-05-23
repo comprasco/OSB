@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ee/solicituddecorreccion/v1"
+                  targetNamespace="https://www.supernotariado.gov.co/services/bachue/ee/solicituddecorreccion/v1"
+                  xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/ee/solicituddecorreccion/obtenercausalescorreccion/v1"
+                  xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/ee/solicituddecorreccion/ingresosolicitud/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/solicituddecorreccion/obtenercausalescorreccion/v1"
+              schemaLocation="../Schemas/Legacy/EE_OCC_ObtenerCausalesCorreccion.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/solicituddecorreccion/ingresosolicitud/v1"
+              schemaLocation="../Schemas/Legacy/EE_SDC_IngresoSolicitud.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerCausalesCorreccion_Request">
+    <wsdl:part name="entrada" element="bachue1:entradaObtenerCausalesCorreccion"/>
+  </wsdl:message>
+  <wsdl:message name="ObtenerCausalesCorreccion_Response">
+    <wsdl:part name="salida" element="bachue1:salidaObtenerCausalesCorreccion"/>
+  </wsdl:message>
+  <wsdl:message name="IngresoSolicitud_Request">
+    <wsdl:part name="entrada" element="bachue2:entradaIngresoSolicitud"/>
+  </wsdl:message>
+  <wsdl:message name="IngresoSolicitud_Response">
+    <wsdl:part name="salida" element="bachue2:salidaIngresoSolicitud"/>
+  </wsdl:message>
+  <wsdl:portType name="SDI_CB_SolicitudDeCorreccion">
+    <wsdl:operation name="ObtenerCausalesCorreccion">
+      <wsdl:input message="bachue:ObtenerCausalesCorreccion_Request"/>
+      <wsdl:output message="bachue:ObtenerCausalesCorreccion_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="IngresoSolicitud">
+      <wsdl:input message="bachue:IngresoSolicitud_Request"/>
+      <wsdl:output message="bachue:IngresoSolicitud_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SDI_CB_SolicitudDeCorreccion" type="bachue:SDI_CB_SolicitudDeCorreccion">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ObtenerCausalesCorreccion">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ee/solicituddecorreccion/obtenercausalescorreccion/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IngresoSolicitud">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ee/solicituddecorreccion/ingresosolicitud/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SDI_CB_SolicitudDeCorreccion">
+    <wsdl:port name="SDI_CB_SolicitudDeCorreccionPort" binding="bachue:SDI_CB_SolicitudDeCorreccion">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

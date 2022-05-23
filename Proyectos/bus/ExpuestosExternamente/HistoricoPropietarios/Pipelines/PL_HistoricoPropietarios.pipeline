@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/HistoricoPropietarios/Resources/WSDLs/SBB_EE_HistoricoPropietarios"/>
+            <con:binding>
+                <con:name>SBB_EE_HistoricoPropietarios</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ee/SBB_EE_HistoricoPropietarios/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fff8.N312772d7.0.170ee5b67c3.N8000" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="consultarHistoricoPropietarios">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_consultarHistoricoPropietarios">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fff8.N312772d7.0.170ee5b67c3.N7ffc</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/HistoricoPropietarios/Pipelines/Local/PL_ConsultarHistoricoPropietarios" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>consultarHistoricoPropietarios</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fef4.N6af478e8.0.174adc0c6b9.N7df2</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="consultarHistoricoPropiedades">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_consultarHistoricoPropiedades">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fff8.N312772d7.0.170ee5b67c3.N7f96</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/HistoricoPropietarios/Pipelines/Local/PL_ConsultarHistoricoPropiedades" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>consultarHistoricoPropiedades</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fef4.N6af478e8.0.174adc0c6b9.N7dbf</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

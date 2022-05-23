@@ -1,0 +1,20 @@
+<wsdl:definitions name="PS_LeerJmsNPRegLiq" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/Bachue/ExpuestosFinancieras/PS_LeerJmsNPRegLiq" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/Bachue/ExpuestosFinancieras/PS_LeerJmsNPRegLiq" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:pc="http://xmlns.oracle.com/pcbpel/" xmlns:imp1="https://www.supernotariado.gov.co/schemas/bachue/np/operacionesfinancieras/registrarliquidacion/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="ConsumirJms_NPRegLiq_plt">
+    <plt:role name="ConsumirJms_NPRegLiq_role">
+      <plt:portType name="tns:ConsumirJms_NPRegLiq_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="https://www.supernotariado.gov.co/schemas/bachue/np/operacionesfinancieras/registrarliquidacion/v2" schemaLocation="../Schemas/Legacy/NP_OF_RegistrarLiquidacion.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="ConsumirJms_NPRegLiq_msg">
+        <wsdl:part name="body" element="imp1:entradaRegistrarLiquidacion"/>
+    </wsdl:message>
+    <wsdl:portType name="ConsumirJms_NPRegLiq_ptt">
+        <wsdl:operation name="ConsumirJms_NPRegLiq">
+            <wsdl:input message="tns:ConsumirJms_NPRegLiq_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

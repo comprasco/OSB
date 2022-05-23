@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="RemoverMatriculaAlerta"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/removerMatriculaAlerta/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/removerMatriculaAlerta/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaRemoverMatriculaAlerta">
+    <xsd:sequence>
+    <xsd:element name="idAlerta" type="xsd:int" minOccurs="1"/>
+      <xsd:element name="codCirculoRegistral" type="xsd:string" minOccurs="1"/>
+    <xsd:element name="numMatriculaInmobiliaria" minOccurs="1" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaRemoverMatriculaAlerta" type="bachue:tipoEntradaRemoverMatriculaAlerta"/>
+  <xsd:complexType name="tipoSalidaRemoverMatriculaAlerta">
+    <xsd:sequence>
+      <xsd:element name="codigo" type="xsd:string" minOccurs="1" />
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaRemoverMatriculaAlerta" type="bachue:tipoSalidaRemoverMatriculaAlerta"/>
+</xsd:schema>

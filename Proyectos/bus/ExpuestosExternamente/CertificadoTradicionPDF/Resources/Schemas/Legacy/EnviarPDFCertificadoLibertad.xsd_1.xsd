@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6b02  svn-revision#14033. -->
+<xsd:schema xmlns:ns0="http://enviarPDFCertificadoLibertad.ubi.com.co/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://enviarPDFCertificadoLibertad.ubi.com.co/">
+  <xsd:complexType name="certificadoLibertadPDFSal">
+    <xsd:sequence>
+      <xsd:element name="codigoResultado" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="datosArchivoPDF" type="xsd:base64Binary" minOccurs="0"/>
+      <xsd:element name="estado" type="ns0:estadoCertificadoLibertadPDF" minOccurs="0"/>
+      <xsd:element name="fecha" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="mensajeResultado" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="numeroTurno" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="pin" type="xsd:long" minOccurs="0"/>
+      <xsd:element name="tipoLogResultadoConsulta" type="ns0:tipoLogResultadoConsulta" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="consultarPDFPorPin">
+    <xsd:sequence>
+      <xsd:element name="entrada" type="ns0:consultarCertificadoEnt" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="consultarCertificadoSal">
+    <xsd:sequence>
+      <xsd:element name="archivo" type="xsd:base64Binary" minOccurs="0"/>
+      <xsd:element name="circulo" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoResultado" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="fecha" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="matricula" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="mensajeResultado" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="numeroTurno" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="tipoLogResultadoConsulta" type="ns0:tipoLogResultadoConsulta" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="consultarCertificadoEnt">
+    <xsd:sequence>
+      <xsd:element name="clave" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="pin" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="sistemaUsuario" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="consultarPDFPorPinResponse">
+    <xsd:sequence>
+      <xsd:element name="return" type="ns0:consultarCertificadoSal" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ejecutarCopiaArchivosCTL"/>
+  <xsd:complexType name="obtenerPDF">
+    <xsd:sequence>
+      <xsd:element name="entrada" type="ns0:certificadoLibertadPDFEnt" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="obtenerPDFResponse">
+    <xsd:sequence>
+      <xsd:element name="return" type="ns0:certificadoLibertadPDFSal" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="certificadoLibertadPDFEnt">
+    <xsd:sequence>
+      <xsd:element name="banco" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="bancoCanalRecaudo" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="canalRecaudo" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ciudadEntidad" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="clave" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoCirculo" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cuentaCanalRecaudo" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cus" type="xsd:long" minOccurs="0"/>
+      <xsd:element name="email" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="entidad" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="franquicia" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="lugarExpedicion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="medioPago" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="nombreUsuario" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="numRecibo" type="xsd:long" minOccurs="0"/>
+      <xsd:element name="numeroMatricula" type="xsd:long" minOccurs="0"/>
+      <xsd:element name="pin" type="xsd:long" minOccurs="0"/>
+      <xsd:element name="sincronizar" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="sistemaUsuario" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="solicitante" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="tarifa" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="tipoPago" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="usaCanalesRecaudo" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="uso" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tipoLogResultadoConsulta">
+    <xsd:sequence>
+      <xsd:element name="consecutivoConsulta" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="fechaHoraConsulta" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="identificacionNotaria" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="traza" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ejecutarCopiaArchivosCTLResponse">
+    <xsd:sequence>
+      <xsd:element name="return" type="xsd:boolean" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consultarPDFPorPin" type="ns0:consultarPDFPorPin"/>
+  <xsd:element name="consultarPDFPorPinResponse" type="ns0:consultarPDFPorPinResponse"/>
+  <xsd:element name="ejecutarCopiaArchivosCTL" type="ns0:ejecutarCopiaArchivosCTL"/>
+  <xsd:element name="obtenerPDF" type="ns0:obtenerPDF"/>
+  <xsd:element name="obtenerPDFResponse" type="ns0:obtenerPDFResponse"/>
+  <xsd:element name="ejecutarCopiaArchivosCTLResponse" type="ns0:ejecutarCopiaArchivosCTLResponse"/>
+  <xsd:simpleType name="estadoCertificadoLibertadPDF">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="OK"/>
+      <xsd:enumeration value="ERROR"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

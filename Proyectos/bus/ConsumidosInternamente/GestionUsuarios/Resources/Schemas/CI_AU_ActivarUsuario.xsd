@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActivarUsuario"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ci/activacionusuarios/activarusuario/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ci/activacionusuarios/activarusuario/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaActivarUsuario">
+		<xsd:sequence>
+			<xsd:element name="loginUsuario" type="xsd:string"/>
+			<xsd:element name="estadoActivacion" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaActivarUsuario" type="bachue:tipoEntradaActivarUsuario"/>
+
+	<xsd:complexType name="tipoSalidaActivarUsuario">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaActivarUsuario" type="bachue:tipoSalidaActivarUsuario"/>
+</xsd:schema>

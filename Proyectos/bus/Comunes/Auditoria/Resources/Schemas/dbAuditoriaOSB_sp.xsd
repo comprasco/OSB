@@ -1,0 +1,26 @@
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbAuditoriaOSB" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/dbAuditoriaOSB" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_UUID_SOLICITUD" type="string" db:index="1" db:type="CHAR" minOccurs="0" nillable="true"/>
+            <element name="P_TIPO_MENSAJE" type="string" db:index="2" db:type="CHAR" minOccurs="0" nillable="true"/>
+            <element name="P_FECHA" type="dateTime" db:index="3" db:type="TIMESTAMP" minOccurs="0" nillable="true"/>
+            <element name="P_TAMANO_SIMPLE" type="decimal" db:index="4" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_TERMINAL" type="string" db:index="5" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_DOMINIO" type="string" db:index="6" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_USUARIO" type="string" db:index="7" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_SERVICIO" type="string" db:index="8" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_OPERACION" type="string" db:index="9" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_MENSAJE" type="string" db:index="10" db:type="CLOB" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <element name="OutputParameters">
+      <complexType>
+         <sequence>
+            <element name="RSCODERROR" type="string" db:index="11" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="RSDESCERROR" type="string" db:index="12" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+</schema>

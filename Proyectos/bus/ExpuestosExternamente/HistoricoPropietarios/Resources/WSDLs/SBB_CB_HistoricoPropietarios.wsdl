@@ -1,0 +1,70 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/v1" xmlns:bachueCHP1="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/consultarHistoricoPropiedades/v1" xmlns:bachueCHP2="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/consultarHistoricoPropietarios/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/consultarHistoricoPropiedades/v1" schemaLocation="../Schemas/Legacy/CB_HP_consultarHistoricoPropiedades.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/consultarHistoricoPropietarios/v1" schemaLocation="../Schemas/Legacy/CB_HP_consultarHistoricoPropietarios.xsd"/>
+    </schema>
+  </wsdl:types>
+  <!-- INICIO sección Message -->
+  <wsdl:message name="ConsultarHistoricoPropiedades_Request">
+    <wsdl:part name="entrada" element="bachueCHP1:entradaConsultarHistoricoPropiedades"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarHistoricoPropiedades_Response">
+    <wsdl:part name="salida" element="bachueCHP1:salidaConsultarHistoricoPropiedades"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarHistoricoPropietarios_Request">
+    <wsdl:part name="entrada" element="bachueCHP2:entradaConsultarHistoricoPropietarios"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarHistoricoPropietarios_Response">
+    <wsdl:part name="salida" element="bachueCHP2:salidaConsultarHistoricoPropietarios"/>
+  </wsdl:message>
+  <!-- FIN sección Message -->
+  <!-- INICIO SBB_CB_HistoricoPropietarios -->
+  <wsdl:portType name="SBB_CB_HistoricoPropietarios">
+    <!-- Inicio Operacion consultarHistoricoPropiedades -->
+    <wsdl:operation name="consultarHistoricoPropiedades">
+      <wsdl:input message="bachue:ConsultarHistoricoPropiedades_Request"/>
+      <wsdl:output message="bachue:ConsultarHistoricoPropiedades_Response"/>
+    </wsdl:operation>
+    <!-- Fin Operacion consultarHistoricoPropiedades -->
+    <!-- Inicio Operacion consultarHistoricoPropietarios -->
+    <wsdl:operation name="consultarHistoricoPropietarios">
+      <wsdl:input message="bachue:ConsultarHistoricoPropietarios_Request"/>
+      <wsdl:output message="bachue:ConsultarHistoricoPropietarios_Response"/>
+    </wsdl:operation>
+    <!-- Fin Operacion consultarHistoricoPropietarios -->
+  </wsdl:portType>
+  <!-- INICIO WSDL:binding -->
+  <wsdl:binding name="SBB_CB_HistoricoPropietariosSOAP12Binding" type="bachue:SBB_CB_HistoricoPropietarios">
+    <!-- Inicio Binding DatosHistoricoPropiedades -->
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarHistoricoPropiedades">
+      <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/v1/consultarHistoricoPropiedades"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Binding DatosHistoricoPropiedades -->
+    <!-- Inicio Binding DatosHistoricoPropietarios -->
+    <wsdl:operation name="consultarHistoricoPropietarios">
+      <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/v1/consultarHistoricoPropietarios"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Binding DatosHistoricoPropietarios -->
+  </wsdl:binding>
+  <!-- FIN WSDL:binding -->
+  <wsdl:service name="SBB_CB_HistoricoPropietarios">
+    <wsdl:port name="SBB_CB_HistoricoPropietariosPort" binding="bachue:SBB_CB_HistoricoPropietariosSOAP12Binding">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+  <!-- Últimas modificaciones 2020-01-27 11:34 -->
+</wsdl:definitions>

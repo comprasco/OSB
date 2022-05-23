@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/impuestosgobernaciones/notificarpago/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:notpag="https://www.supernotariado.gov.co/schemas/bachue/ee/impuestosgobernaciones/notificarpago/v1">
+	<xs:element name="entradaNotificarPago" type="notpag:tipoEntradaNotificarPago"/>
+	<xs:element name="salidaNotificarPago" type="notpag:tipoSalidaNotificarPago"/>
+	<xs:complexType name="tipoEntradaNotificarPago">
+		<xs:sequence>
+			<xs:element name="idTramite" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="reciboPago" type="xs:base64Binary" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="fechaPago" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="referenciaPago" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="valorTotalPago" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaNotificarPago">
+		<xs:sequence>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

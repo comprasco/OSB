@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/ConsultaHistorialSolicitudesPagadas/Resources/WSDLs/SBB_EE_ConsultaHistorialSolicitudesPagadas"/>
+            <con:binding>
+                <con:name>SBB_EE_ConsultaHistorialSolicitudesPagadasSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ee/consultahistorialsolicitudespagadas/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:template-overrides>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cbb">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">'ConsultaHistorialSolicitudesPagadas'</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cb8">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">'BuscarSolicitudes'</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7edc">
+                <con:actions>
+                    <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7cea</con2:id>
+                        <con1:schema ref="ExpuestosExternamente/ConsultaHistorialSolicitudesPagadas/Resources/Schemas/EE_CHSP_BuscarSolicitudes"/>
+                        <con1:schemaElement xmlns:v1="https://www.supernotariado.gov.co/schemas/bachue/ee/consultahistorialsolicitudespagadas/buscarsolicitudes/v1">v1:entradaBuscarSolicitudes</con1:schemaElement>
+                        <con1:varName>body</con1:varName>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v1:entradaBuscarSolicitudes</con2:xpathText>
+                        </con1:location>
+                    </con1:validate>
+                </con:actions>
+            </con:placeholder-override>
+            <con:stage-override id="_StageId-N3f57c7ff.1591fdf4.0.16a791d6615.N7edd">
+                <con:context>
+                    <con1:userNsDecl prefix="v1" namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/consultahistorialsolicitudespagadas/buscarsolicitudes/v1" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+            </con:stage-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7edb"/>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7ed9">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7ce7</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ExpuestosExternamente/ConsultaHistorialSolicitudesPagadas/Resources/Xqueries/In_BuscarSolicitudes_to_CB_BuscarSolicitudes"/>
+                                <con2:param name="payloadRequest">
+                                    <con2:path>$requestPayloadProxy/*</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7ebc"/>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7e49">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7ce4</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ExpuestosExternamente/ConsultaHistorialSolicitudesPagadas/Resources/Xqueries/Out_CB_BuscarSolicitudes_to_BuscarSolicitudes"/>
+                                <con2:param name="payloadResponse">
+                                    <con2:path>$responsePayloadTarget/*</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:action-override id="_ActionId-N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7f05">
+                <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                    <con1:service ref="ExpuestosExternamente/ConsultaHistorialSolicitudesPagadas/BusinessServices/BS_SBB_CB_ConsultaHistorialSolicitudesPagadas" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con1:operation>BuscarSolicitudes</con1:operation>
+                </con1:route>
+            </con:action-override>
+            <con:placeholder-override id="PlaceholderID_N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7e12">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7cad</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ExpuestosExternamente/ConsultaHistorialSolicitudesPagadas/Resources/Xqueries/Out_BuscarSolicitudesFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7cd1">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7ce1</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ExpuestosExternamente/ConsultaHistorialSolicitudesPagadas/Resources/Xqueries/Out_BuscarSolicitudesFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+        </con:template-overrides>
+    </con:router>
+    <con:template ref="Comunes/Resources/Templates/PlantillaPipelineOp"/>
+</con:pipelineEntry>

@@ -1,0 +1,47 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/co/consultapoderes/v1"
+                  xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/co/consultapoderes/consultarpoder/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  targetNamespace="https://www.supernotariado.gov.co/services/bachue/co/consultapoderes/v1">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/co/consultapoderes/consultarpoder/v1"
+              schemaLocation="../Schemas/Legacy/CO_CP_ConsultarPoder.xsd"/>
+      
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarPoder_Request">
+    <wsdl:part name="entrada" element="bachue1:entradaConsultarPoder"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarPoder_Response">
+    <wsdl:part name="salida" element="bachue1:salidaConsultarPoder"/>
+  </wsdl:message>
+
+  <wsdl:portType name="SAN_EE_ConsultaPoderes">
+    <wsdl:operation name="ConsultarPoder">
+      <wsdl:input message="bachue:ConsultarPoder_Request"/>
+      <wsdl:output message="bachue:ConsultarPoder_Response"/>
+    </wsdl:operation>
+ 
+  </wsdl:portType>
+  <wsdl:binding name="SAN_EE_ConsultaPoderesSOAP12Binding" type="bachue:SAN_EE_ConsultaPoderes">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultarPoder">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/co/consultapoderes/v1/ConsultarPoder"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+  </wsdl:binding>
+  <wsdl:service name="SAN_EE_ConsultaPoderes">
+    <wsdl:port name="SAN_EE_ConsultaPoderesPort" binding="bachue:SAN_EE_ConsultaPoderesSOAP12Binding">
+      <soap12:address location="http://snrappdev06.eastus.cloudapp.azure.com:20202/WCContentIn/SAN_CO_ConsultaPoderes"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/v1"
+                  targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/v1"
+                  xmlns:bachueCMP="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionPredio/v1"
+                  xmlns:bachueCMO="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionORIP/v1"
+                  xmlns:bachueCMM="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionMatriculas/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionPredio/v1"
+              schemaLocation="../Schemas/Legacy/CB_CM_consultarMigracionPredio.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionORIP/v1"
+              schemaLocation="../Schemas/Legacy/CB_CM_consultarMigracionORIP.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionMatriculas/v1"
+              schemaLocation="../Schemas/Legacy/CB_CM_consultarMigracionMatriculas.xsd"/>
+    </schema>
+  </wsdl:types>
+  <!-- INICIO sección Message -->
+  <!-- ConsultarDatosMigracionPredio -->
+  <wsdl:message name="ConsultarDatosMigracionPredio_Request">
+    <wsdl:part name="entrada" element="bachueCMP:entradaConsultaMigracionPredio"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarDatosMigracionPredio_Response">
+    <wsdl:part name="salida" element="bachueCMP:salidaConsultaMigracionPredio"></wsdl:part>
+  </wsdl:message>
+  <!-- ConsultarDatosMigracionORIP -->
+  <wsdl:message name="ConsultarDatosMigracionORIP_Request">
+    <wsdl:part name="entrada" element="bachueCMO:entradaConsultaMigracionORIP"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarDatosMigracionORIP_Response">
+    <wsdl:part name="salida" element="bachueCMO:salidaConsultaMigracionORIP"></wsdl:part>
+  </wsdl:message>
+  <!-- ConsultarDatosMigracionMatriculas -->
+  <wsdl:message name="ConsultarDatosMigracionMatriculas_Request">
+    <wsdl:part name="entrada" element="bachueCMM:entradaConsultaMigracionMatriculas"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarDatosMigracionMatriculas_Response">
+    <wsdl:part name="salida" element="bachueCMM:salidaConsultaMigracionMatriculas"></wsdl:part>
+  </wsdl:message>
+  <!-- FIN sección Message -->
+  <!-- INICIO PortType SUT_CB_ConsultaMigracion -->
+  <wsdl:portType name="SUT_CB_ConsultaMigracion">
+    <!-- Inicio Operacion consultarMigracionPredio -->
+    <wsdl:operation name="consultarMigracionPredio">
+      <wsdl:input message="bachue:ConsultarDatosMigracionPredio_Request"></wsdl:input>
+      <wsdl:output message="bachue:ConsultarDatosMigracionPredio_Response"></wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Operacion consultarMigracionPredio -->
+    <!-- Inicio Operacion consultarMigracionORIP -->
+    <wsdl:operation name="consultarMigracionORIP">
+      <wsdl:input message="bachue:ConsultarDatosMigracionORIP_Request"></wsdl:input>
+      <wsdl:output message="bachue:ConsultarDatosMigracionORIP_Response"></wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Operacion consultarMigracionORIP -->
+    <!-- Inicio Operacion consultarMigracionMatriculas -->
+    <wsdl:operation name="consultarMigracionMatriculas">
+      <wsdl:input message="bachue:ConsultarDatosMigracionMatriculas_Request"></wsdl:input>
+      <wsdl:output message="bachue:ConsultarDatosMigracionMatriculas_Response"></wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Operacion consultarMigracionMatriculas -->
+  </wsdl:portType>
+  <!-- INICIO WSDL:binding -->
+  <wsdl:binding name="SUT_CB_ConsultaMigracionSOAP12Binding" type="bachue:SUT_CB_ConsultaMigracion">
+    <!-- Inicio Binding ConsultaMigracionPredio -->
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarMigracionPredio">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/v1/consultarMigracionPredio"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Binding ConsultaMigracionPredio -->
+    <!-- Inicio Binding ConsultaMigracionORIP -->
+    <wsdl:operation name="consultarMigracionORIP">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/v1/consultarMigracionORIP"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Binding ConsultaMigracionORIP -->
+    <!-- Inicio Binding ConsultaMigracionMatriculas -->
+    <wsdl:operation name="consultarMigracionMatriculas">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/v1/consultarMigracionMatriculas"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Binding ConsultaMigracionMatriculas -->
+  </wsdl:binding>
+  <wsdl:service name="SUT_CB_ConsultaMigracion">
+    <wsdl:port name="SUT_CB_ConsultaMigracionPort" binding="bachue:SUT_CB_ConsultaMigracionSOAP12Binding">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+  <!-- Últimas modificaciones 2020-02-12 11:13 -->
+</wsdl:definitions>

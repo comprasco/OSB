@@ -1,0 +1,43 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/ee/historialNotificaciones/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ee/historialNotificaciones/v1"
+                  xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/ee/historialNotificaciones/consultarHistorial/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/historialNotificaciones/consultarHistorial/v1"
+              schemaLocation="../Schemas/EE_HN_consultarHistorial.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarHistorial_Request">
+    <wsdl:part name="entrada" element="bachue2:entradaConsultarHistorial"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarHistorial_Response">
+    <wsdl:part name="salida" element="bachue2:salidaConsultarHistorial"/>
+  </wsdl:message>
+  <wsdl:portType name="SDI_EE_HistorialNotificaciones">
+    <wsdl:operation name="consultarHistorial">
+      <wsdl:input message="bachue:ConsultarHistorial_Request"/>
+      <wsdl:output message="bachue:ConsultarHistorial_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SDI_EE_HistorialNotificaciones" type="bachue:SDI_EE_HistorialNotificaciones">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarHistorial">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ee/historialNotificaciones/consultarHistorial/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SDI_EE_HistorialNotificaciones">
+    <wsdl:port name="SDI_EE_HistorialNotificacionesPort" binding="bachue:SDI_EE_HistorialNotificaciones">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

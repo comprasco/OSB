@@ -1,0 +1,12 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/ExpuestosFinancieras/escribirJmsNPRegLiquidacion" name="escribirJmsNPRegLiquidacion-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="BS_EscribirJmsNPRegLiquidacion.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/ExpuestosFinancieras/escribirJmsNPRegLiquidacion"/>
+    <wsdl:binding name="Produce_MessageNPRegLiquidacion_ptt-binding" type="esc:Produce_MessageNPRegLiquidacion_ptt" xmlns:esc="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/ExpuestosFinancieras/escribirJmsNPRegLiquidacion">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="Produce_MessageNPRegLiquidacion">
+            <soap:operation soapAction="Produce_MessageNPRegLiquidacion"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

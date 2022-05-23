@@ -1,0 +1,45 @@
+<definitions targetNamespace="https://gevir.cundinamarca.gov.co" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://gevir.cundinamarca.gov.co" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<types>
+<xsd:schema targetNamespace="https://gevir.cundinamarca.gov.co">
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+ <xsd:complexType name="matricula">
+  <xsd:all>
+   <xsd:element name="numeroMatricula" type="xsd:int"/>
+   <xsd:element name="estado" type="xsd:string"/>
+   <xsd:element name="fechaRegistro" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="matriculas">
+  <xsd:sequence>
+   <xsd:element name="matricula" type="tns:matricula" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="notificacionRegistroRequest">
+  <part name="idTramite" type="xsd:int"/>
+  <part name="matricuals" type="tns:matriculas"/></message>
+<message name="notificacionRegistroResponse">
+  <part name="codMensaje" type="xsd:string"/>
+  <part name="descMensaje" type="xsd:string"/></message>
+<portType name="NotificacióndeRegistroPortType">
+  <operation name="notificacionRegistro">
+    <input message="tns:notificacionRegistroRequest"/>
+    <output message="tns:notificacionRegistroResponse"/>
+  </operation>
+</portType>
+<binding name="NotificacióndeRegistroBinding" type="tns:NotificacióndeRegistroPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="notificacionRegistro">
+    <soap:operation soapAction="https://pruebagevir.cundinamarca.gov.co/WSNotificacionRegistro.php/notificacionRegistro" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://gevir.cundinamarca.gov.co" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://gevir.cundinamarca.gov.co" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="NotificacióndeRegistro">
+  <port name="NotificacióndeRegistroPort" binding="tns:NotificacióndeRegistroBinding">
+    <soap:address location="https://pruebagevir.cundinamarca.gov.co:443/WSNotificacionRegistro.php"/>
+  </port>
+</service>
+</definitions>

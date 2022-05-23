@@ -1,0 +1,12 @@
+<adapter-config name="dbAuditoriaOSB" adapter="db" wsdlLocation="../WSDLs/dbAuditoriaOSB.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="OSB-AuditoriaDataTools" location="eis/dbOsbAuditoria"/>
+  <endpoint-interaction portType="dbAuditoriaOSB_ptt" operation="dbAuditoriaOSB">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="ADM_OSB_AUDITORIA"/>
+      <property name="ProcedureName" value="PROC_INS_AUDITORIA"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

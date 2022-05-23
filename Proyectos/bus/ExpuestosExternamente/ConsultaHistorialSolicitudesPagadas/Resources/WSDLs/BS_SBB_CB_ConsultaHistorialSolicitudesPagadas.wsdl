@@ -1,0 +1,59 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/consultahistorialsolicitudespagadas/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/consultahistorialsolicitudespagadas/v1" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/consultahistorialsolicitudespagadas/consultardetallesolicitud/v1" xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/cb/consultahistorialsolicitudespagadas/buscarsolicitudes/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/consultahistorialsolicitudespagadas/consultardetallesolicitud/v1" schemaLocation="../Schemas/Legacy/CB_CHSP_ConsultarDetalleSolicitud.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/consultahistorialsolicitudespagadas/buscarsolicitudes/v1" schemaLocation="../Schemas/Legacy/CB_CHSP_BuscarSolicitudes.xsd"/>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="ConsultarDetalleSolicitud_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaConsultarDetalleSolicitud"/>
+	</wsdl:message>
+	<wsdl:message name="ConsultarDetalleSolicitud_Response">
+		<wsdl:part name="salida" element="bachue1:salidaConsultarDetalleSolicitud"/>
+	</wsdl:message>
+	
+	<wsdl:message name="BuscarSolicitudes_Request">
+		<wsdl:part name="entrada" element="bachue2:entradaBuscarSolicitudes"/>
+	</wsdl:message>
+	<wsdl:message name="BuscarSolicitudes_Response">
+		<wsdl:part name="salida" element="bachue2:salidaBuscarSolicitudes"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="SBB_CB_ConsultaHistorialSolicitudesPagadas">
+		<wsdl:operation name="ConsultarDetalleSolicitud">
+			<wsdl:input message="bachue:ConsultarDetalleSolicitud_Request"/>
+			<wsdl:output message="bachue:ConsultarDetalleSolicitud_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="BuscarSolicitudes">
+			<wsdl:input message="bachue:BuscarSolicitudes_Request"/>
+			<wsdl:output message="bachue:BuscarSolicitudes_Response"/>
+		</wsdl:operation>
+	</wsdl:portType>
+ <wsdl:binding name="SBB_CB_ConsultaHistorialSolicitudesPagadasSOAP12Binding" type="bachue:SBB_CB_ConsultaHistorialSolicitudesPagadas">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="ConsultarDetalleSolicitud">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultahistorialsolicitudespagadas/v1/ConsultarDetalleSolicitud"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="BuscarSolicitudes">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultahistorialsolicitudespagadas/v1/BuscarSolicitudes"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SBB_CB_ConsultaHistorialSolicitudesPagadas">
+  <wsdl:port name="SBB_CB_ConsultaHistorialSolicitudesPagadasPort" binding="bachue:SBB_CB_ConsultaHistorialSolicitudesPagadasSOAP12Binding">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

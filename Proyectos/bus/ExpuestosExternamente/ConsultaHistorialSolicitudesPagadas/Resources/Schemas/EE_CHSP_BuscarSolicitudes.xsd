@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/consultahistorialsolicitudespagadas/buscarsolicitudes/v1" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bussol="https://www.supernotariado.gov.co/schemas/bachue/ee/consultahistorialsolicitudespagadas/buscarsolicitudes/v1"
+           elementFormDefault="qualified" version="1.3">
+	<xs:element name="entradaBuscarSolicitudes" type="bussol:tipoEntradaBuscarSolicitudes"/>
+	<xs:element name="salidaBuscarSolicitudes" type="bussol:tipoSalidaBuscarSolicitudes"/>
+	<xs:complexType name="solicitantesType">
+		<xs:sequence>
+			<xs:element name="solicitante" type="bussol:solicitanteType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="solicitanteType">
+		<xs:sequence>
+			<xs:element name="tipoDocumento" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="numeroDocumento" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tipoPersona" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="solicitudesType">
+		<xs:sequence>
+			<xs:element name="solicitud" type="bussol:solicitudType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="solicitudType">
+		<xs:sequence>
+			<xs:element name="nir" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionServicio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionSubServicio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fechaServicio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaBuscarSolicitudes">
+		<xs:sequence>
+			<xs:element name="modulo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="listaSolicitante" type="bussol:solicitantesType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="servicio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="nir" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fechaDesdeBusqueda" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fechaHastaBusqueda" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaBuscarSolicitudes">
+		<xs:sequence>
+			<xs:element name="solicitudes" type="bussol:solicitudesType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

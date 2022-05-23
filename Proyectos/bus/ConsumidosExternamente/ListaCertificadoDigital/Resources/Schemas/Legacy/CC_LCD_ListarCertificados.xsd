@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://TargetNamespace.com/ServiceName"
+            targetNamespace="http://TargetNamespace.com/ServiceName" elementFormDefault="qualified"
+            xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+  <xsd:element name="Root-Element">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="errores">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="code" type="xsd:string"/>
+              <xsd:element name="message" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="exitoso" type="xsd:string"/>
+        <xsd:element name="signResponse"/>
+        <xsd:element name="listCertificateResponse">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="cn" type="xsd:string"/>
+              <xsd:element name="o" type="xsd:string"/>
+              <xsd:element name="serialNumber" type="xsd:integer"/>
+              <xsd:element name="ou" type="xsd:string"/>
+              <xsd:element name="serial" type="xsd:integer"/>
+              <xsd:element name="issuer" type="xsd:string"/>
+              <xsd:element name="validity">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="notBefore" type="xsd:date"/>
+                    <xsd:element name="notAfter" type="xsd:date"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="timeStampDate"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:annotation xmlns="">
+    <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
+    <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+  </xsd:annotation>
+</xsd:schema>

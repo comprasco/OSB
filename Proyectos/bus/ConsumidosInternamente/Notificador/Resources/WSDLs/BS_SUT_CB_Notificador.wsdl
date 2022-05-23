@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/notificador/v1"
+  targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/notificador/v1"
+  xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/notificador/acusarmensaje/v1"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/notificador/acusarmensaje/v1" schemaLocation="../Schemas/Legacy/CB_NB_AcusarMensaje.xsd" />
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="AcusarMensaje_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaAcusarMensaje"/>
+	</wsdl:message>
+	<wsdl:message name="AcusarMensaje_Response">
+		<wsdl:part name="salida" element="bachue1:salidaAcusarMensaje"/>
+	</wsdl:message>
+
+	<wsdl:portType name="SUT_CB_Notificador">
+		<wsdl:operation name="AcusarMensaje">
+			<wsdl:input message="bachue:AcusarMensaje_Request"/>
+			<wsdl:output message="bachue:AcusarMensaje_Response"/>
+		</wsdl:operation>
+	</wsdl:portType>
+ <wsdl:binding name="SUT_CB_Notificador" type="bachue:SUT_CB_Notificador">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="AcusarMensaje">
+   <soap12:operation style="document"
+                     soapAction="https://www.supernotariado.gov.co/services/bachue/cb/notificador/v1/AcusarMensaje"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SUT_CB_Notificador">
+  <wsdl:port name="SUT_CB_NotificadorPort" binding="bachue:SUT_CB_Notificador">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

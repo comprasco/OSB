@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://ws.ani.rnec.gov.co/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.ani.rnec.gov.co/">
+
+<xs:element name="cambiarContrasena" type="tns:cambiarContrasena" />
+
+<xs:element name="cambiarContrasenaResponse" type="tns:cambiarContrasenaResponse" />
+
+<xs:element name="consultarCedulas" type="tns:consultarCedulas" />
+
+<xs:element name="consultarCedulasResponse" type="tns:consultarCedulasResponse" />
+
+<xs:element name="contrasena" nillable="true" type="xs:string" />
+
+<xs:element name="ip" nillable="true" type="xs:string" />
+
+<xs:element name="usuario" nillable="true" type="xs:string" />
+
+<xs:complexType name="consultarCedulas">
+<xs:sequence>
+<xs:element name="nuip" type="xs:string" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarCedulasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cedulasResponse" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cedulasResponse">
+<xs:sequence>
+<xs:element name="estadoConsulta" type="tns:estadoConsulta" minOccurs="0" />
+<xs:element name="datosCedulas" type="tns:datosCedulas" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="estadoConsulta">
+<xs:sequence>
+<xs:element name="numeroControl" type="xs:string" minOccurs="0" />
+<xs:element name="codError" type="xs:string" minOccurs="0" />
+<xs:element name="descripcionError" type="xs:string" minOccurs="0" />
+<xs:element name="fechaHoraConsulta" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datosCedulas">
+<xs:sequence>
+<xs:element name="datos" type="tns:datos" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datos">
+<xs:sequence>
+<xs:element name="nuip" type="xs:string" minOccurs="0" />
+<xs:element name="codError" type="xs:string" minOccurs="0" />
+<xs:element name="primerApellido" type="xs:string" minOccurs="0" />
+<xs:element name="particula" type="xs:string" minOccurs="0" />
+<xs:element name="segundoApellido" type="xs:string" minOccurs="0" />
+<xs:element name="primerNombre" type="xs:string" minOccurs="0" />
+<xs:element name="segundoNombre" type="xs:string" minOccurs="0" />
+<xs:element name="municipioExpedicion" type="xs:string" minOccurs="0" />
+<xs:element name="departamentoExpedicion" type="xs:string" minOccurs="0" />
+<xs:element name="fechaExpedicion" type="xs:string" minOccurs="0" />
+<xs:element name="estadoCedula" type="xs:string" minOccurs="0" />
+<xs:element name="numResolucion" type="xs:string" minOccurs="0" />
+<xs:element name="anoResolucion" type="xs:string" minOccurs="0" />
+<xs:element name="genero" type="xs:string" minOccurs="0" />
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0" />
+<xs:element name="lugarNacimiento" type="xs:string" minOccurs="0" />
+<xs:element name="informante" type="xs:string" minOccurs="0" />
+<xs:element name="serial" type="xs:string" minOccurs="0" />
+<xs:element name="fechaDefuncion" type="xs:string" minOccurs="0" />
+<xs:element name="lugarNovedad" type="xs:string" minOccurs="0" />
+<xs:element name="lugarPreparacion" type="xs:string" minOccurs="0" />
+<xs:element name="grupoSanguineo" type="xs:string" minOccurs="0" />
+<xs:element name="estatura" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cambiarContrasena">
+<xs:sequence>
+<xs:element name="cambioClaveRequest" type="tns:cambioClaveRequest" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cambioClaveRequest">
+<xs:sequence>
+<xs:element name="confirmarNuevaClave" type="xs:string" minOccurs="0" />
+<xs:element name="nuevaClave" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cambiarContrasenaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cambioClaveResponse" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cambioClaveResponse">
+<xs:sequence>
+<xs:element name="estadoCambioClave" type="tns:estadoCambioClave" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="estadoCambioClave">
+<xs:sequence>
+<xs:element name="numeroControl" type="xs:string" minOccurs="0" />
+<xs:element name="codError" type="xs:string" minOccurs="0" />
+<xs:element name="descripcionError" type="xs:string" minOccurs="0" />
+<xs:element name="fechaHoraConsulta" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

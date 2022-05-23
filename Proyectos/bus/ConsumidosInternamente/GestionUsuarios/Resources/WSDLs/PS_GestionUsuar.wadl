@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bachue7="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolescomponente/v1" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerconveniosentidad/v1" xmlns:bachue6="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolesusuario/v1" xmlns:bachue5="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/registrarusuario/v1" xmlns:bachue10="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenermodulosporrol/v1" xmlns:bachue9="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obteneraccesosporrol/v1" xmlns:bachue8="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerusuariosrolorip/v1" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="PS_GestionUsuar">GestionUsuarios</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerconveniosentidad/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerConveniosEntidad.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerentidadesconvenio/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerEntidadesConvenio.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerorips/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerORIPs.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerroles/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerRoles.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/registrarusuario/v1" schemaLocation="../Schemas/Legacy/CB_GU_RegistrarUsuario.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolesusuario/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerRolesUsuario.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolescomponente/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerRolesComponente.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerusuariosrolorip/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerUsuariosRolOrip.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obteneraccesosporrol/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerAccesosPorRol.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenermodulosporrol/v1" schemaLocation="../Schemas/Legacy/CB_GU_ObtenerModulosPorRol.xsd"/>
+        </schema>
+   </grammars>
+   <resources>
+      <resource path="/ObtenerRolesComponente">
+         <method name="GET" soa:wsdlOperation="ObtenerRolesComponente">
+            <request soa:paramElement="pns:entradaObtenerRolesComponente" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolescomponente/v1">
+               <param name="componente" style="query" soa:expression="$msg.entrada/bachue7:componente" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerRolesComponente" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolescomponente/v1"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/ObtenerRoles">
+         <method name="GET" soa:wsdlOperation="ObtenerRoles">
+            <request soa:paramElement="pns:entradaObtenerRoles" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerroles/v1"/>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerRoles" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerroles/v1"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/RegistrarUsuario">
+         <method name="POST" soa:wsdlOperation="RegistrarUsuario">
+            <request>
+               <representation mediaType="application/json" element="cns:entradaRegistrarUsuario" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/registrarusuario/v1"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaRegistrarUsuario" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/registrarusuario/v1"/>
+            </response>
+         </method>
+         <method name="GET" soa:wsdlOperation="ObtenerRolesUsuario">
+            <request soa:paramElement="pns:entradaObtenerRolesUsuario" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolesusuario/v1">
+               <param name="loginUsuario" style="query" soa:expression="$msg.entrada/bachue6:loginUsuario" type="xsd:string"/>
+               <param name="componente" style="query" soa:expression="$msg.entrada/bachue6:componente" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerRolesUsuario" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolesusuario/v1"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/ObtenerORIPs">
+         <method name="GET" soa:wsdlOperation="ObtenerORIPs">
+            <request soa:paramElement="pns:entradaObtenerORIPs" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerorips/v1"/>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerORIPs" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerorips/v1"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/ObtenerEntidadesConvenio">
+         <method name="GET" soa:wsdlOperation="ObtenerEntidadesConvenio">
+            <request soa:paramElement="pns:entradaObtenerEntidadesConvenio" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerentidadesconvenio/v1"/>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerEntidadesConvenio" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerentidadesconvenio/v1"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/ObtenerUsuariosRolOrip">
+         <method name="GET" soa:wsdlOperation="ObtenerUsuariosRolOrip">
+            <request soa:paramElement="pns:entradaObtenerUsuariosRolOrip" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerusuariosrolorip/v1">
+               <param name="codigoCirculo" style="query" soa:expression="$msg.entrada/bachue8:codigoCirculo" type="xsd:string"/>
+               <param name="codigoRol" style="query" soa:expression="$msg.entrada/bachue8:codigoRol" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerUsuariosRolOrip" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerusuariosrolorip/v1"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/ObtenerAccesosPorRol">
+         <method name="GET" soa:wsdlOperation="ObtenerAccesosPorRol">
+            <request soa:paramElement="pns:entradaObtenerAccesosPorRol" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obteneraccesosporrol/v1">
+               <param name="codigoRol" style="query" soa:expression="$msg.entrada/bachue9:codigoRol" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerAccesosPorRol" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obteneraccesosporrol/v1"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/ObtenerModulosPorRol">
+         <method name="GET" soa:wsdlOperation="ObtenerModulosPorRol">
+            <request soa:paramElement="pns:entradaObtenerModulosPorRol" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenermodulosporrol/v1">
+               <param name="codigoRol" style="query" soa:expression="$msg.entrada/bachue10:codigoRol" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerModulosPorRol" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenermodulosporrol/v1"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="/ObtenerConveniosEntidad">
+         <method name="GET" soa:wsdlOperation="ObtenerConveniosEntidad">
+            <request soa:paramElement="pns:entradaObtenerConveniosEntidad" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerconveniosentidad/v1">
+               <param name="codigoEntidad" style="query" soa:expression="$msg.entrada/bachue1:codigoEntidad" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaObtenerConveniosEntidad" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerconveniosentidad/v1"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

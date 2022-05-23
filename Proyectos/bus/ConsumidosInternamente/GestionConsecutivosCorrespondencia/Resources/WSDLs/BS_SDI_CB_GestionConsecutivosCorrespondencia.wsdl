@@ -1,0 +1,137 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/ci/gestionConsecutivosCorrespondencia/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ci/gestionConsecutivosCorrespondencia/v1"
+                  xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/anularConsecutivo/v1"
+                  xmlns:bachue3="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/consultarConsecutivo/v1"
+                  xmlns:bachue4="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoEE/v1"
+                  xmlns:bachue5="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoER/v1"
+                  xmlns:bachue6="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoIE/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/anularConsecutivo/v1"
+              schemaLocation="../Schemas/Legacy/CI_GCC_AnularConsecutivo.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/consultarConsecutivo/v1"
+              schemaLocation="../Schemas/Legacy/CI_GCC_ConsultarConsecutivo.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoEE/v1"
+              schemaLocation="../Schemas/Legacy/CI_GCC_GenerarConsecutivoEE.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoER/v1"
+              schemaLocation="../Schemas/Legacy/CI_GCC_GenerarConsecutivoER.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoIE/v1"
+              schemaLocation="../Schemas/Legacy/CI_GCC_GenerarConsecutivoIE.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="AnularConsecutivo_Request">
+    <wsdl:part name="entrada" element="bachue2:entradaAnularConsecutivo"/>
+  </wsdl:message>
+  <wsdl:message name="AnularConsecutivo_Response">
+    <wsdl:part name="salida" element="bachue2:salidaAnularConsecutivo"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarConsecutivo_Request">
+    <wsdl:part name="entrada" element="bachue3:entradaConsultarConsecutivo"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarConsecutivo_Response">
+    <wsdl:part name="salida" element="bachue3:salidaConsultarConsecutivo"/>
+  </wsdl:message>
+  <wsdl:message name="GenerarConsecutivoEE_Request">
+    <wsdl:part name="entrada" element="bachue4:entradaGenerarConsecutivoEE"/>
+  </wsdl:message>
+  <wsdl:message name="GenerarConsecutivoEE_Response">
+    <wsdl:part name="salida" element="bachue4:salidaGenerarConsecutivoEE"/>
+  </wsdl:message>
+  <wsdl:message name="GenerarConsecutivoER_Request">
+    <wsdl:part name="entrada" element="bachue5:entradaGenerarConsecutivoER"/>
+  </wsdl:message>
+  <wsdl:message name="GenerarConsecutivoER_Response">
+    <wsdl:part name="salida" element="bachue5:salidaGenerarConsecutivoER"/>
+  </wsdl:message>
+  <wsdl:message name="GenerarConsecutivoIE_Request">
+    <wsdl:part name="entrada" element="bachue6:entradaGenerarConsecutivoIE"/>
+  </wsdl:message>
+  <wsdl:message name="GenerarConsecutivoIE_Response">
+    <wsdl:part name="salida" element="bachue6:salidaGenerarConsecutivoIE"/>
+  </wsdl:message>
+  <wsdl:portType name="BS_SDI_CB_GestionConsecutivosCorrespondencia">
+    <wsdl:operation name="AnularConsecutivo">
+      <wsdl:input message="bachue:AnularConsecutivo_Request"/>
+      <wsdl:output message="bachue:AnularConsecutivo_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConsecutivo">
+      <wsdl:input message="bachue:ConsultarConsecutivo_Request"/>
+      <wsdl:output message="bachue:ConsultarConsecutivo_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarConsecutivoEE">
+      <wsdl:input message="bachue:GenerarConsecutivoEE_Request"/>
+      <wsdl:output message="bachue:GenerarConsecutivoEE_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarConsecutivoER">
+      <wsdl:input message="bachue:GenerarConsecutivoER_Request"/>
+      <wsdl:output message="bachue:GenerarConsecutivoER_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarConsecutivoIE">
+      <wsdl:input message="bachue:GenerarConsecutivoIE_Request"/>
+      <wsdl:output message="bachue:GenerarConsecutivoIE_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BS_SDI_CB_GestionConsecutivosCorrespondencia"
+                type="bachue:BS_SDI_CB_GestionConsecutivosCorrespondencia">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AnularConsecutivo">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/anularConsecutivo/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConsecutivo">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/consultarConsecutivo/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarConsecutivoEE">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoEE/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarConsecutivoER">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoER/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarConsecutivoIE">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoIE/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BS_SDI_CB_GestionConsecutivosCorrespondencia">
+    <wsdl:port name="BS_SDI_CB_GestionConsecutivosCorrespondenciaPort"
+               binding="bachue:BS_SDI_CB_GestionConsecutivosCorrespondencia">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

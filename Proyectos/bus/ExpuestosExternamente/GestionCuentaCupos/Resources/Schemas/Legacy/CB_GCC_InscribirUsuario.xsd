@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="InscribirUsuario"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/inscribirusuario/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/inscribirusuario/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaInscribirUsuario">
+		<xsd:sequence>
+			<xsd:element name="modulo" type="xsd:string"/>
+			<xsd:element name="IDCuentaCupo" type="xsd:string"/>
+			<xsd:element name="admin" type="bachue:tipoAdminIUI"/>
+			<xsd:element name="usuario" type="bachue:tipoUsuarioIUI"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoAdminIUI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocAdmin" type="xsd:string"/>
+			<xsd:element name="numDocAdmin" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoUsuarioIUI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocUsuario" type="xsd:string"/>
+			<xsd:element name="numDocUsuario" type="xsd:string"/>
+			<xsd:element name="primerNombreUsuario" type="xsd:string"/>
+			<xsd:element name="segundoNombreUsuario" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="primerApellidoUsuario" type="xsd:string"/>
+			<xsd:element name="segundoApellidoUsuario" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="correoElectronicoCorporativoUsuario" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaInscribirUsuario" type="bachue:tipoEntradaInscribirUsuario"/>
+
+	<xsd:complexType name="tipoSalidaInscribirUsuario">
+		<xsd:sequence>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaInscribirUsuario" type="bachue:tipoSalidaInscribirUsuario"/>
+</xsd:schema>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ConsumidosInternamente/OperacionesFinancieras/Resources/WSDLs/SBB_CI_OperacionesFinancieras"/>
+            <con:binding>
+                <con:name>SBB_CI_OperacionesFinancierasSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ci/operacionesfinancieras/v2</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:template-overrides>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cbb">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">'OperacionesFinancieras'</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cb8">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">'RegistrarAnulacion'</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:stage-override id="_StageId-N3f57c7ff.1591fdf4.0.16a791d6615.N7efc">
+                <con:context>
+                    <con1:userNsDecl prefix="v2" namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/operacionesfinancieras/registraranulacion/v2" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+            </con:stage-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7edc">
+                <con:actions>
+                    <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-afefed9.6408322c.0.16e7f682323.N66ea</con2:id>
+                        <con1:schema ref="ConsumidosInternamente/OperacionesFinancieras/Resources/Schemas/CI_OF_RegistrarAnulacion"/>
+                        <con1:schemaElement xmlns:v2="https://www.supernotariado.gov.co/schemas/bachue/ci/operacionesfinancieras/registraranulacion/v2">v2:entradaRegistrarAnulacion</con1:schemaElement>
+                        <con1:varName>body</con1:varName>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v2:entradaRegistrarAnulacion</con2:xpathText>
+                        </con1:location>
+                    </con1:validate>
+                </con:actions>
+            </con:placeholder-override>
+            <con:stage-override id="_StageId-N3f57c7ff.1591fdf4.0.16a791d6615.N7edd">
+                <con:context>
+                    <con1:userNsDecl prefix="v2" namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/operacionesfinancieras/registraranulacion/v2" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+            </con:stage-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7edb"/>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7ed9">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-afefed9.6408322c.0.16e7f682323.N66b6</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ConsumidosInternamente/OperacionesFinancieras/Resources/Xqueries/In_RegistrarAnulacion_to_NP_RegistrarAnulacion"/>
+                                <con2:param name="payloadRequest">
+                                    <con2:path>$requestPayloadProxy/*</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7ebc"/>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7e49">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-afefed9.6408322c.0.16e7f682323.N661b</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v2:entradaRegistrarAnulacion</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ConsumidosInternamente/OperacionesFinancieras/Resources/Xqueries/Out_NP_RegistrarAnulacion_to_RegistrarAnulacion"/>
+                                <con2:param name="payloadResponse">
+                                    <con2:path>$requestPayloadTarget/*</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:action-override id="_ActionId-N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7f05">
+                <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                    <con1:service ref="ConsumidosInternamente/OperacionesFinancieras/BusinessServices/BS_SBB_NP_OperacionesFinancieras" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con1:operation>RegistrarAnulacion</con1:operation>
+                </con1:route>
+            </con:action-override>
+            <con:placeholder-override id="PlaceholderID_N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7e12">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-afefed9.6408322c.0.16e7f682323.N6682</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ConsumidosInternamente/OperacionesFinancieras/Resources/Xqueries/Out_RegistrarAnulacionFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7cd1">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-afefed9.6408322c.0.16e7f682323.N664f</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ConsumidosInternamente/OperacionesFinancieras/Resources/Xqueries/Out_RegistrarAnulacionFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_a640f2e.730bb72d.0.16fb4fef506.N7fac">
+                <con:actions/>
+            </con:placeholder-override>
+            <con:stage-override id="_StageId-N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7e4a">
+                <con:context>
+                    <con1:userNsDecl prefix="v2" namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/operacionesfinancieras/registraranulacion/v2" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+            </con:stage-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7bb7">
+                <con1:replace xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                            <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                            <con2:param name="servicio">
+                                <con2:path>$targetName</con2:path>
+                            </con2:param>
+                            <con2:param name="fechaHora">
+                                <con2:path>$requestProxyDatetime</con2:path>
+                            </con2:param>
+                            <con2:param name="dominio">
+                                <con2:path>$dominio</con2:path>
+                            </con2:param>
+                            <con2:param name="usuario">
+                                <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                            </con2:param>
+                            <con2:param name="tipoMensaje">
+                                <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '1', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="operacion">
+                                <con2:path>$targetOperation</con2:path>
+                            </con2:param>
+                            <con2:param name="mensaje">
+                                <con2:path>$requestPayloadProxy/*</con2:path>
+                            </con2:param>
+                            <con2:param name="terminal">
+                                <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'CI', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="UUID">
+                                <con2:path>data($uuid)</con2:path>
+                            </con2:param>
+                            <con2:param name="tamano">
+                                <con2:path>string(string-length($body))</con2:path>
+                            </con2:param>
+                        </con2:xqueryTransform>
+                    </con1:expr>
+                </con1:replace>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7b4f">
+                <con1:replace xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                            <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                            <con2:param name="servicio">
+                                <con2:path>concat('Legacy/', $targetName)</con2:path>
+                            </con2:param>
+                            <con2:param name="fechaHora">
+                                <con2:path>$requestTargetDatetime</con2:path>
+                            </con2:param>
+                            <con2:param name="dominio">
+                                <con2:path>$dominio</con2:path>
+                            </con2:param>
+                            <con2:param name="usuario">
+                                <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                            </con2:param>
+                            <con2:param name="tipoMensaje">
+                                <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '2', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="operacion">
+                                <con2:path>concat('Legacy/', $targetOperation)</con2:path>
+                            </con2:param>
+                            <con2:param name="mensaje">
+                                <con2:path>$requestPayloadTarget/*</con2:path>
+                            </con2:param>
+                            <con2:param name="terminal">
+                                <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'CI', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="UUID">
+                                <con2:path>data($uuid)</con2:path>
+                            </con2:param>
+                            <con2:param name="tamano">
+                                <con2:path>string(string-length($body))</con2:path>
+                            </con2:param>
+                        </con2:xqueryTransform>
+                    </con1:expr>
+                </con1:replace>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7ab0">
+                <con1:replace xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                            <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                            <con2:param name="servicio">
+                                <con2:path>concat('Legacy/', $targetName)</con2:path>
+                            </con2:param>
+                            <con2:param name="fechaHora">
+                                <con2:path>$responseTargetDatetime</con2:path>
+                            </con2:param>
+                            <con2:param name="dominio">
+                                <con2:path>$dominio</con2:path>
+                            </con2:param>
+                            <con2:param name="usuario">
+                                <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                            </con2:param>
+                            <con2:param name="tipoMensaje">
+                                <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '3', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="operacion">
+                                <con2:path>concat('Legacy/',$targetOperation)</con2:path>
+                            </con2:param>
+                            <con2:param name="mensaje">
+                                <con2:path>$responsePayloadTarget/*</con2:path>
+                            </con2:param>
+                            <con2:param name="terminal">
+                                <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'CI', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="UUID">
+                                <con2:path>data($uuid)</con2:path>
+                            </con2:param>
+                            <con2:param name="tamano">
+                                <con2:path>string-length(data($responsePayloadTarget))</con2:path>
+                            </con2:param>
+                        </con2:xqueryTransform>
+                    </con1:expr>
+                </con1:replace>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7a7b">
+                <con1:replace xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                            <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                            <con2:param name="servicio">
+                                <con2:path>$targetName</con2:path>
+                            </con2:param>
+                            <con2:param name="fechaHora">
+                                <con2:path>$responseProxyDatetime</con2:path>
+                            </con2:param>
+                            <con2:param name="dominio">
+                                <con2:path>$dominio</con2:path>
+                            </con2:param>
+                            <con2:param name="usuario">
+                                <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                            </con2:param>
+                            <con2:param name="tipoMensaje">
+                                <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '4', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="operacion">
+                                <con2:path>$targetOperation</con2:path>
+                            </con2:param>
+                            <con2:param name="mensaje">
+                                <con2:path>$responsePayloadProxy/*</con2:path>
+                            </con2:param>
+                            <con2:param name="terminal">
+                                <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'CI', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="UUID">
+                                <con2:path>data($uuid)</con2:path>
+                            </con2:param>
+                            <con2:param name="tamano">
+                                <con2:path>string-length(data($responsePayloadProxy))</con2:path>
+                            </con2:param>
+                        </con2:xqueryTransform>
+                    </con1:expr>
+                </con1:replace>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7b4c">
+                <con1:replace xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                            <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                            <con2:param name="servicio">
+                                <con2:path>$targetName</con2:path>
+                            </con2:param>
+                            <con2:param name="fechaHora">
+                                <con2:path>$responseFailDatetime</con2:path>
+                            </con2:param>
+                            <con2:param name="dominio">
+                                <con2:path>$dominio</con2:path>
+                            </con2:param>
+                            <con2:param name="usuario">
+                                <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                            </con2:param>
+                            <con2:param name="tipoMensaje">
+                                <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '3', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="operacion">
+                                <con2:path>$targetOperation</con2:path>
+                            </con2:param>
+                            <con2:param name="mensaje">
+                                <con2:path>$responsePayloadProxy/*</con2:path>
+                            </con2:param>
+                            <con2:param name="terminal">
+                                <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'CI', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="UUID">
+                                <con2:path>data($uuid)</con2:path>
+                            </con2:param>
+                            <con2:param name="tamano">
+                                <con2:path>string-length(data($responsePayloadProxy))</con2:path>
+                            </con2:param>
+                        </con2:xqueryTransform>
+                    </con1:expr>
+                </con1:replace>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7a78">
+                <con1:replace xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                            <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                            <con2:param name="servicio">
+                                <con2:path>$targetName</con2:path>
+                            </con2:param>
+                            <con2:param name="fechaHora">
+                                <con2:path>$responseFailDatetime</con2:path>
+                            </con2:param>
+                            <con2:param name="dominio">
+                                <con2:path>$dominio</con2:path>
+                            </con2:param>
+                            <con2:param name="usuario">
+                                <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                            </con2:param>
+                            <con2:param name="tipoMensaje">
+                                <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '4', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="operacion">
+                                <con2:path>$targetOperation</con2:path>
+                            </con2:param>
+                            <con2:param name="mensaje">
+                                <con2:path>$responsePayloadProxy/*</con2:path>
+                            </con2:param>
+                            <con2:param name="terminal">
+                                <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'CI', 'Valor', 'default')</con2:path>
+                            </con2:param>
+                            <con2:param name="UUID">
+                                <con2:path>data($uuid)</con2:path>
+                            </con2:param>
+                            <con2:param name="tamano">
+                                <con2:path>string-length(data($responsePayloadProxy))</con2:path>
+                            </con2:param>
+                        </con2:xqueryTransform>
+                    </con1:expr>
+                </con1:replace>
+            </con:action-override>
+        </con:template-overrides>
+    </con:router>
+    <con:template ref="Comunes/Resources/Templates/PlantillaPipelineOp"/>
+</con:pipelineEntry>

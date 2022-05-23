@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="NotificarLiquidacion" elementFormDefault="qualified" xmlns=""
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/impuestosgobernaciones/notificarliquidacion/v1"
+xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/impuestosgobernaciones/notificarliquidacion/v1">
+<xsd:complexType name="tipoEntradaNotificarLiquidacion">
+	<xsd:annotation>
+		<xsd:appinfo>Bachue</xsd:appinfo>
+		<xsd:documentation xml:lang="es">Servicio que permite
+			notificar la liquidacion de impuestos de registro por parte de las
+			gobernaciones
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="idTramite">
+			<xsd:annotation>
+				<xsd:documentation>Codigo asociado al tramite generado desde la SNR
+					(NIR)
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string"> </xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="estadoPago">
+			<xsd:annotation>
+				<xsd:documentation>estado de liquidación</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="L">
+						<xsd:annotation>
+							<xsd:documentation>Liquidado</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="A">
+						<xsd:annotation>
+							<xsd:documentation>Anulado</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="fechaVencimiento">
+			<xsd:annotation>
+				<xsd:documentation>Fecha de Vencimiento del recibo (aaaa-mm-dd)
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:date"> </xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="referenciaLiquidacion">
+			<xsd:annotation>
+				<xsd:documentation>Número de referencia de liquidacion de impuesto
+					de registro
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string"> </xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="identificadorTransaccion">
+			<xsd:annotation>
+				<xsd:documentation>Representa el identificador de la transacción en
+					la gobernacion (idTicket)
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string"> </xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="matriculas">
+			<xsd:annotation>
+				<xsd:documentation>
+					Estructura de datos que contiene una lista de
+					matriculas relacionadas con la liquidación de impuesto generada.
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element ref="bachue:matricula" minOccurs="1" maxOccurs="unbounded"/>
+				</xsd:sequence>				
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:element name="reciboLiquidacion">
+			<xsd:annotation>
+				<xsd:documentation>Documento serializado del recibo de liquidación
+					(pdf)
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:base64Binary"> </xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!-- Tipo complejo Matricula -->
+<xsd:element name="matricula">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="numeroMatricula">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al número de matrícula asociada al
+						trámite de registro
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="actos">
+				<xsd:annotation>
+					<xsd:documentation>
+						Estructura de datos que contiene una lista de
+						actos relacionados en la liquidación del impuesto de registro
+						de la gobernación.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="bachue:acto" minOccurs="1" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+	
+<!-- Tipo complejo Acto -->
+<xsd:element name="acto">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="codigoActo">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al código del acto registrado en
+						Bachué asociado a la matrícula
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="valorActo">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al valor liquidado por la
+						gobernación del acto relacionado
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="valorCuantiaActo">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al valor de la cuantía del acto
+						validado por la Gobernación ( si el valor es 0, no tiene
+						cuantía)
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:decimal"/>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+	
+<xsd:element name="entradaNotificarLiquidacion" type="bachue:tipoEntradaNotificarLiquidacion"/>
+	
+<xsd:complexType name="tipoSalidaNotificarLiquidacion">
+	<xsd:annotation>
+		<xsd:appinfo>Bachue</xsd:appinfo>
+		<xsd:documentation xml:lang="es">Mensaje de Salida de
+			notificación de la liquidacion de impuestos de registro en la
+			gobernación</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="codigoMensaje">
+			<xsd:annotation>
+				<xsd:documentation>Código asociado al resultado de la operación (200
+					OK, 409, Error)</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+
+		<xsd:element name="descripcionMensaje">
+			<xsd:annotation>
+				<xsd:documentation>Descripcion del mensaje</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+	
+<xsd:element name="salidaNotificarLiquidacion" type="bachue:tipoSalidaNotificarLiquidacion"/>
+</xsd:schema>

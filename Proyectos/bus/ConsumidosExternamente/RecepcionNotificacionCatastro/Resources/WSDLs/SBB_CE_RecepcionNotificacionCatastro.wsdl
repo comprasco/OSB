@@ -1,0 +1,43 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/ce/notificarCambioCatastro/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ce/notificarCambioCatastro/v1"
+                  xmlns:bachue5="https://www.supernotariado.gov.co/schemas/bachue/ce/recepcionNotificacionCatastro/notificarCambioCatastro/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ce/recepcionNotificacionCatastro/notificarCambioCatastro/v1"
+              schemaLocation="../Schemas/Legacy/CE_CC_NotificarCambioCatastro.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="RecepcionNotificacionCatastro_Request">
+    <wsdl:part name="entrada" element="bachue5:entradaNotificarCambioCatastro"/>
+  </wsdl:message>
+  <wsdl:message name="RecepcionNotificacionCatastro_Response">
+    <wsdl:part name="salida" element="bachue5:salidaNotificarCambioCatastro"/>
+  </wsdl:message>
+  <wsdl:portType name="SBB_CE_RecepcionNotificacionCatastro">
+    <wsdl:operation name="NotificarCambioCatastro">
+      <wsdl:input message="bachue:RecepcionNotificacionCatastro_Request"/>
+      <wsdl:output message="bachue:RecepcionNotificacionCatastro_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SBB_CE_RecepcionNotificacionCatastro" type="bachue:SBB_CE_RecepcionNotificacionCatastro">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NotificarCambioCatastro">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/ce/recepcionNotificacionCatastro/v1/notificarCambioCatastro"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SBB_CE_RecepcionNotificacionCatastro">
+    <wsdl:port name="SBB_CE_RecepcionNotificacionCatastroPort" binding="bachue:SBB_CE_RecepcionNotificacionCatastro">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

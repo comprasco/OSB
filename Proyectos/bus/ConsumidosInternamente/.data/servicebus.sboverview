@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/CreadorTurno/BusinessServices/BS_SUT_CO_CreadorTurno"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/BusquedaDocumentos/BusinessServices/BS_SUT_CO_BusquedaDocumentos"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/Notificador/BusinessServices/BS_SUT_CB_Notificador"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/Mensajero/BusinessServices/BS_SUT_CN_Mensajero"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/OperacionesFinancieras/BusinessServices/BS_SBB_NP_OperacionesFinancieras"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/ControlDigitalizacion/BusinessServices/BS_SUT_CB_ControlDigitalizacion"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/ConsultaDatosRegistrales/BusinessServices/BS_SDI_CB_ConsultaDatosRegistrales"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/GestionUsuarios/BusinessServices/BS_SUT_CB_GestionUsuarios"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/RecepcionNotificacionBachue/BusinessServices/BS_SBB_CB_RecepcionNotificacionBachue"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/ControlDigitalizacion/BusinessServices/BS_SUT_CR_ControlDigitalizacion"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/NotificadorCorrespondencia/BusinessServices/BS_SUT_CN_NotificadorCorrespondencia"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/CierreAperturaExpediente/BusinessServices/BS_SUT_CO_CierreAperturaExpediente"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/ConsultarCatastrosGIS/BusinessServices/BS_SBB_GIS_consultarCatastrosGIS"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:Comunes/Auditoria/BusinessServices/RegistroJmsAuditoria"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/RelacionesDocumento/BusinessServices/BS_SUT_CO_RelacionesDocumento"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/EnvioCorrespondenciaFisica/BusinessServices/BS_SUT_CR_EnvioCorrespondenciaFisica"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/GeneracionIDsCorrespondencia/BusinessServices/BS_SUT_CR_GeneracionIDsCorrespondencia"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ConsumidosInternamente/LicenciasCuradurias/BusinessServices/BS_SBB_CB_LicenciasCuradurias"/>
+    </ns:reference>
+</ns:composite>

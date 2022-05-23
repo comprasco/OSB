@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/gestionalertastitulares/consultartarifaalertastitulares/v1" 
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+          xmlns:cotaalti="https://www.supernotariado.gov.co/schemas/bachue/ee/gestionalertastitulares/consultartarifaalertastitulares/v1" elementFormDefault="qualified" version="1.3">
+	<xs:element name="entradaConsultarTarifaAlertasTitulares" type="cotaalti:tipoEntradaConsultarTarifaAlertasTitulares"/>
+	<xs:element name="salidaConsultarTarifaAlertasTitulares" type="cotaalti:tipoSalidaConsultarTarifaAlertasTitulares"/>
+	<xs:complexType name="tarifasType">
+		<xs:sequence>
+			<xs:element name="tarifa" type="cotaalti:tarifaType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tarifaType">
+		<xs:sequence>
+			<xs:element name="rango" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="valor" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaConsultarTarifaAlertasTitulares">
+		<xs:sequence>
+			<xs:element name="modulo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="cantidadAlertasNuevas" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tipoDocumento" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="numeroDocumento" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaConsultarTarifaAlertasTitulares">
+		<xs:sequence>
+			<xs:element name="tarifas" type="cotaalti:tarifasType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="alertasInscrtitas" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="tarifaNuevasAlertas" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

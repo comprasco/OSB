@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActualizarEntidad"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/actualizarentidad/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/actualizarentidad/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaActualizarEntidad">
+		<xsd:sequence>
+			<xsd:element name="modulo" type="xsd:string"/>
+			<xsd:element name="empresa" type="bachue:tipoEmpresaAEI"/>
+			<xsd:element name="representanteLegal" type="bachue:tipoRepresentanteLegalAEI"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoEmpresaAEI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocumentoEmpresa" type="xsd:string"/>
+			<xsd:element name="numeroDocumentoEmpresa" type="xsd:string"/>
+			<xsd:element name="razonSocialEmpresa" type="xsd:string"/>
+			<xsd:element name="paisEmpresa" type="xsd:string"/>
+			<xsd:element name="departamentoEmpresa" type="xsd:string"/>
+			<xsd:element name="municipioEmpresa" type="xsd:string"/>
+			<xsd:element name="tipoEntidadEmpresa" type="xsd:string"/>
+			<xsd:element name="actividadEconomica" type="xsd:string"/>
+			<xsd:element name="telefonoEmpresa" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="tipoRepresentanteLegalAEI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocumentoRepresentanteLegal" type="xsd:string"/>
+			<xsd:element name="numeroDocumentoRepresentanteLegal" type="xsd:string"/>
+			<xsd:element name="primerNombre" type="xsd:string"/>
+			<xsd:element name="segundoNombre" type="xsd:string"/>
+			<xsd:element name="departamentoEmpresa" type="xsd:string"/>
+			<xsd:element name="primerApellido" type="xsd:string"/>
+			<xsd:element name="segundoApellido" type="xsd:string"/>
+			<xsd:element name="telefono" type="xsd:string"/>
+			<xsd:element name="correoElectronicoCorporativoUsuario" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="entradaActualizarEntidad" type="bachue:tipoEntradaActualizarEntidad"/>
+
+	<xsd:complexType name="tipoSalidaActualizarEntidad">
+		<xsd:sequence>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaActualizarEntidad" type="bachue:tipoSalidaActualizarEntidad"/>
+</xsd:schema>

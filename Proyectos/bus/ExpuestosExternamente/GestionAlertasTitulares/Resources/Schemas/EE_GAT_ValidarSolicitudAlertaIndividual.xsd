@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/gestionalertastitulares/validarsolicitudalertaindividual/v1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vasoalin="https://www.supernotariado.gov.co/schemas/bachue/ee/gestionalertastitulares/validarsolicitudalertaindividual/v1"
+           elementFormDefault="qualified" version="1.3">
+  <xs:element name="entradaValidarSolicitudAlertaIndividual"
+              type="vasoalin:tipoEntradaValidarSolicitudAlertaIndividual"/>
+  <xs:element name="salidaValidarSolicitudAlertaIndividual" type="vasoalin:tipoSalidaValidarSolicitudAlertaIndividual"/>
+  <xs:complexType name="tipoEntradaValidarSolicitudAlertaIndividual">
+    <xs:sequence>
+      <xs:element name="modulo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="orip" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="numeroMatricula" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="tipoDocumento" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="numeroDocumento" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="primerNombre" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="segundoNombre" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="primerApellido" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="segundoApellido" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="razonSocial" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoSalidaValidarSolicitudAlertaIndividual">
+    <xs:sequence>
+      <xs:element name="departamento" type="xs:string"/>
+      <xs:element name="ciudad" type="xs:string"/>
+      <xs:element name="direccion" type="xs:string"/>
+      <xs:element name="codigoMensaje">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="200"/>
+            <xs:enumeration value="452"/>
+            <xs:enumeration value="453"/>
+            <xs:enumeration value="454"/>
+            <xs:enumeration value="455"/>
+            <xs:enumeration value="463"/>
+            <xs:enumeration value="465"/>
+            <xs:enumeration value="466"/>
+            <xs:enumeration value="467"/>
+            <xs:enumeration value="469"/>
+            <xs:enumeration value="470"/>
+            <xs:enumeration value="471"/>
+            <xs:enumeration value="472"/>
+            <xs:enumeration value="473"/>
+            <xs:enumeration value="474"/>
+            <xs:enumeration value="500"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="descripcionMensaje" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

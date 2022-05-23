@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ListarCertificados"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ce/listacertificadodigital/listarcertificados/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ce/listacertificadodigital/listarcertificados/v1"
+            elementFormDefault="qualified" version="1.3" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="US-ASCII">
+  <xsd:complexType name="tipoEntradaListarCertificados">
+    <xsd:sequence>
+      <xsd:element name="numDocumento" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="contraseña" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaListarCertificados" type="bachue:tipoEntradaListarCertificados"/>
+  <xsd:complexType name="tipoSalidaListarCertificados">
+    <xsd:sequence>
+      <xsd:element name="nombreComun" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="nombreOrganizacion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="identificador" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="unidadOrganizacional" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="serialCertificado" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="issuer" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fechaEmision" type="xsd:date" minOccurs="0"/>
+      <xsd:element name="fechaVencimiento" type="xsd:date" minOccurs="0"/>
+      <xsd:element name="codigoMensaje" type="xsd:integer"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaListarCertificados" type="bachue:tipoSalidaListarCertificados"/>
+</xsd:schema>

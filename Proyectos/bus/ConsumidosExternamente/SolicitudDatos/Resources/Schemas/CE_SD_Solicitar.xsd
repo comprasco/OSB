@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ce/solicituddatos/solicitar/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sol="https://www.supernotariado.gov.co/schemas/bachue/ce/solicituddatos/solicitar/v1">
+	<xs:element name="entradaSolicitar" type="sol:tipoEntradaSolicitar"/>
+	<xs:element name="salidaSolicitar" type="sol:tipoSalidaSolicitar"/>
+	<xs:complexType name="acto">
+		<xs:sequence>
+			<xs:element name="codigoActo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="valorCuantiaActo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="documento">
+		<xs:sequence>
+			<xs:element name="ubicacion" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="claseDoc" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="numeroDocumento" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="claseLiquidacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaOtorgamientocDoc" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="matriculas" type="sol:tipoMatricula" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="municipioSolicitud" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="entidad" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="origenDoc" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="municipioDoc" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="interviniente">
+		<xs:sequence>
+			<xs:element name="tipoIdentificacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="numIdentificacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="nombre1" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="nombre2" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="apellido1" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="apellido2" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="razonSocial" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="direccion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="pais" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="departamento" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="municipio" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="tipoInterviniente" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="rolInterviniente" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="telefono" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="correoElectronico" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="matricula">
+		<xs:sequence>
+			<xs:element name="numeroMatricula" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="actos" type="sol:tipoActos" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoActos">
+		<xs:sequence>
+			<xs:element name="acto" type="sol:acto" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoDocumento">
+		<xs:sequence>
+			<xs:element name="documento" type="sol:documento" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaSolicitar">
+		<xs:sequence>
+			<xs:element name="gobernacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="idTramite" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="rutaArchivo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fecSolicitud" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="intervinientes" type="sol:tipoInterviniente" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="documentos" type="sol:tipoDocumento" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoInterviniente">
+		<xs:sequence>
+			<xs:element name="interviniente" type="sol:interviniente" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoMatricula">
+		<xs:sequence>
+			<xs:element name="matricula" type="sol:matricula" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaSolicitar">
+		<xs:sequence>
+			<xs:element name="codMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="descMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

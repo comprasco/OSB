@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="RegistrarSegregacionCambioLinderosCatastro"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/cambioLinderosPredios/registrarSegregacionCambioLinderosCatastro/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/cambioLinderosPredios/registrarSegregacionCambioLinderosCatastro/v1"
+            elementFormDefault="qualified" version="1.3" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="UTF-8">
+  <xsd:complexType name="tipoEntradaRegistrarSegregacionCambioLinderosCatastro">
+    <xsd:sequence>
+      <xsd:element name="numIdentificacionPredio" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+       <xsd:element name="tipoPredio" type="xsd:string" minOccurs="1"/>
+       <xsd:element name="poligonoPredio" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaRegistrarSegregacionCambioLinderosCatastro"
+               type="bachue:tipoEntradaRegistrarSegregacionCambioLinderosCatastro"/>
+  <xsd:complexType name="tipoSalidaRegistrarSegregacionCambioLinderosCatastro">
+    <xsd:sequence>
+      <xsd:element name="codMensaje" type="xsd:integer"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaRegistrarSegregacionCambioLinderosCatastro"
+               type="bachue:tipoSalidaRegistrarSegregacionCambioLinderosCatastro"/>
+</xsd:schema>

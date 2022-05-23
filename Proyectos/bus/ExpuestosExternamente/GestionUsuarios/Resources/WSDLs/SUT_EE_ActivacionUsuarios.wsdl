@@ -1,0 +1,36 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/ee/activacionusuarios/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ee/activacionusuarios/v1" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/ee/activacionusuarios/activarusuario/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/activacionusuarios/activarusuario/v1" schemaLocation="../Schemas/EE_AU_ActivarUsuario.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="ActivarUsuario_Request">
+    <wsdl:part name="entrada" element="bachue1:entradaActivarUsuario"/>
+  </wsdl:message>
+  <wsdl:message name="ActivarUsuario_Response">
+    <wsdl:part name="salida" element="bachue1:salidaActivarUsuario"/>
+  </wsdl:message>
+  <wsdl:portType name="SUT_EE_ActivacionUsuarios">
+    <wsdl:operation name="ActivarUsuario">
+      <wsdl:input message="bachue:ActivarUsuario_Request"/>
+      <wsdl:output message="bachue:ActivarUsuario_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SUT_EE_ActivacionUsuariosSOAP12Binding" type="bachue:SUT_EE_ActivacionUsuarios">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ActivarUsuario">
+      <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/ci/activacionusuarios/v1/ActivarUsuario"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SUT_EE_ActivacionUsuarios">
+    <wsdl:port name="SUT_EE_ActivacionUsuariosPort" binding="bachue:SUT_EE_ActivacionUsuariosSOAP12Binding">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

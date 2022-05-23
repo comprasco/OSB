@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ConsultarPazySalvoTributario"
+	targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/consultapazysalvotributario/consultarpazysalvotributario/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/consultapazysalvotributario/consultarpazysalvotributario/v1" elementFormDefault="qualified" version="1.3">
+<xsd:complexType name="tipoEntradaConsultarPazySalvoTributario">
+	<xsd:sequence>
+		<xsd:element name="entidadCertificadora" type="xsd:string"/>
+		<xsd:element name="entidad" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="usuario" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="clave" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="codigoDepartamento" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="codigoMunicipio" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="codigoNotaria" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="referenciaCatastral" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="numeroMatricula" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="chip" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="direccion" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="impuesto" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="pdf" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="idpersona" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="ip" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:element name="entradaConsultarPazySalvoTributario" type="bachue:tipoEntradaConsultarPazySalvoTributario"/>
+
+<xsd:complexType name="tipoSalidaConsultarPazySalvoTributario">
+	<xsd:sequence>
+		<xsd:element name="pdfCertificado" type="xsd:base64Binary" minOccurs="0" maxOccurs="1" nillable="true"/>
+		<xsd:element name="codigoMensaje">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="200"/>
+					<xsd:enumeration value="409"/>
+				<xsd:enumeration value="500"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="salidaConsultarPazySalvoTributario" type="bachue:tipoSalidaConsultarPazySalvoTributario"/>
+</xsd:schema>

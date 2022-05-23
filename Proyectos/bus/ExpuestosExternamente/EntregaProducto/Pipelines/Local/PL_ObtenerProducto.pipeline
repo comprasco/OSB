@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/EntregaProducto/Resources/WSDLs/SBB_EE_EntregaProducto"/>
+            <con:binding>
+                <con:name>SBB_EE_EntregaProductoSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ee/entregaproducto/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:template-overrides>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cbb">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">'EntregaProducto'</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cb8">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">'ObtenerProducto'</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cb5">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">dvm:lookup('Comunes/DVMs/DominiosNegocio', 'Prefijo', 'EE', 'Valor', 'default')</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7edc">
+                <con:actions>
+                    <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N77d5</con2:id>
+                        <con1:schema ref="ExpuestosExternamente/EntregaProducto/Resources/Schemas/EE_EP_ObtenerProducto"/>
+                        <con1:schemaElement xmlns:v1="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerproducto/v1">v1:entradaObtenerProducto</con1:schemaElement>
+                        <con1:varName>body</con1:varName>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v1:entradaObtenerProducto</con2:xpathText>
+                        </con1:location>
+                    </con1:validate>
+                </con:actions>
+            </con:placeholder-override>
+            <con:stage-override id="_StageId-N3f57c7ff.1591fdf4.0.16a791d6615.N7edd">
+                <con:context>
+                    <con1:userNsDecl prefix="v1" namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerproducto/v1" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+            </con:stage-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7edb">
+                <con:stage id="_StageId-N3f57f564.N6207dea6.0.16e7ee136e4.N76f8" name="Llamado_CB_ObtenerProducto">
+                    <con:context/>
+                    <con:actions>
+                        <con1:wsCallout xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                            <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N76f7</con2:id>
+                            <con1:service ref="ExpuestosExternamente/EntregaProducto/BusinessServices/BS_SBB_CB_EntregaProducto" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                            <con1:operation>ObtenerProducto</con1:operation>
+                            <con1:request>
+                                <con1:body wrapped="false">ObtenerProductoRq</con1:body>
+                            </con1:request>
+                            <con1:response>
+                                <con1:body wrapped="false">ObtenerProductoRs</con1:body>
+                            </con1:response>
+                            <con1:requestTransform>
+                                <con1:assign varName="ObtenerProductoRq">
+                                    <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N76f6</con2:id>
+                                    <con1:expr>
+                                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                            <con2:resource ref="ExpuestosExternamente/EntregaProducto/Resources/Xqueries/In_ObtenerProducto_to_CB_ObtenerProducto"/>
+                                            <con2:param name="payloadRequest">
+                                                <con2:path>$requestPayloadProxy/*</con2:path>
+                                            </con2:param>
+                                        </con2:xqueryTransform>
+                                    </con1:expr>
+                                </con1:assign>
+                            </con1:requestTransform>
+                            <con1:responseTransform>
+                                <con1:ifThenElse>
+                                    <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N76f5</con2:id>
+                                    <con1:case id="_BranchId-N3f57f564.N6207dea6.0.16e7ee136e4.N76f4">
+                                        <con1:condition>
+                                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">data($ObtenerProductoRs/*:codigoMensaje) = '200'</con2:xqueryText>
+                                        </con1:condition>
+                                        <con1:actions/>
+                                    </con1:case>
+                                    <con1:default>
+                                        <con1:replace varName="body">
+                                            <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N76f3</con2:id>
+                                            <con1:location>
+                                                <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                                            </con1:location>
+                                            <con1:expr>
+                                                <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                                    <con2:resource ref="ExpuestosExternamente/EntregaProducto/Resources/Xqueries/Out_CB_ObtenerProducto_to_ObtenerProducto"/>
+                                                    <con2:param name="payloadResponse">
+                                                        <con2:path>$ObtenerProductoRs</con2:path>
+                                                    </con2:param>
+                                                </con2:xqueryTransform>
+                                            </con1:expr>
+                                        </con1:replace>
+                                        <con2:reply isError="false" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                            <con2:id>_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N76f2</con2:id>
+                                        </con2:reply>
+                                    </con1:default>
+                                </con1:ifThenElse>
+                            </con1:responseTransform>
+                        </con1:wsCallout>
+                    </con:actions>
+                </con:stage>
+                <con:stage id="_StageId-N3f57f564.N6207dea6.0.16e7ee136e4.N7646" name="Llamado_CO_ObtenerArchivo">
+                    <con:context/>
+                    <con:actions>
+                        <con1:wsCallout xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                            <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7645</con2:id>
+                            <con1:service ref="ExpuestosExternamente/EntregaProducto/BusinessServices/BS_SUT_CO_BusquedaDocumentos" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                            <con1:operation>ObtenerArchivo</con1:operation>
+                            <con1:request>
+                                <con1:body wrapped="false">obtenerArchivoRq</con1:body>
+                            </con1:request>
+                            <con1:response>
+                                <con1:body wrapped="false">obtenerArchivoRs</con1:body>
+                            </con1:response>
+                            <con1:requestTransform>
+                                <con1:assign varName="obtenerArchivoRq">
+                                    <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57ffe7.74d8d17f.0.171e51fff4f.N7eaf</con2:id>
+                                    <con1:expr>
+                                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                            <con2:resource ref="ExpuestosExternamente/EntregaProducto/Resources/Xqueries/Out_CB_ObtenerProducto_to_In_CB_ObtenerArchivo"/>
+                                            <con2:param name="payloadRequest">
+                                                <con2:path>$ObtenerProductoRs</con2:path>
+                                            </con2:param>
+                                        </con2:xqueryTransform>
+                                    </con1:expr>
+                                </con1:assign>
+                            </con1:requestTransform>
+                            <con1:responseTransform>
+                                <con1:ifThenElse>
+                                    <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7643</con2:id>
+                                    <con1:case id="_BranchId-N3f57f564.N6207dea6.0.16e7ee136e4.N7642">
+                                        <con1:condition>
+                                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">data($obtenerArchivoRs/*:codigoMensaje)='200'</con2:xqueryText>
+                                        </con1:condition>
+                                        <con1:actions/>
+                                    </con1:case>
+                                    <con1:default>
+                                        <con1:replace varName="body">
+                                            <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7641</con2:id>
+                                            <con1:location>
+                                                <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                                            </con1:location>
+                                            <con1:expr>
+                                                <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                                    <con2:resource ref="ExpuestosExternamente/EntregaProducto/Resources/Xqueries/Out_CO_ObtenerArchivo_to_ObtenerProducto"/>
+                                                    <con2:param name="payloadResponse">
+                                                        <con2:path>$obtenerArchivoRs</con2:path>
+                                                    </con2:param>
+                                                </con2:xqueryTransform>
+                                            </con1:expr>
+                                        </con1:replace>
+                                        <con2:reply isError="false" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                            <con2:id>_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7640</con2:id>
+                                        </con2:reply>
+                                    </con1:default>
+                                </con1:ifThenElse>
+                            </con1:responseTransform>
+                        </con1:wsCallout>
+                    </con:actions>
+                </con:stage>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7ed9">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7608</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ExpuestosExternamente/EntregaProducto/Resources/Xqueries/In_ObtenerProducto_to_CB_RegistrarEntregaProducto"/>
+                                <con2:param name="payloadRequest">
+                                    <con2:path>$requestPayloadProxy/*</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7ebc"/>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7e49">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N74d0</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ExpuestosExternamente/EntregaProducto/Resources/Xqueries/Out_CO_ObtenerArchivo_to_ObtenerProducto"/>
+                                <con2:param name="payloadResponse">
+                                    <con2:path>$obtenerArchivoRs</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:action-override id="_ActionId-N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7f05">
+                <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                    <con1:service ref="ExpuestosExternamente/EntregaProducto/BusinessServices/BS_SBB_CB_EntregaProducto" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con1:operation>RegistrarEntregaProducto</con1:operation>
+                </con1:route>
+            </con:action-override>
+            <con:placeholder-override id="PlaceholderID_N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7e12">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N7469</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ExpuestosExternamente/EntregaProducto/Resources/Xqueries/Out_ObtenerProductoFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7cd1">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57f564.N6207dea6.0.16e7ee136e4.N749c</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ExpuestosExternamente/EntregaProducto/Resources/Xqueries/Out_ObtenerProductoFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:action-override id="_ActionId-N3f57f57d.N2aa4afd3.0.16b46effc8c.N793a">
+                <con1:assign varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config"/>
+            </con:action-override>
+            <con:placeholder-override id="PlaceholderID_a640f2e.730bb72d.0.16fb4fef506.N7fac">
+                <con:actions/>
+            </con:placeholder-override>
+        </con:template-overrides>
+    </con:router>
+    <con:template ref="Comunes/Resources/Templates/PlantillaPipelineOp"/>
+</con:pipelineEntry>

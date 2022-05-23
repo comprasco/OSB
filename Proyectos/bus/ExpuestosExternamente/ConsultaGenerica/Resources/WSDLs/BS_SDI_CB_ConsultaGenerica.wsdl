@@ -1,0 +1,38 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/consultagenerica/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/consultagenerica/v1" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/consultagenerica/consultar/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/consultagenerica/consultar/v1" schemaLocation="../Schemas/Legacy/CB_CG_Consultar.xsd"/>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="Consultar_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaConsultar"/>
+	</wsdl:message>
+	<wsdl:message name="Consultar_Response">
+		<wsdl:part name="salida" element="bachue1:salidaConsultar"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="SDI_CB_ConsultaGenerica">
+		<wsdl:operation name="Consultar">
+			<wsdl:input message="bachue:Consultar_Request"/>
+			<wsdl:output message="bachue:Consultar_Response"/>
+		</wsdl:operation>
+	</wsdl:portType>
+ <wsdl:binding name="SDI_CB_ConsultaGenericaSOAP12Binding" type="bachue:SDI_CB_ConsultaGenerica">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="Consultar">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultagenerica/v1/Consultar"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SDI_CB_ConsultaGenerica">
+  <wsdl:port name="SDI_CB_ConsultaGenericaPort" binding="bachue:SDI_CB_ConsultaGenericaSOAP12Binding">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

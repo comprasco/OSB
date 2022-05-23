@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ConsumidosInternamente/GestionUsuarios/Resources/WSDLs/BS_SUT_CB_GestionUsuarios"/>
+            <con:binding>
+                <con:name>SUT_CB_GestionUsuariosSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:template-overrides>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cbb">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">'GestionUsuarios'</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:action-override id="_ActionId-N3f57f54d.34b8626c.0.16e3c5bdc62.N7cb8">
+                <con1:assign xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:expr>
+                        <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">'ObtenerRoles'</con2:xqueryText>
+                    </con1:expr>
+                </con1:assign>
+            </con:action-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7edc">
+                <con:actions>
+                    <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57c7ff.43ff2bff.0.16e94bc707a.N7880</con2:id>
+                        <con1:schema ref="ConsumidosInternamente/GestionUsuarios/Resources/Schemas/Legacy/CB_GU_ObtenerRoles"/>
+                        <con1:schemaElement xmlns:v1="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerroles/v1">v1:entradaObtenerRoles</con1:schemaElement>
+                        <con1:varName>body</con1:varName>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v1:entradaObtenerRoles</con2:xpathText>
+                        </con1:location>
+                    </con1:validate>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7edb"/>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.1591fdf4.0.16a791d6615.N7ed9">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-a01014d.N72937fef.0.16f29e5c254.N7f8f</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">&lt;v1:ObtenerRoles xmlns:v1="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerroles/v1"/></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7ebc"/>
+            <con:placeholder-override id="PlaceholderID_N3f57c7ff.4fd3fbbf.0.16a8dac0a27.N7e49">
+                <con:actions/>
+            </con:placeholder-override>
+            <con:action-override id="_ActionId-N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7f05">
+                <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                    <con1:service ref="ConsumidosInternamente/GestionUsuarios/BusinessServices/BS_SUT_CB_GestionUsuarios" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con1:operation>ObtenerRoles</con1:operation>
+                </con1:route>
+            </con:action-override>
+            <con:placeholder-override id="PlaceholderID_N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7e12">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57c7ff.43ff2bff.0.16e94bc707a.N7818</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ConsumidosInternamente/GestionUsuarios/Resources/Xqueries/Out_ObtenerRolesFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:placeholder-override id="PlaceholderID_N3f57cb87.N3d87dd3a.0.16ae1a8452c.N7cd1">
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57c7ff.43ff2bff.0.16e94bc707a.N77e5</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                                <con2:resource ref="ConsumidosInternamente/GestionUsuarios/Resources/Xqueries/Out_ObtenerRolesFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:placeholder-override>
+            <con:stage-override id="_StageId-N3f57c7ff.1591fdf4.0.16a791d6615.N7edd">
+                <con:context>
+                    <con1:userNsDecl prefix="v1" namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerroles/v1" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                </con:context>
+            </con:stage-override>
+        </con:template-overrides>
+    </con:router>
+    <con:template ref="Comunes/Resources/Templates/PlantillaPipelineOp"/>
+</con:pipelineEntry>

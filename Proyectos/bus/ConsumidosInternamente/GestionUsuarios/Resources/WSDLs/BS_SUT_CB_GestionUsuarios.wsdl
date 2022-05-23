@@ -1,0 +1,254 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+    
+     targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1"
+     xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerconveniosentidad/v1"
+     xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerentidadesconvenio/v1"
+     xmlns:bachue3="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerorips/v1"
+     xmlns:bachue4="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerroles/v1"
+     xmlns:bachue5="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/registrarusuario/v1"
+     xmlns:bachue6="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolesusuario/v1"
+     xmlns:bachue7="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolescomponente/v1"
+     xmlns:bachue8="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerusuariosrolorip/v1"
+     xmlns:bachue9="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obteneraccesosporrol/v1"
+     xmlns:bachue10="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenermodulosporrol/v1"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerconveniosentidad/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerConveniosEntidad.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerentidadesconvenio/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerEntidadesConvenio.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerorips/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerORIPs.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerroles/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerRoles.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/registrarusuario/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_RegistrarUsuario.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolesusuario/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerRolesUsuario.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerrolescomponente/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerRolesComponente.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenerusuariosrolorip/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerUsuariosRolOrip.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obteneraccesosporrol/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerAccesosPorRol.xsd"/>
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obtenermodulosporrol/v1"
+                 schemaLocation="../Schemas/Legacy/CB_GU_ObtenerModulosPorRol.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="ObtenerRoles_Request">
+        <wsdl:part name="entrada" element="bachue4:entradaObtenerRoles"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerRoles_Response">
+        <wsdl:part name="salida" element="bachue4:salidaObtenerRoles"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerORIPs_Request">
+        <wsdl:part name="entrada" element="bachue3:entradaObtenerORIPs"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerORIPs_Response">
+        <wsdl:part name="salida" element="bachue3:salidaObtenerORIPs"/>
+    </wsdl:message>
+    <wsdl:message name="RegistrarUsuario_Request">
+        <wsdl:part name="entrada" element="bachue5:entradaRegistrarUsuario"/>
+    </wsdl:message>
+    <wsdl:message name="RegistrarUsuario_Response">
+        <wsdl:part name="salida" element="bachue5:salidaRegistrarUsuario"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerEntidadesConvenio_Request">
+        <wsdl:part name="entrada" element="bachue2:entradaObtenerEntidadesConvenio"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerEntidadesConvenio_Response">
+        <wsdl:part name="salida" element="bachue2:salidaObtenerEntidadesConvenio"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerConveniosEntidad_Request">
+        <wsdl:part name="entrada" element="bachue1:entradaObtenerConveniosEntidad"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerConveniosEntidad_Response">
+        <wsdl:part name="salida" element="bachue1:salidaObtenerConveniosEntidad"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerRolesUsuario_Request">
+        <wsdl:part name="entrada" element="bachue6:entradaObtenerRolesUsuario"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerRolesUsuario_Response">
+        <wsdl:part name="salida" element="bachue6:salidaObtenerRolesUsuario"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerRolesComponente_Request">
+        <wsdl:part name="entrada" element="bachue7:entradaObtenerRolesComponente"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerRolesComponente_Response">
+        <wsdl:part name="salida" element="bachue7:salidaObtenerRolesComponente"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerUsuariosRolOrip_Request">
+        <wsdl:part name="entrada" element="bachue8:entradaObtenerUsuariosRolOrip"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerUsuariosRolOrip_Response">
+        <wsdl:part name="salida" element="bachue8:salidaObtenerUsuariosRolOrip"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerAccesosPorRol_Request">
+        <wsdl:part name="entrada" element="bachue9:entradaObtenerAccesosPorRol"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerAccesosPorRol_Response">
+        <wsdl:part name="salida" element="bachue9:salidaObtenerAccesosPorRol"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerModulosPorRol_Request">
+        <wsdl:part name="entrada" element="bachue10:entradaObtenerModulosPorRol"/>
+    </wsdl:message>
+    <wsdl:message name="ObtenerModulosPorRol_Response">
+        <wsdl:part name="salida" element="bachue10:salidaObtenerModulosPorRol"/>
+    </wsdl:message>
+    <wsdl:portType name="SUT_CB_GestionUsuarios">
+        <wsdl:operation name="ObtenerRoles">
+            <wsdl:input message="bachue:ObtenerRoles_Request"/>
+            <wsdl:output message="bachue:ObtenerRoles_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerORIPs">
+            <wsdl:input message="bachue:ObtenerORIPs_Request"/>
+            <wsdl:output message="bachue:ObtenerORIPs_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="RegistrarUsuario">
+            <wsdl:input message="bachue:RegistrarUsuario_Request"/>
+            <wsdl:output message="bachue:RegistrarUsuario_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerEntidadesConvenio">
+            <wsdl:input message="bachue:ObtenerEntidadesConvenio_Request"/>
+            <wsdl:output message="bachue:ObtenerEntidadesConvenio_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerConveniosEntidad">
+            <wsdl:input message="bachue:ObtenerConveniosEntidad_Request"/>
+            <wsdl:output message="bachue:ObtenerConveniosEntidad_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerRolesUsuario">
+            <wsdl:input message="bachue:ObtenerRolesUsuario_Request"/>
+            <wsdl:output message="bachue:ObtenerRolesUsuario_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerRolesComponente">
+            <wsdl:input message="bachue:ObtenerRolesComponente_Request"/>
+            <wsdl:output message="bachue:ObtenerRolesComponente_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerUsuariosRolOrip">
+            <wsdl:input message="bachue:ObtenerUsuariosRolOrip_Request"/>
+            <wsdl:output message="bachue:ObtenerUsuariosRolOrip_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerAccesosPorRol">
+            <wsdl:input message="bachue:ObtenerAccesosPorRol_Request"/>
+            <wsdl:output message="bachue:ObtenerAccesosPorRol_Response"/>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerModulosPorRol">
+            <wsdl:input message="bachue:ObtenerModulosPorRol_Request"/>
+            <wsdl:output message="bachue:ObtenerModulosPorRol_Response"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SUT_CB_GestionUsuariosSOAP12Binding" type="bachue:SUT_CB_GestionUsuarios">
+        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="ObtenerRoles">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerRoles"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerORIPs">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerORIPs"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RegistrarUsuario">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/RegistrarUsuario"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerEntidadesConvenio">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerEntidadesConvenio"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerConveniosEntidad">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerConveniosEntidad"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerRolesUsuario">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerRolesUsuario"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerRolesComponente">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerRolesComponente"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerUsuariosRolOrip">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerUsuariosRolOrip"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerAccesosPorRol">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerAccesosPorRol"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ObtenerModulosPorRol">
+            <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionusuarios/v1/ObtenerModulosPorRol"
+                 soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal" parts="entrada"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal" parts="salida"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SUT_CB_GestionUsuarios">
+        <wsdl:port name="SUT_CB_GestionUsuariosPort" binding="bachue:SUT_CB_GestionUsuariosSOAP12Binding">
+            <soap12:address location="http://www.example.com"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

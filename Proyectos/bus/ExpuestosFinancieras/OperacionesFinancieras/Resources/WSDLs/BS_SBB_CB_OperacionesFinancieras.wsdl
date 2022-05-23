@@ -1,0 +1,139 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/operacionesfinancieras/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/operacionesfinancieras/v2" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/consultartarifaservicio/v2" xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/generarliquidacion/v2" xmlns:bachue3="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/registrarpago/v2" xmlns:bachue4="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/obtenerclavepdfliquidacion/v2" xmlns:bachue5="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/actualizardatossolicitante/v2" xmlns:bachue6="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/validaractualizaciondatossolicitante/v2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/consultartarifaservicio/v2" schemaLocation="../Schemas/Legacy/CB_OF_ConsultarTarifaServicio.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/generarliquidacion/v2" schemaLocation="../Schemas/Legacy/CB_OF_GenerarLiquidacion.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/registrarpago/v2" schemaLocation="../Schemas/Legacy/CB_OF_RegistrarPago.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/obtenerclavepdfliquidacion/v2" schemaLocation="../Schemas/Legacy/CB_OF_ObtenerClavePDFLiquidacion.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/actualizardatossolicitante/v2" schemaLocation="../Schemas/Legacy/CB_OF_ActualizarDatosSolicitante.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/validaractualizaciondatossolicitante/v2" schemaLocation="../Schemas/Legacy/CB_OF_ValidarActualizacionDatosSolicitante.xsd"/>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="ConsultarTarifaServicio_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaConsultarTarifaServicio"/>
+	</wsdl:message>
+	<wsdl:message name="ConsultarTarifaServicio_Response">
+		<wsdl:part name="salida" element="bachue1:salidaConsultarTarifaServicio"/>
+	</wsdl:message>
+	<wsdl:message name="GenerarLiquidacion_Request">
+		<wsdl:part name="entrada" element="bachue2:entradaGenerarLiquidacion"/>
+	</wsdl:message>
+	<wsdl:message name="GenerarLiquidacion_Response">
+		<wsdl:part name="salida" element="bachue2:salidaGenerarLiquidacion"/>
+	</wsdl:message>
+	<wsdl:message name="RegistrarPago_Request">
+		<wsdl:part name="entrada" element="bachue3:entradaRegistrarPago"/>
+	</wsdl:message>
+	<wsdl:message name="RegistrarPago_Response">
+		<wsdl:part name="salida" element="bachue3:salidaRegistrarPago"/>
+	</wsdl:message>
+	<wsdl:message name="ObtenerClavePDFLiquidacion_Request">
+		<wsdl:part name="entrada" element="bachue4:entradaObtenerClavePDFLiquidacion"/>
+	</wsdl:message>
+	<wsdl:message name="ObtenerClavePDFLiquidacion_Response">
+		<wsdl:part name="salida" element="bachue4:salidaObtenerClavePDFLiquidacion"/>
+	</wsdl:message>
+	<wsdl:message name="ActualizarDatosSolicitante_Request">
+		<wsdl:part name="entrada" element="bachue5:entradaActualizarDatosSolicitante"/>
+	</wsdl:message>
+	<wsdl:message name="ActualizarDatosSolicitante_Response">
+		<wsdl:part name="salida" element="bachue5:salidaActualizarDatosSolicitante"/>
+	</wsdl:message>
+        <wsdl:message name="ValidarActualizacionDatosSolicitante_Request">
+		<wsdl:part name="entrada" element="bachue6:entradaValidarActualizacionDatosSolicitante"/>
+	</wsdl:message>
+	<wsdl:message name="ValidarActualizacionDatosSolicitante_Response">
+		<wsdl:part name="salida" element="bachue6:salidaValidarActualizacionDatosSolicitante"/>
+	</wsdl:message>
+
+	<wsdl:portType name="SBB_CB_OperacionesFinancieras">
+		<wsdl:operation name="ConsultarTarifaServicio">
+			<wsdl:input message="bachue:ConsultarTarifaServicio_Request"/>
+			<wsdl:output message="bachue:ConsultarTarifaServicio_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="GenerarLiquidacion">
+			<wsdl:input message="bachue:GenerarLiquidacion_Request"/>
+			<wsdl:output message="bachue:GenerarLiquidacion_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="RegistrarPago">
+			<wsdl:input message="bachue:RegistrarPago_Request"/>
+			<wsdl:output message="bachue:RegistrarPago_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerClavePDFLiquidacion">
+			<wsdl:input message="bachue:ObtenerClavePDFLiquidacion_Request"/>
+			<wsdl:output message="bachue:ObtenerClavePDFLiquidacion_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ActualizarDatosSolicitante">
+			<wsdl:input message="bachue:ActualizarDatosSolicitante_Request"/>
+			<wsdl:output message="bachue:ActualizarDatosSolicitante_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ValidarActualizacionDatosSolicitante">
+			<wsdl:input message="bachue:ValidarActualizacionDatosSolicitante_Request"/>
+			<wsdl:output message="bachue:ValidarActualizacionDatosSolicitante_Response"/>
+		</wsdl:operation>
+
+	</wsdl:portType>
+ <wsdl:binding name="SBB_CB_OperacionesFinancierasSOAP12Binding" type="bachue:SBB_CB_OperacionesFinancieras">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="ConsultarTarifaServicio">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/operacionesfinancieras/v2/ConsultarTarifaServicio"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="GenerarLiquidacion">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/operacionesfinancieras/v2/GenerarLiquidacion"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="RegistrarPago">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/operacionesfinancieras/v2/RegistrarPago"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ObtenerClavePDFLiquidacion">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/operacionesfinancieras/v2/ObtenerClavePDFLiquidacion"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ActualizarDatosSolicitante">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/operacionesfinancieras/v2/ActualizarDatosSolicitante"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ValidarActualizacionDatosSolicitante">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/operacionesfinancieras/v2/ValidarActualizacionDatosSolicitante"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SBB_CB_OperacionesFinancieras">
+  <wsdl:port name="SBB_CB_OperacionesFinancierasPort" binding="bachue:SBB_CB_OperacionesFinancierasSOAP12Binding">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

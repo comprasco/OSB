@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/salvedades/v1"
+                  targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/salvedades/v1"
+                  xmlns:bachueCS="https://www.supernotariado.gov.co/services/bachue/cb/salvedades/consultarSalvedades/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/services/bachue/cb/salvedades/consultarSalvedades/v1"
+              schemaLocation="../Schemas/Legacy/CB_S_consultarSalvedades.xsd"/>
+    </schema>
+  </wsdl:types>
+  <!-- INICIO WSDL:mesage -->
+  <wsdl:message name="ConsultarSalvedades_Request">
+    <wsdl:part name="entrada" element="bachueCS:entradaDatosSalvedades"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarSalvedades_Response">
+    <wsdl:part name="salida" element="bachueCS:salidaDatosSalvedades"></wsdl:part>
+  </wsdl:message>
+  <!-- INICIO ConsultasBachue -->
+  <wsdl:portType name="SBB_CB_Salvedades">
+    <!-- Inicio Operacion consultarSalvedades -->
+    <wsdl:operation name="consultarSalvedades">
+      <wsdl:input message="bachue:ConsultarSalvedades_Request"></wsdl:input>
+      <wsdl:output message="bachue:ConsultarSalvedades_Response"></wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Operacion consultarSalvedades -->
+  </wsdl:portType>
+  <!-- INICIO WSDL:binding -->
+  <wsdl:binding name="SBB_CB_SalvedadesSOAP12Binding" type="bachue:SBB_CB_Salvedades">
+    <!-- Inicio Binding DatosSalvedades -->
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarSalvedades">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/salvedades/v1/consultarSalvedades"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Binding DatosSalvedades -->
+  </wsdl:binding>
+  <wsdl:service name="SBB_CB_Salvedades">
+    <wsdl:port name="SBB_CB_SalvedadesPort" binding="bachue:SBB_CB_SalvedadesSOAP12Binding">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+  <!-- Últimas modificaciones 2020-01-27 11:13 -->
+</wsdl:definitions>

@@ -1,0 +1,6 @@
+<view_states>
+   <function arity="2" name="func">
+      <source_tree_view last.visible.row="5" last.visible.path="/sourceRoot[[0]]/matriculaInmobiliaria[[1]]/response1[[0]]/numeroMatriculaInmobiliaria[[0]]" first.visible.path="/sourceRoot[[0]]/circulos[[0]]" expanded.paths="/sourceRoot[[0]]/circulos[[0]]&#xA;/sourceRoot[[0]]/circulos[[0]]/response[[0]]&#xA;/sourceRoot[[0]]/matriculaInmobiliaria[[1]]&#xA;/sourceRoot[[0]]/matriculaInmobiliaria[[1]]/response1[[0]]" first.visible.row="0" selected.paths=""/>
+      <target_tree_view last.visible.row="3" last.visible.path="/TargetRoot[[0]]/Response[[0]]/Actualizar[[0]]/numeroMatriculaInmobiliaria[[1]]" first.visible.path="/TargetRoot[[0]]/Response[[0]]" expanded.paths="/TargetRoot[[0]]/Response[[0]]&#xA;/TargetRoot[[0]]/Response[[0]]/Actualizar[[0]]" first.visible.row="0" selected.paths=""/>
+   </function>
+</view_states>

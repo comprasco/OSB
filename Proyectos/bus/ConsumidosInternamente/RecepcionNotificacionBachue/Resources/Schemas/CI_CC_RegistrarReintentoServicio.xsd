@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="RegistrarReintentoServicio"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ci/recepcionNotificacionBachue/registrarReintentoServicio/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ci/recepcionNotificacionBachue/registrarReintentoServicio/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaRegistrarReintentoServicio">
+		<xsd:sequence>
+			<xsd:element name="codTransaccion" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="operacionRegistro" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="estadoRegistro" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="numeroReintento" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="fechaRegistro" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="entradaRegistrarReintentoServicio" type="bachue:tipoEntradaRegistrarReintentoServicio"/>
+	<xsd:complexType name="tipoSalidaRegistrarReintentoServicio">
+		<xsd:sequence>
+			<xsd:element name="codMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="salidaRegistrarReintentoServicio" type="bachue:tipoSalidaRegistrarReintentoServicio"/>
+</xsd:schema>

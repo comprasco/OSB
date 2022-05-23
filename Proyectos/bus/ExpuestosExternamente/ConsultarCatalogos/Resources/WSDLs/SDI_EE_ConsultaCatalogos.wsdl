@@ -1,0 +1,38 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/ee/consultacatalogos/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ee/consultacatalogos/v1" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/ee/consultacatalogos/consultarcatalogos/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/consultacatalogos/consultarcatalogos/v1" schemaLocation="../Schemas/EE_CC_ConsultarCatalogos.xsd"/>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="ConsultarCatalogos_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaConsultarCatalogos"/>
+	</wsdl:message>
+	<wsdl:message name="ConsultarCatalogos_Response">
+		<wsdl:part name="salida" element="bachue1:salidaConsultarCatalogos"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="SDI_EE_ConsultaCatalogos">
+		<wsdl:operation name="ConsultarCatalogos">
+			<wsdl:input message="bachue:ConsultarCatalogos_Request"/>
+			<wsdl:output message="bachue:ConsultarCatalogos_Response"/>
+		</wsdl:operation>
+	</wsdl:portType>
+ <wsdl:binding name="SDI_EE_ConsultaCatalogosSOAP12Binding" type="bachue:SDI_EE_ConsultaCatalogos">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="ConsultarCatalogos">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/ee/consultacatalogos/v1/ConsultarCatalogos"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SDI_EE_ConsultaCatalogos">
+  <wsdl:port name="SDI_EE_ConsultaCatalogosPort" binding="bachue:SDI_EE_ConsultaCatalogosSOAP12Binding">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

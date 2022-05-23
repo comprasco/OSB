@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/consultatrazabilidad/consultartrazabilidad/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+          xmlns:contra="https://www.supernotariado.gov.co/schemas/bachue/ee/consultatrazabilidad/consultartrazabilidad/v1" elementFormDefault="qualified" version="1.3">
+	<xs:element name="entradaConsultarTrazabilidad" type="contra:tipoEntradaConsultarTrazabilidad"/>
+	<xs:element name="salidaConsultarTrazabilidad" type="contra:tipoSalidaConsultarTrazabilidad"/>
+	<xs:complexType name="documentos">
+		<xs:sequence>
+			<xs:element name="documento" type="contra:documentosType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="documentosType">
+		<xs:sequence>
+			<xs:element name="tipo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="numeroDocumento" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaDocumento" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="oficinaOrigen" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="tipoOficina" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="departamento" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="municipio" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="tipoEntidad" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="elementonir">
+		<xs:sequence>
+			<xs:element name="elementonir" type="contra:elementonirType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="elementonirType">
+		<xs:sequence>
+			<xs:element name="turno" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="orip" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="decisionCalificacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="faseActualTurno" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="procesoTurno" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="documentos" type="contra:documentos" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="matriculas" type="contra:matricula" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="trazabilidades" type="contra:trazabilidad" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="matricula">
+		<xs:sequence>
+			<xs:element name="matricula" type="contra:matriculaTpe" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="matriculaTpe">
+		<xs:sequence>
+			<xs:element name="orip" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="numeroMatricula" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="estado" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="alertaVigente" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaConsultarTrazabilidad">
+		<xs:sequence>
+			<xs:element name="modulo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="criterioBusqueda" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="valorCriterioBusqueda" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaConsultarTrazabilidad">
+		<xs:sequence>
+			<xs:element name="nir" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="faseActualNIR" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="nirVinculado" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="tramiteVinculado" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="elementosnir" type="contra:elementonir" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="codigoMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="trazabilidad">
+		<xs:sequence>
+			<xs:element name="trazabilidad" type="contra:trazabilidadType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="trazabilidadType">
+		<xs:sequence>
+			<xs:element name="etapa" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="nombreEtapa" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="estadoActividad" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="usuario" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaAsignacion" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaReparto" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaInicioEtapa" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaFinalEtapa" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

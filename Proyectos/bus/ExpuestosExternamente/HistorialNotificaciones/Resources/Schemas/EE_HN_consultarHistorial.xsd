@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema id="ConsultarHistoricoPropietarios"
+	targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/historialNotificaciones/consultarHistorial/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/historialNotificaciones/consultarHistorial/v1"
+	elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaConsultarHistorial">
+    <xsd:sequence>
+      <xsd:element name="fechaInicial" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="fechaFinal" type="xsd:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xsd:element name="tipoID" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xsd:element name="identificador" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xsd:element name="pagina" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xsd:element name="direccionCorreoElectronicoDestinatario" type="xsd:string" minOccurs="0" maxOccurs="1"
+                   nillable="true"/>
+      <xsd:element name="numeroTelefonoDestinatario" type="xsd:integer" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaConsultarHistorial" type="bachue:tipoEntradaConsultarHistorial"/>
+  <xsd:complexType name="tipoSalidaConsultarHistorial">
+    <xsd:sequence>
+      <xsd:element name="numeroRegistros" type="xsd:integer" minOccurs="0"/>
+      <xsd:element name="listaMensajes" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="mensaje" minOccurs="0" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="nir" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="turno" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                  <xsd:element name="orip" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                  <xsd:element name="identificadorEE" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                  <xsd:element name="fechaEnvio" type="xsd:dateTime" minOccurs="0"/>
+                  <xsd:element name="tipoTramiteCurso" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="asunto" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="cuerpo" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="para" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="tipoDocumental" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="nomTipoDocumentoPublico" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="codMensaje" type="xsd:integer"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaConsultarHistorial" type="bachue:tipoSalidaConsultarHistorial"/>
+</xsd:schema>

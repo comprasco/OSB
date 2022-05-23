@@ -1,0 +1,37 @@
+xquery version "1.0" encoding "utf-8";
+
+(:: OracleAnnotationVersion "1.0" ::)
+
+declare namespace ns2="https://www.supernotariado.gov.co/services/bachue/cb/certificadotradicionpdf/obtenerPDF/v1";
+(:: import schema at "../Schemas/Legacy/CB_CTPDF_obtenerPDF.xsd" ::)
+declare namespace ns1="https://www.supernotariado.gov.co/services/bachue/ee/cb/certificadotradicionpdf/obtenerPDF/v1";
+(:: import schema at "../Schemas/EE_CTP_obtenerPDF.xsd" ::)
+
+declare variable $payloadRequest as element() (:: schema-element(ns1:entradaCertificadoTradicionPDF) ::) external;
+
+declare function local:func($payloadRequest as element() (:: schema-element(ns1:entradaCertificadoTradicionPDF) ::)) as element() (:: schema-element(ns2:entradaCertificadoTradicionPDF) ::) {
+    <ns2:entradaCertificadoTradicionPDF>
+        {
+            if ($payloadRequest/ns1:tipoPDF)
+            then <ns2:tipoPDF>{fn:data($payloadRequest/ns1:tipoPDF)}</ns2:tipoPDF>
+            else ()
+        }
+        {
+            if ($payloadRequest/ns1:tipoIdentificacionPredio)
+            then <ns2:tipoIdentificacionPredio>{fn:data($payloadRequest/ns1:tipoIdentificacionPredio)}</ns2:tipoIdentificacionPredio>
+            else ()
+        }
+        {
+            if ($payloadRequest/ns1:numIdentificacionPredio)
+            then <ns2:numIdentificacionPredio>{fn:data($payloadRequest/ns1:numIdentificacionPredio)}</ns2:numIdentificacionPredio>
+            else ()
+        }
+        {
+            if ($payloadRequest/ns1:convenio)
+            then <ns2:convenio>{fn:data($payloadRequest/ns1:convenio)}</ns2:convenio>
+            else ()
+        }
+    </ns2:entradaCertificadoTradicionPDF>
+};
+
+local:func($payloadRequest)

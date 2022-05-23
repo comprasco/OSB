@@ -1,0 +1,20 @@
+<wsdl:definitions name="BS_EscribirJmsCBRegPago" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/ExpuestosFinancieras/BS_EscribirJmsCBRegPago" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/ExpuestosFinancieras/BS_EscribirJmsCBRegPago" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:imp1="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/registrarpago/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="Produce_MessageCBRegPago_plt">
+    <plt:role name="Produce_MessageCBRegPago_role">
+      <plt:portType name="tns:Produce_MessageCBRegPago_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/registrarpago/v2" schemaLocation="../Schemas/Legacy/CB_OF_RegistrarPago.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="Produce_MessageCBRegPago_msg">
+        <wsdl:part name="body" element="imp1:entradaRegistrarPago"/>
+    </wsdl:message>
+    <wsdl:portType name="Produce_MessageCBRegPago_ptt">
+        <wsdl:operation name="Produce_MessageCBRegPago">
+            <wsdl:input message="tns:Produce_MessageCBRegPago_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

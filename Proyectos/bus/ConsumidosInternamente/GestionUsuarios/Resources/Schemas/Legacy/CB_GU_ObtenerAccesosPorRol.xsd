@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ObtenerAccesosPorRol"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obteneraccesosporrol/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/obteneraccesosporrol/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaObtenerAccesosPorRol">
+		<xsd:sequence>
+			<xsd:element name="codigoRol" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaObtenerAccesosPorRol" type="bachue:tipoEntradaObtenerAccesosPorRol"/>
+
+	<xsd:complexType name="tipoSalidaObtenerAccesosPorRol">
+		<xsd:sequence>
+			<xsd:element name="accesos" minOccurs="0" type="bachue:tipoAcceso" nillable="true" maxOccurs="unbounded"/>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="tipoAcceso">
+		<xsd:sequence>
+			<xsd:element name="idOpcion" type="xsd:string"/>
+			<xsd:element name="opcion" type="xsd:string"/>
+			<xsd:element name="descripcion" type="xsd:string"/>
+			<xsd:element name="opcionPadre" type="xsd:string"/>
+			<xsd:element name="tipo" type="xsd:string"/>
+			<xsd:element name="url" type="xsd:string"/>
+			<xsd:element name="fechaDesde" type="xsd:string"/>
+			<xsd:element name="fechaHasta" type="xsd:string"/>
+			<xsd:element name="activo" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaObtenerAccesosPorRol" type="bachue:tipoSalidaObtenerAccesosPorRol"/>
+</xsd:schema>

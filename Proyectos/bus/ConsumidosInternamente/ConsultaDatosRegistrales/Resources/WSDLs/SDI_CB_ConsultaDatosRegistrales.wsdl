@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/consultadatosregistrales/v1"
+                  targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/consultadatosregistrales/v1"
+                  xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/consultadatosregistrales/consultardatosregistrales/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/consultadatosregistrales/consultardatosregistrales/v1"
+              schemaLocation="../Schemas/Legacy/CB_CDR_ConsultarDatosRegistrales.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarDatosRegistrales_Request">
+    <wsdl:part name="entrada" element="bachue1:entradaConsultarDatosRegistrales"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarDatosRegistrales_Response">
+    <wsdl:part name="salida" element="bachue1:salidaConsultarDatosRegistrales"/>
+  </wsdl:message>
+  <wsdl:portType name="SDI_CB_ConsultaDatosRegistrales">
+    <wsdl:operation name="ConsultarDatosRegistrales">
+      <wsdl:input message="bachue:ConsultarDatosRegistrales_Request"/>
+      <wsdl:output message="bachue:ConsultarDatosRegistrales_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SDI_CB_ConsultaDatosRegistralesSOAP12Binding" type="bachue:SDI_CB_ConsultaDatosRegistrales">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultarDatosRegistrales">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultadatosregistrales/v1/ConsultarDatosRegistrales"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SDI_CB_ConsultaDatosRegistrales">
+    <wsdl:port name="SDI_CB_ConsultaDatosRegistralesPort" binding="bachue:SDI_CB_ConsultaDatosRegistralesSOAP12Binding">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

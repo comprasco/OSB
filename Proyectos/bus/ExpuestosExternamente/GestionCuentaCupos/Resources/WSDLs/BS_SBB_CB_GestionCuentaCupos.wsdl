@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1"
+                  targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1"
+                  xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/inscribirusuario/v1"
+                  xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/cancelarusuario/v1"
+                  xmlns:bachue3="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarusuario/v1"
+                  xmlns:bachue4="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarusuarios/v1"
+                  xmlns:bachue5="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarsaldo/v1"
+                  xmlns:bachue6="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarmovimientos/v1"
+                  xmlns:bachue7="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/pagarcuentacupo/v1"
+                  xmlns:bachue8="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultaridcuentacupo/v1"
+                  xmlns:bachue9="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/actualizarentidad/v1"
+                  xmlns:bachue10="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarSaldosNotaCredito/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/inscribirusuario/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_InscribirUsuario.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/cancelarusuario/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_CancelarUsuario.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarusuario/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_ConsultarUsuario.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarusuarios/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_ConsultarUsuarios.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarsaldo/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_ConsultarSaldo.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarmovimientos/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_ConsultarMovimientos.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/pagarcuentacupo/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_PagarCuentaCupo.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultaridcuentacupo/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_ConsultarIDCuentaCupo.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/actualizarentidad/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_ActualizarEntidad.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarSaldosNotaCredito/v1"
+              schemaLocation="../Schemas/Legacy/CB_GCC_consultarSaldosNotaCredito.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="InscribirUsuario_Request">
+    <wsdl:part name="entrada" element="bachue1:entradaInscribirUsuario"/>
+  </wsdl:message>
+  <wsdl:message name="InscribirUsuario_Response">
+    <wsdl:part name="salida" element="bachue1:salidaInscribirUsuario"/>
+  </wsdl:message>
+  <wsdl:message name="CancelarUsuario_Request">
+    <wsdl:part name="entrada" element="bachue2:entradaCancelarUsuario"/>
+  </wsdl:message>
+  <wsdl:message name="CancelarUsuario_Response">
+    <wsdl:part name="salida" element="bachue2:salidaCancelarUsuario"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarUsuario_Request">
+    <wsdl:part name="entrada" element="bachue3:entradaConsultarUsuario"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarUsuario_Response">
+    <wsdl:part name="salida" element="bachue3:salidaConsultarUsuario"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarUsuarios_Request">
+    <wsdl:part name="entrada" element="bachue4:entradaConsultarUsuarios"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarUsuarios_Response">
+    <wsdl:part name="salida" element="bachue4:salidaConsultarUsuarios"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarSaldo_Request">
+    <wsdl:part name="entrada" element="bachue5:entradaConsultarSaldo"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarSaldo_Response">
+    <wsdl:part name="salida" element="bachue5:salidaConsultarSaldo"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarMovimientos_Request">
+    <wsdl:part name="entrada" element="bachue6:entradaConsultarMovimientos"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarMovimientos_Response">
+    <wsdl:part name="salida" element="bachue6:salidaConsultarMovimientos"/>
+  </wsdl:message>
+  <wsdl:message name="PagarCuentaCupo_Request">
+    <wsdl:part name="entrada" element="bachue7:entradaPagarCuentaCupo"/>
+  </wsdl:message>
+  <wsdl:message name="PagarCuentaCupo_Response">
+    <wsdl:part name="salida" element="bachue7:salidaPagarCuentaCupo"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarIDCuentaCupo_Request">
+    <wsdl:part name="entrada" element="bachue8:entradaConsultarIDCuentaCupo"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarIDCuentaCupo_Response">
+    <wsdl:part name="salida" element="bachue8:salidaConsultarIDCuentaCupo"/>
+  </wsdl:message>
+  <wsdl:message name="ActualizarEntidad_Request">
+    <wsdl:part name="entrada" element="bachue9:entradaActualizarEntidad"/>
+  </wsdl:message>
+  <wsdl:message name="ActualizarEntidad_Response">
+    <wsdl:part name="salida" element="bachue9:salidaActualizarEntidad"/>
+  </wsdl:message>
+    <wsdl:message name="consultarSaldosNotaCredito_Request">
+    <wsdl:part name="entrada" element="bachue10:entradaConsultarSaldosNotaCredito"/>
+  </wsdl:message>
+  <wsdl:message name="consultarSaldosNotaCredito_Response">
+    <wsdl:part name="salida" element="bachue10:salidaConsultarSaldosNotaCredito"/>
+  </wsdl:message>
+  <wsdl:portType name="SBB_CB_GestionCuentaCupos">
+    <wsdl:operation name="InscribirUsuario">
+      <wsdl:input message="bachue:InscribirUsuario_Request"/>
+      <wsdl:output message="bachue:InscribirUsuario_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarUsuario">
+      <wsdl:input message="bachue:CancelarUsuario_Request"/>
+      <wsdl:output message="bachue:CancelarUsuario_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuario">
+      <wsdl:input message="bachue:ConsultarUsuario_Request"/>
+      <wsdl:output message="bachue:ConsultarUsuario_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuarios">
+      <wsdl:input message="bachue:ConsultarUsuarios_Request"/>
+      <wsdl:output message="bachue:ConsultarUsuarios_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldo">
+      <wsdl:input message="bachue:ConsultarSaldo_Request"/>
+      <wsdl:output message="bachue:ConsultarSaldo_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMovimientos">
+      <wsdl:input message="bachue:ConsultarMovimientos_Request"/>
+      <wsdl:output message="bachue:ConsultarMovimientos_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="PagarCuentaCupo">
+      <wsdl:input message="bachue:PagarCuentaCupo_Request"/>
+      <wsdl:output message="bachue:PagarCuentaCupo_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarIDCuentaCupo">
+      <wsdl:input message="bachue:ConsultarIDCuentaCupo_Request"/>
+      <wsdl:output message="bachue:ConsultarIDCuentaCupo_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEntidad">
+      <wsdl:input message="bachue:ActualizarEntidad_Request"/>
+      <wsdl:output message="bachue:ActualizarEntidad_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="consultarSaldosNotaCredito">
+      <wsdl:input message="bachue:consultarSaldosNotaCredito_Request"/>
+      <wsdl:output message="bachue:consultarSaldosNotaCredito_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SBB_CB_GestionCuentaCuposSOAP12Binding" type="bachue:SBB_CB_GestionCuentaCupos">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="InscribirUsuario">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/InscribirUsuario"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarUsuario">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/CancelarUsuario"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuario">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/ConsultarUsuario"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuarios">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/ConsultarUsuarios"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldo">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/ConsultarSaldo"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMovimientos">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/ConsultarMovimientos"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarCuentaCupo">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/PagarCuentaCupo"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarIDCuentaCupo">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/ConsultarIDCuentaCupo"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEntidad">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1/ActualizarEntidad"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarSaldosNotaCredito">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarSaldosNotaCredito/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SBB_CB_GestionCuentaCupos">
+    <wsdl:port name="SBB_CB_GestionCuentaCuposPort" binding="bachue:SBB_CB_GestionCuentaCuposSOAP12Binding">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

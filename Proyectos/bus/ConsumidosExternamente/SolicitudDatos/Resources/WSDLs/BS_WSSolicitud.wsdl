@@ -1,0 +1,125 @@
+<definitions targetNamespace="https://gevir.cundinamarca.gov.co" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://gevir.cundinamarca.gov.co" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<types>
+<xsd:schema targetNamespace="https://gevir.cundinamarca.gov.co">
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+ <xsd:complexType name="responsable">
+  <xsd:all>
+   <xsd:element name="tipoIdentificacion" type="xsd:string"/>
+   <xsd:element name="numIdentificacion" type="xsd:string"/>
+   <xsd:element name="nombre" type="xsd:string"/>
+   <xsd:element name="apellido" type="xsd:string"/>
+   <xsd:element name="direccion" type="xsd:string"/>
+   <xsd:element name="pais" type="xsd:string"/>
+   <xsd:element name="departamento" type="xsd:int"/>
+   <xsd:element name="municipio" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="interviniente">
+  <xsd:all>
+   <xsd:element name="tipoIdentificacion" type="xsd:string"/>
+   <xsd:element name="numIdentificacion" type="xsd:string"/>
+   <xsd:element name="nombre1" type="xsd:string"/>
+   <xsd:element name="nombre2" type="xsd:string"/>
+   <xsd:element name="apellido1" type="xsd:string"/>
+   <xsd:element name="apellido2" type="xsd:string"/>
+   <xsd:element name="razonSocial" type="xsd:string"/>
+   <xsd:element name="direccion" type="xsd:string"/>
+   <xsd:element name="pais" type="xsd:string"/>
+   <xsd:element name="departamento" type="xsd:int"/>
+   <xsd:element name="municipio" type="xsd:int"/>
+   <xsd:element name="tipoInterviniente" type="xsd:string"/>
+   <xsd:element name="rolInterviniente" type="xsd:string"/>
+   <xsd:element name="telefono" type="xsd:int"/>
+   <xsd:element name="correo" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="intervinientes">
+  <xsd:sequence>
+   <xsd:element name="interviniente" type="tns:interviniente" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="contribuyente">
+  <xsd:all>
+   <xsd:element name="tipoIdentificacion" type="xsd:string"/>
+   <xsd:element name="numIdentificacion" type="xsd:string"/>
+   <xsd:element name="nombre" type="xsd:string"/>
+   <xsd:element name="apellido" type="xsd:string"/>
+   <xsd:element name="direccion" type="xsd:string"/>
+   <xsd:element name="pais" type="xsd:string"/>
+   <xsd:element name="departamento" type="xsd:int"/>
+   <xsd:element name="municipio" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="documento">
+  <xsd:all>
+   <xsd:element name="ubicacion" type="xsd:int"/>
+   <xsd:element name="claseDoc" type="xsd:int"/>
+   <xsd:element name="numeroDocumento" type="xsd:string"/>
+   <xsd:element name="claseLiquidacion" type="xsd:string"/>
+   <xsd:element name="fechaOtorgamientocDoc" type="xsd:string"/>
+   <xsd:element name="matriculas" type="tns:matriculas"/>
+   <xsd:element name="municipioSolicitud" type="xsd:int"/>
+   <xsd:element name="entidad" type="xsd:int"/>
+   <xsd:element name="origenDoc" type="xsd:string"/>
+   <xsd:element name="municipioDoc" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="documentos">
+  <xsd:sequence>
+   <xsd:element name="documento" type="tns:documento" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="acto">
+  <xsd:all>
+   <xsd:element name="codigoActo" type="xsd:string"/>
+   <xsd:element name="valorCuantiaActo" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="actos">
+  <xsd:sequence>
+   <xsd:element name="acto" type="tns:acto" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="matricula">
+  <xsd:all>
+   <xsd:element name="numeroMatricula" type="xsd:int"/>
+   <xsd:element name="actos" type="tns:actos"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="matriculas">
+  <xsd:sequence>
+   <xsd:element name="matricula" type="tns:matricula" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="solicitudRequest">
+  <part name="idTramite" type="xsd:string"/>
+  <part name="rutaArchivo" type="xsd:string"/>
+  <part name="fecSolicitud" type="xsd:string"/>
+  <part name="interviniente" type="tns:intervinientes"/>
+  <part name="documentos" type="tns:documentos"/></message>
+<message name="solicitudResponse">
+  <part name="codMensaje" type="xsd:string"/>
+  <part name="descMensaje" type="xsd:string"/></message>
+<portType name="SolicituddelSNRPortType">
+  <operation name="solicitud">
+    <input message="tns:solicitudRequest"/>
+    <output message="tns:solicitudResponse"/>
+  </operation>
+</portType>
+<binding name="SolicituddelSNRBinding" type="tns:SolicituddelSNRPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="solicitud">
+    <soap:operation soapAction="https://pruebagevir.cundinamarca.gov.co/WSSolicitud.php/solicitud" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://gevir.cundinamarca.gov.co" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://gevir.cundinamarca.gov.co" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="SolicituddelSNR">
+  <port name="SolicituddelSNRPort" binding="tns:SolicituddelSNRBinding">
+    <soap:address location="https://pruebagevir.cundinamarca.gov.co:443/WSSolicitud.php"/>
+  </port>
+</service>
+</definitions>

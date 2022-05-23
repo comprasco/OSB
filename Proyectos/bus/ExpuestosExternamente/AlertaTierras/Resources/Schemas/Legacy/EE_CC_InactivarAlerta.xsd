@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="InactivarAlerta"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/inactivarAlerta/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/inactivarAlerta/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaInactivarAlerta">
+    <xsd:sequence>
+      <xsd:element name="idAlerta" type="xsd:int" minOccurs="1" />
+      <xsd:element name="idMotivo" minOccurs="1" >
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="TERMINACION"/>
+            <xsd:enumeration value="EQUIVOCACION"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="oficinaOrigen" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codTipoDocumentoPublico" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fechaDocumento" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="docNumero" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="docIdSGD" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="docNameSGD" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="textoInactivacion" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaInactivarAlerta" type="bachue:tipoEntradaInactivarAlerta"/>
+  <xsd:complexType name="tipoSalidaInactivarAlerta">
+    <xsd:sequence>
+      <xsd:element name="codigo" type="xsd:string" minOccurs="1" />
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaInactivarAlerta" type="bachue:tipoSalidaInactivarAlerta"/>
+</xsd:schema>

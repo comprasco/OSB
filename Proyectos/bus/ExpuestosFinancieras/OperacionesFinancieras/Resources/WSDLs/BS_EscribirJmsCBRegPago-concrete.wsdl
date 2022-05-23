@@ -1,0 +1,12 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/ExpuestosFinancieras/BS_EscribirJmsCBRegPago" name="BS_EscribirJmsCBRegPago-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="BS_EscribirJmsCBRegPago.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/ExpuestosFinancieras/BS_EscribirJmsCBRegPago"/>
+    <wsdl:binding name="Produce_MessageCBRegPago_ptt-binding" type="bs:Produce_MessageCBRegPago_ptt" xmlns:bs="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/ExpuestosFinancieras/BS_EscribirJmsCBRegPago">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="Produce_MessageCBRegPago">
+            <soap:operation soapAction="Produce_MessageCBRegPago"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

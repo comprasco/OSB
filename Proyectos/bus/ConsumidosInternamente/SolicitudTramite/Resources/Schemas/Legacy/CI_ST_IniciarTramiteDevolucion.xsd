@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActivarAlertaTierras"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteDevolucion/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteDevolucion/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaIniciarTramiteDevolucion">
+    <xsd:sequence>
+      <xsd:element name="datosBasicosInteresado" minOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="tipoPersona" minOccurs="1">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="N"/>
+                  <xsd:enumeration value="J"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="tipoDocumento" minOccurs="1">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="CC"/>
+                  <xsd:enumeration value="CE"/>
+                  <xsd:enumeration value="NIT"/>
+                  <xsd:enumeration value="NUIP"/>
+                  <xsd:enumeration value="PS"/>
+                  <xsd:enumeration value="TI"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="numeroDocumento" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="primerNombreSolicitante" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="segundoNombreSolicitante" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="primerApellidoSolicitante" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="segundoApellidoSolicitante" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="genero" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="razonSocial" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="intervieneDocumento" minOccurs="1">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="S"/>
+                  <xsd:enumeration value="N"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="medioComunicar" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="medioNotificar" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="mismaDireccion" minOccurs="1">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="S"/>
+                  <xsd:enumeration value="N"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="direccionResidencia" minOccurs="1">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="tipoDireccion" minOccurs="1">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="R"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="tipoEje" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="ejePrincipical" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="ejeUno" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="ejeSecundario" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="complemento" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="pais" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="departamento" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="municipio" type="xsd:string" minOccurs="1"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="direccionCorrespondencia" minOccurs="1">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="tipoDireccion" minOccurs="1">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="C"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="tipoEje" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="ejePrincipical" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="ejeUno" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="ejeSecundario" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="complemento" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="pais" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="departamento" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="municipio" type="xsd:string" minOccurs="1"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="datosContacto" minOccurs="1">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="paisTelefono" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="departamentoTelefono" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="numeroTelefono" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="paisCelular" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="numeroCelular" type="xsd:string" minOccurs="1"/>
+                  <xsd:element name="correoElectronico" type="xsd:string" minOccurs="1"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="datosTramite" minOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="turnoAnterior" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="nir" type="xsd:string" minOccurs="1"/>
+            
+            <xsd:element name="codigoProceso" minOccurs="1">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="4"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            
+            <xsd:element name="codigoSubproceso" minOccurs="1">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="1"/>
+                  <xsd:enumeration value="2"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            
+            <xsd:element name="codigoProcedencia" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="radicado" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="fechaRadicado" type="xsd:dateTime" minOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="datosActo" minOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="codigoActo" type="xsd:string"/>
+            <xsd:element name="especificacion" type="xsd:string"/>
+            
+            <xsd:element name="actosSinCuantia" minOccurs="1">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="S"/>
+                  <xsd:enumeration value="N"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            
+            <xsd:element name="tipoTarifa" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="cuantia" type="xsd:decimal" minOccurs="1"/>
+            <xsd:element name="tipoDocumental" type="xsd:string" minOccurs="1"/>
+            
+            <xsd:element name="reciboPagoImpuesto" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="observaciones" type="xsd:string" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaIniciarTramiteDevolucion" type="bachue:tipoEntradaIniciarTramiteDevolucion"/>
+  <xsd:complexType name="tipoSalidaIniciarTramiteDevolucion">
+    <xsd:sequence>
+      <xsd:element name="nir" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="codigoMensaje" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaIniciarTramiteDevolucion" type="bachue:tipoSalidaIniciarTramiteDevolucion"/>
+</xsd:schema>

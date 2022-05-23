@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ObtenerReciboCaja"
+	targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerrecibocaja/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerrecibocaja/v1" elementFormDefault="qualified" version="1.3">
+<xsd:complexType name="tipoEntradaObtenerReciboCaja">
+	<xsd:sequence>
+		<xsd:element name="NIR" type="xsd:string"/>
+		<xsd:element name="ReferenciaPago" type="xsd:string"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="entradaObtenerReciboCaja" type="bachue:tipoEntradaObtenerReciboCaja"/>
+
+<xsd:complexType name="tipoSalidaObtenerReciboCaja">
+	<xsd:sequence>
+		<xsd:element name="archivo" type="xsd:base64Binary"/>
+		<xsd:element name="codigoMensaje" type="xsd:integer"/>
+		<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="salidaObtenerReciboCaja" type="bachue:tipoSalidaObtenerReciboCaja"/>
+</xsd:schema>

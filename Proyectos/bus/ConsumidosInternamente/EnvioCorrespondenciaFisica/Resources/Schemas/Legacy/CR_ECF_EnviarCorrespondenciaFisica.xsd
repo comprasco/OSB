@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="EnviarCorrespondenciaFisica"
+    targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cr/enviocorrespondenciafisica/enviarcorrespondenciafisica/v1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cr/enviocorrespondenciafisica/enviarcorrespondenciafisica/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaEnviarCorrespondenciaFisica">
+		<xsd:sequence>
+			<xsd:element name="identificador" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaEnviarCorrespondenciaFisica" type="bachue:tipoEntradaEnviarCorrespondenciaFisica"/>
+
+	<xsd:complexType name="tipoSalidaEnviarCorrespondenciaFisica">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaEnviarCorrespondenciaFisica" type="bachue:tipoSalidaEnviarCorrespondenciaFisica"/>
+</xsd:schema>

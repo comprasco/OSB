@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/SolicitudDeCopias/Resources/WSDLs/SDI_EE_SolicitudDeCopias"/>
+            <con:binding>
+                <con:name>SDI_EE_SolicitudDeCopias</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ee/solicituddecopias/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fcef.163b41fe.0.17030ba3921.N7dbe" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="IngresoSolicitud">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_IngresoSolicitud">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fcef.163b41fe.0.17030ba3921.N7dba</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/SolicitudDeCopias/Pipelines/Local/PL_IngresoSolicitud" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>IngresoSolicitud</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.39043246.0.1746f8d90c7.N7bcf</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConsultarSolicitud">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ConsultaSolicitud">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fcef.163b41fe.0.17030ba3921.N7db6</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/SolicitudDeCopias/Pipelines/Local/PL_ConsultarSolicitud" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarSolicitud</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.39043246.0.1746f8d90c7.N7b9c</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

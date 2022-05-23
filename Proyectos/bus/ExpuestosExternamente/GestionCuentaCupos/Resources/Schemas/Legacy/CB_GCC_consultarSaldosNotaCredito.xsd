@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="PagarCuentaCupo"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarSaldosNotaCredito/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarSaldosNotaCredito/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaConsultarSaldosNotaCredito">
+		<xsd:sequence>		
+			<xsd:element name="modulo" type="xsd:string"/>
+			<xsd:element name="IDCuentaCupo" type="xsd:string"/>
+			<xsd:element name="admin" type="bachue:tipoAdminCSI"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoAdminCSI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocAdmin" type="xsd:string"/>
+			<xsd:element name="numDocAdmin" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaConsultarSaldosNotaCredito" type="bachue:tipoEntradaConsultarSaldosNotaCredito"/>
+
+	<xsd:complexType name="tipoSalidaConsultarSaldosNotaCredito">
+		<xsd:sequence>
+   <xsd:element name="notasCreditos" maxOccurs="unbounded" minOccurs="0">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="notaCredito" minOccurs="0">
+       <xsd:complexType>
+        <xsd:sequence>
+         <xsd:element name="codigo" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="fecha" type="xsd:date" minOccurs="0"/>
+         <xsd:element name="valorRecarga" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="saldo" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+       </xsd:complexType>
+      </xsd:element>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+   <xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="1"/>
+  </xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaConsultarSaldosNotaCredito" type="bachue:tipoSalidaConsultarSaldosNotaCredito"/>
+</xsd:schema>

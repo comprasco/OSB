@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/ControlDigitalizacion/Resources/WSDLs/SUT_EE_ControlDigitalizacion"/>
+            <con:binding>
+                <con:name>SUT_EE_ControlDigitalizacion</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ee/controldigitalizacion/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57c7ff.N3fa06932.0.17010718c48.N77a6" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="NotificarDigitalizacion">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode1">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57c7ff.N3fa06932.0.17010718c48.N77a2</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/ControlDigitalizacion/Pipelines/Local/PL_NotificarDigitalizacion" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>NotificarDigitalizacion</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff8.N51d69169.0.1746a27521b.N7d0b</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/GestionCuentaCupos/Resources/WSDLs/BS_SBB_CB_GestionCuentaCupos"/>
+            <con:binding>
+                <con:name>SBB_CB_GestionCuentaCuposSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/cb/gestioncuentacupos/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fffe.10a435a0.0.16ead7186ce.N79cf" name="GestionCuentaCuposBranch">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="InscribirUsuario">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode1">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.10a435a0.0.16ead7186ce.N799b</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_InscribirUsuario" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>InscribirUsuario</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7a91</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="CancelarUsuario">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode2">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.10a435a0.0.16ead7186ce.N7935</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_CancelarUsuario" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>CancelarUsuario</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7a5e</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConsultarUsuario">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode3">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.10a435a0.0.16ead7186ce.N7901</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_ConsultarUsuario" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarUsuario</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7a2b</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConsultarUsuarios">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode4">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.10a435a0.0.16ead7186ce.N78cd</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_ConsultarUsuarios" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarUsuarios</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N79f8</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConsultarSaldo">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode5">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.10a435a0.0.16ead7186ce.N7899</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_ConsultarSaldo" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarSaldo</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N79c5</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConsultarMovimientos">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode6">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.10a435a0.0.16ead7186ce.N7865</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_ConsultarMovimientos" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarMovimientos</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7992</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="PagarCuentaCupo">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode7">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.10a435a0.0.16ead7186ce.N7831</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_PagarCuentaCupo" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>PagarCuentaCupo</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N795f</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConsultarIDCuentaCupo">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode8">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.10a435a0.0.16ead7186ce.N77fd</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_ConsultarIDCuentaCupo" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarIDCuentaCupo</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N792c</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="consultarSaldosNotaCredito">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode9">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57c7ff.2e5a937.0.1733a715977.N7f52</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionCuentaCupos/Pipelines/Local/PL_consultarSaldosNotaCredito" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarIDCuentaCupo</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N78f9</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

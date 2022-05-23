@@ -1,0 +1,14 @@
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/hn/busquedadocumentos/consultar/v1"
+           elementFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:Consultar="https://www.supernotariado.gov.co/schemas/bachue/co/busquedadocumentos/consultar/v1">
+  
+  <xs:import namespace="https://www.supernotariado.gov.co/schemas/bachue/co/busquedadocumentos/consultar/v1"
+             schemaLocation="../../../../ConsumidosInternamente/BusquedaDocumentos/Resources/Schemas/Legacy/CO_BD_Consultar.xsd"/>
+  <xs:element name="GeneralList">
+    <xs:complexType>
+      <xs:sequence>
+          <xs:element ref="Consultar:salidaConsultar"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

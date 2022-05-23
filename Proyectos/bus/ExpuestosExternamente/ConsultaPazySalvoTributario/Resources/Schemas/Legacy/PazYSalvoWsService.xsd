@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://ws.saimyr.com.co/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.saimyr.com.co/">
+
+<xs:element name="generarPysVur" type="tns:generarPysVur"/>
+
+<xs:element name="generarPysVurResponse" type="tns:generarPysVurResponse"/>
+
+<xs:complexType name="generarPysVur">
+<xs:sequence>
+<xs:element name="entidad" type="xs:string" minOccurs="0"/>
+<xs:element name="userEI" type="xs:string" minOccurs="0"/>
+<xs:element name="passwordEI" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoDpto" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoMpio" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoNotaria" type="xs:string" minOccurs="0"/>
+<xs:element name="ip" type="xs:string" minOccurs="0"/>
+<xs:element name="refCatastral" type="xs:string" minOccurs="0"/>
+<xs:element name="idPers" type="xs:string" minOccurs="0"/>
+<xs:element name="pdf" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="generarPysVurResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:vurItem" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vurItem">
+<xs:sequence>
+<xs:element name="areaTerreno" type="xs:double"/>
+<xs:element name="avaluoCatastral" type="xs:long"/>
+<xs:element name="descripcionEstado" type="xs:string" minOccurs="0"/>
+<xs:element name="direccionInmueble" type="xs:string" minOccurs="0"/>
+<xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+<xs:element name="estadoPredio" type="xs:int"/>
+<xs:element name="fechaConsulta" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="filePyS" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="matricula" type="xs:string" minOccurs="0"/>
+<xs:element name="mensajeError" type="xs:string" minOccurs="0"/>
+<xs:element name="mensajeInfo" type="xs:string" minOccurs="0"/>
+<xs:element name="nroConsulta" type="xs:long"/>
+<xs:element name="propietarios" type="tns:propietario" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="refCatastral" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoTerreno" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="propietario">
+<xs:sequence>
+<xs:element name="cumplePyS" type="xs:int"/>
+<xs:element name="descripcionEstado" type="xs:string" minOccurs="0"/>
+<xs:element name="identificacion" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreCompleto" type="xs:string" minOccurs="0"/>
+<xs:element name="proindiviso" type="xs:double"/>
+<xs:element name="tipIdentificacion" type="xs:int"/>
+<xs:element name="valorProindiviso" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ObtenerEECorrespondencia"
+    targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cr/generacionidscorrespondencia/obtenereecorrespondencia/v1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cr/generacionidscorrespondencia/obtenereecorrespondencia/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaObtenerEECorrespondencia">
+		<xsd:sequence>
+			<xsd:element name="clasificacion">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="comunicacion"/>
+						<xsd:enumeration value="notificacion"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="canal">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="fisico"/>
+						<xsd:enumeration value="electronico"/>
+						<xsd:enumeration value="sms"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="orip" type="xsd:string"/>
+			<xsd:element name="nir" type="xsd:string"/>
+			<xsd:element name="turno" type="xsd:string"/>
+			<xsd:element name="numeroFolios" type="xsd:string"/>
+			<xsd:element name="documentos">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="nombreDocumento" type="xsd:string" minOccurs="1"
+							maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>	
+			<xsd:element name="destinatarios">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="destinatario" type="bachue:tipoDestinatario" minOccurs="1"
+							maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>	
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoDestinatario">
+			<xsd:sequence>
+				<xsd:element name="tipoDocDestinatario" type="xsd:string"/>
+				<xsd:element name="numeroDocDestinatario" type="xsd:string"/>
+				<xsd:element name="primerNombreDestinatario" type="xsd:string"/>
+				<xsd:element name="segundoNombreDestinatario" type="xsd:string"/>
+				<xsd:element name="primerApellidoDestinatario" type="xsd:string"/>
+				<xsd:element name="segundoApellidoDestinatario" type="xsd:string"/>
+				<xsd:element name="variables">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="variable" type="bachue:tipoVariable" minOccurs="1"
+							maxOccurs="unbounded" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>	
+			</xsd:sequence>
+		</xsd:complexType>
+	
+
+	<xsd:complexType name="tipoVariable">
+			<xsd:sequence>
+				<xsd:element name="llave" type="xsd:string"/>
+				<xsd:element name="valor" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	
+
+	<xsd:element name="entradaObtenerEECorrespondencia" type="bachue:tipoEntradaObtenerEECorrespondencia"/>
+
+	<xsd:complexType name="tipoSalidaObtenerEECorrespondencia">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+			<xsd:element name="identificador" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaObtenerEECorrespondencia" type="bachue:tipoSalidaObtenerEECorrespondencia"/>
+</xsd:schema>

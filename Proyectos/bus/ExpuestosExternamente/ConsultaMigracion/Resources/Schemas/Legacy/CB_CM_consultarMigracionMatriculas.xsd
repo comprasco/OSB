@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema id="DatosConsultaMigracionMatriculas"
+	targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionMatriculas/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionMatriculas/v1"
+	elementFormDefault="qualified" version="1.3">
+	<xsd:complexType
+		name="tipoEntradaConsultaMigracionMatriculas">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="es">El esquema define los
+				datos de entrada para la operacion Consulta Migracion Matriculas
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="matriculasConsultadas" minOccurs="0"
+				maxOccurs="unbounded" type="bachue:tipoMatriculaConsultada" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tipoMatriculaConsultada">
+		<xsd:sequence>
+			<xsd:element name="matricula" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>tres primeros caractares para código del circulo
+						registral, a partir del cuarto caracter el número de matrícula
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType
+		name="tipoSalidaConsultaMigracionMatriculas">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="es">El esquema define los
+				datos de salida para saber con cada una de las matrículas recibidas,
+				si se busca en Nodo Central o en los
+				Servicios de Bachué
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence minOccurs="0" maxOccurs="1">
+			<xsd:element name="datosMatriculasMigracion"
+				minOccurs="0" maxOccurs="unbounded"
+				type="bachue:tipoDatosMatriculasMigracion" />
+			<xsd:element name="codMensaje">
+				<xsd:annotation>
+					<xsd:documentation>200 cuando no hay error, 4* por errores de
+						validación de campos de entrada o validación de negocio y 500
+						cuando existen errores de sistema
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer" />
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="descripcionMensaje">
+				<xsd:annotation>
+					<xsd:documentation>En caso de que se presente un error en la
+						ejecución del servicio se envía un texto explicativo
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tipoDatosMatriculasMigracion">
+		<xsd:sequence>
+			<xsd:element name="matricula" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>En cada de las matrículas recibidas,
+						los tres
+						primeros caractares deben corresponder al circulo
+						registral; a
+						partir del
+						cuarto caracter el número de matrícula
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="infoMatriculaMigrada" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>True cuando la información de la matrícula
+						ha
+						sido migrada,
+						false en cualquier otro caso
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:boolean"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="entradaConsultaMigracionMatriculas"
+		type="bachue:tipoEntradaConsultaMigracionMatriculas" />
+	<xsd:element name="salidaConsultaMigracionMatriculas"
+		type="bachue:tipoSalidaConsultaMigracionMatriculas" />
+	<!-- Últimas modificaciones 2020-02-03 16:26 -->
+</xsd:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerturnosrefpago/v1" 
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+          xmlns:obttur="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerturnosrefpago/v1"
+          elementFormDefault="qualified" version="1.3">
+	<xs:element name="entradaObtenerTurnosRefPago" type="obttur:tipoEntradaObtenerTurnosRefPago"/>
+	<xs:element name="salidaObtenerTurnosRefPago" type="obttur:tipoSalidaObtenerTurnosRefPago"/>
+	<xs:complexType name="tipoEntradaObtenerTurnosRefPago">
+		<xs:sequence>
+			<xs:element name="ReferenciaPago" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaObtenerTurnosRefPago">
+		<xs:sequence>
+   <xs:element name="turnos">
+    <xs:complexType>
+     <xs:sequence>
+      <xs:element name="turno" type="obttur:turno" minOccurs="0" maxOccurs="unbounded"/>
+     </xs:sequence>
+    </xs:complexType>
+   </xs:element>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="turno">
+		<xs:sequence>
+			<xs:element name="identificadorTurno" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

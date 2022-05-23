@@ -1,0 +1,138 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/gestionalertastitulares/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/gestionalertastitulares/v1" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/consultaralerta/v1" xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/consultartarifaalertastitulares/v1" xmlns:bachue3="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/inactivaralerta/v1" xmlns:bachue4="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/validarsolicitudalertaindividual/v1" xmlns:bachue5="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/validarsolicitudalertamasiva/v1" xmlns:bachue6="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/actualizarcontactoalerta/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/consultaralerta/v1" schemaLocation="../Schemas/Legacy/CB_GAT_ConsultarAlerta.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/consultartarifaalertastitulares/v1" schemaLocation="../Schemas/Legacy/CB_GAT_ConsultarTarifaAlertasTitulares.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/inactivaralerta/v1" schemaLocation="../Schemas/Legacy/CB_GAT_InactivarAlerta.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/validarsolicitudalertaindividual/v1" schemaLocation="../Schemas/Legacy/CB_GAT_ValidarSolicitudAlertaIndividual.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/validarsolicitudalertamasiva/v1" schemaLocation="../Schemas/Legacy/CB_GAT_ValidarSolicitudAlertaMasiva.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/actualizarcontactoalerta/v1" schemaLocation="../Schemas/Legacy/CB_GAT_ActualizarContactoAlerta.xsd"/>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="ConsultarAlerta_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaConsultarAlerta"/>
+	</wsdl:message>
+	<wsdl:message name="ConsultarAlerta_Response">
+		<wsdl:part name="salida" element="bachue1:salidaConsultarAlerta"/>
+	</wsdl:message>
+	<wsdl:message name="ConsultarTarifaAlertasTitulares_Request">
+		<wsdl:part name="entrada" element="bachue2:entradaConsultarTarifaAlertasTitulares"/>
+	</wsdl:message>
+	<wsdl:message name="ConsultarTarifaAlertasTitulares_Response">
+		<wsdl:part name="salida" element="bachue2:salidaConsultarTarifaAlertasTitulares"/>
+	</wsdl:message>
+	<wsdl:message name="InactivarAlerta_Request">
+		<wsdl:part name="entrada" element="bachue3:entradaInactivarAlerta"/>
+	</wsdl:message>
+	<wsdl:message name="InactivarAlerta_Response">
+		<wsdl:part name="salida" element="bachue3:salidaInactivarAlerta"/>
+	</wsdl:message>
+	<wsdl:message name="ValidarSolicitudAlertaIndividual_Request">
+		<wsdl:part name="entrada" element="bachue4:entradaValidarSolicitudAlertaIndividual"/>
+	</wsdl:message>
+	<wsdl:message name="ValidarSolicitudAlertaIndividual_Response">
+		<wsdl:part name="salida" element="bachue4:salidaValidarSolicitudAlertaIndividual"/>
+	</wsdl:message>
+	<wsdl:message name="ValidarSolicitudAlertaMasiva_Request">
+		<wsdl:part name="entrada" element="bachue5:entradaValidarSolicitudAlertaMasiva"/>
+	</wsdl:message>
+	<wsdl:message name="ValidarSolicitudAlertaMasiva_Response">
+		<wsdl:part name="salida" element="bachue5:salidaValidarSolicitudAlertaMasiva"/>
+	</wsdl:message>
+	<wsdl:message name="ActualizarContactoAlerta_Request">
+		<wsdl:part name="entrada" element="bachue6:entradaActualizarContactoAlerta"/>
+	</wsdl:message>
+	<wsdl:message name="ActualizarContactoAlerta_Response">
+		<wsdl:part name="salida" element="bachue6:salidaActualizarContactoAlerta"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="SDI_CB_GestionAlertasTitulares">
+		<wsdl:operation name="ConsultarAlerta">
+			<wsdl:input message="bachue:ConsultarAlerta_Request"/>
+			<wsdl:output message="bachue:ConsultarAlerta_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarTarifaAlertasTitulares">
+			<wsdl:input message="bachue:ConsultarTarifaAlertasTitulares_Request"/>
+			<wsdl:output message="bachue:ConsultarTarifaAlertasTitulares_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="InactivarAlerta">
+			<wsdl:input message="bachue:InactivarAlerta_Request"/>
+			<wsdl:output message="bachue:InactivarAlerta_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ValidarSolicitudAlertaIndividual">
+			<wsdl:input message="bachue:ValidarSolicitudAlertaIndividual_Request"/>
+			<wsdl:output message="bachue:ValidarSolicitudAlertaIndividual_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ValidarSolicitudAlertaMasiva">
+			<wsdl:input message="bachue:ValidarSolicitudAlertaMasiva_Request"/>
+			<wsdl:output message="bachue:ValidarSolicitudAlertaMasiva_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ActualizarContactoAlerta">
+			<wsdl:input message="bachue:ActualizarContactoAlerta_Request"/>
+			<wsdl:output message="bachue:ActualizarContactoAlerta_Response"/>
+		</wsdl:operation>
+	</wsdl:portType>
+ <wsdl:binding name="SDI_CB_GestionAlertasTitularesSOAP12Binding" type="bachue:SDI_CB_GestionAlertasTitulares">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="ConsultarAlerta">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionalertastitulares/v1/ConsultarAlerta"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ConsultarTarifaAlertasTitulares">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionalertastitulares/v1/ConsultarTarifaAlertasTitulares"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="InactivarAlerta">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionalertastitulares/v1/InactivarAlerta"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ValidarSolicitudAlertaIndividual">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionalertastitulares/v1/ValidarSolicitudAlertaIndividual"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ValidarSolicitudAlertaMasiva">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionalertastitulares/v1/ValidarSolicitudAlertaMasiva"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ActualizarContactoAlerta">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/gestionalertastitulares/v1/ActualizarContactoAlerta"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SDI_CB_GestionAlertasTitulares">
+  <wsdl:port name="SDI_CB_GestionAlertasTitularesPort" binding="bachue:SDI_CB_GestionAlertasTitularesSOAP12Binding">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/impuestosgobernaciones/notificarliquidacion/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:notliq="https://www.supernotariado.gov.co/schemas/bachue/ee/impuestosgobernaciones/notificarliquidacion/v1">
+	<xs:element name="entradaNotificarLiquidacion" type="notliq:tipoEntradaNotificarLiquidacion"/>
+	<xs:element name="salidaNotificarLiquidacion" type="notliq:tipoSalidaNotificarLiquidacion"/>
+	<xs:complexType name="actos">
+		<xs:sequence>
+			<xs:element name="acto" type="notliq:tipoActo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="matriculas">
+		<xs:sequence>
+			<xs:element name="matricula" type="notliq:tipoMatricula" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoActo">
+		<xs:sequence>
+			<xs:element name="codigoActo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="valorActo" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="valorCuantiaActo" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaNotificarLiquidacion">
+		<xs:sequence>
+			<xs:element name="idTramite" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="estadoPago" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaVencimiento" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="referenciaLiquidacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="identificadorTransaccion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="matriculas" type="notliq:matriculas" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="reciboLiquidacion" type="xs:base64Binary" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoMatricula">
+		<xs:sequence>
+			<xs:element name="numeroMatricula" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="actos" type="notliq:actos" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaNotificarLiquidacion">
+		<xs:sequence>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/gestionalertastitulares/actualizarcontactoalerta/v1" 
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+          xmlns:accoal="https://www.supernotariado.gov.co/schemas/bachue/ee/gestionalertastitulares/actualizarcontactoalerta/v1" elementFormDefault="qualified" version="1.3">
+	<xs:element name="entradaActualizarContactoAlerta" type="accoal:tipoEntradaActualizarContactoAlerta"/>
+	<xs:element name="salidaActualizarContactoAlerta" type="accoal:tipoSalidaActualizarContactoAlerta"/>
+	<xs:complexType name="tipoEntradaActualizarContactoAlerta">
+		<xs:sequence>
+			<xs:element name="modulo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tipoDocumento" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="numeroDocumento" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="primerNombre" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="segundoNombre" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="primerApellido" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="segundoApellido" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="razonSocial" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="correoElectronico" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="numeroCelular" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaActualizarContactoAlerta">
+		<xs:sequence>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

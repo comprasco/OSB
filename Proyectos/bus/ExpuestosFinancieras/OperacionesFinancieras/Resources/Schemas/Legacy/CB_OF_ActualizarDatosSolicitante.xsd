@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActualizarDatosSolicitante"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/actualizardatossolicitante/v2"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/actualizardatossolicitante/v2" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaActualizarDatosSolicitante">
+		<xsd:sequence>
+			<xsd:element name="numeroReferencia" type="xsd:string"/>
+			<xsd:element name="tipoDocSolicitante" type="xsd:string"/>
+			<xsd:element name="numeroDocSolicitante" type="xsd:string"/>
+			<xsd:element name="primerNombreSolicitante" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="segundoNombreSolicitante" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="primerApellidoSolicitante" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="segundoApellidoSolicitante" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="razonSocial" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaActualizarDatosSolicitante" type="bachue:tipoEntradaActualizarDatosSolicitante"/>
+
+	<xsd:complexType name="tipoSalidaActualizarDatosSolicitante">
+		<xsd:sequence>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaActualizarDatosSolicitante" type="bachue:tipoSalidaActualizarDatosSolicitante"/>
+</xsd:schema>

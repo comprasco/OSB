@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="TrazabilidadTramiteRegistroNodoCentral"
+	targetNamespace="http://www.gobiernoenlinea.gov.co/GEL-XML/1.0/schemas/integracion/supernotariado/bachue"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="http://www.gobiernoenlinea.gov.co/GEL-XML/1.0/schemas/integracion/supernotariado/bachue"
+	version="1.3">
+	<xsd:complexType
+		name="tipoEntradaTrazabilidadTramiteRegistroNodoCentral">
+		<xsd:annotation>
+			<xsd:appinfo>Bachue</xsd:appinfo>
+			<xsd:documentation xml:lang="es">Mensaje de Entrada de
+				la consulta estado tramite trazabilidad registro en Nodo Central
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="codCirculoRegisral">
+				<xsd:annotation>
+					<xsd:documentation>Código del círculo o código de ORIP al que
+						corresponde el predio.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="radicacion">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al turno del trámite.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType
+		name="tipoSalidaTrazabilidadTramiteRegistroNodoCentral">
+		<xsd:annotation>
+			<xsd:appinfo>Bachue</xsd:appinfo>
+			<xsd:documentation xml:lang="es">Mensaje de Salida de la
+				consulta de Trazabilidad Tramite Registro o Estado del Tramite en
+				Nodo Central
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="codDepartamento">
+				<xsd:annotation>
+					<xsd:documentation>Código DANE, string de longitud 2. Código del
+						departamento según DANE donde está ubicado el predio.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="nomDepartamento">
+				<xsd:annotation>
+					<xsd:documentation>Nombre del departamento donde está ubicado el
+						predio. Nombre del departamento donde está ubicado el predio.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="codMunicipio">
+				<xsd:annotation>
+					<xsd:documentation>código DANE, longitud 5, dpto + municipio.
+						Código del municipio según DANE donde está ubicado el predio.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="nomMunicipio">
+				<xsd:annotation>
+					<xsd:documentation>Nombre del municipio según DANE donde está
+						ubicado el predio. Nombre del municipio según DANE donde está
+						ubicado el predio.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="oficinaOrigen">
+				<xsd:annotation>
+					<xsd:documentation>Nombre de la oficina que expide u otorga un
+						documento objeto de registro. Nombre de la oficina que expide u
+						otorga un documento objeto de registro.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="estadosTramite" minOccurs="1"
+				maxOccurs="unbounded" type="bachue:tipoEstadoTramite" />
+			<xsd:element name="fechaHoraConsulta">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde a la fecha y hora de la consulta.
+						Fecha y hora en la que se una respuesta de la consulta.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="fechaRadicacion">
+				<xsd:annotation>
+					<xsd:documentation>Fecha en la que se creó el turno
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="fechaInstrumento">
+				<xsd:annotation>
+					<xsd:documentation>Fecha del documento que dio origen a la apertura
+						del Folio
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numeroInstrumento">
+				<xsd:annotation>
+					<xsd:documentation>Número que identifia el instrumento público
+						asociado al trámite.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="nomTipoDocumentoPublico">
+				<xsd:annotation>
+					<xsd:documentation>Nombre del Tipo de documento público o
+						Instrumento
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="descripcionMensaje">
+				<xsd:annotation>
+					<xsd:documentation>Mensaje de error para los casos donde la
+						consulta no fue exitosa, vacío cuando la consulta es exitosa.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numeroConsulta">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al número consecutivo de la
+						consulta. Seuencia o id que identifica cada consulta.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tipoEstadoTramite">
+		<xsd:sequence>
+			<xsd:element name="codigoEstado">
+				<xsd:annotation>
+					<xsd:documentation>Código con el que se identifica cada uno de los
+						estados del trámite en Nodo Central
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="fechaInicioEtapa">
+				<xsd:annotation>
+					<xsd:documentation>Fecha en la que inicio la etapa en la que se
+						encuentra el trámite
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="pasoPorEstado">
+				<xsd:annotation>
+					<xsd:documentation>Se deja True cuando ha
+						pasado por el estado.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:boolean"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element
+		name="salidaTrazabilidadTramiteRegistroNodoCentral"
+		type="bachue:tipoSalidaTrazabilidadTramiteRegistroNodoCentral">
+	</xsd:element>
+	<!-- Últimas modificaciones 2020-02-17 08:26 -->
+	<xsd:element
+		name="entradaTrazabilidadTramiteRegistroNodoCentral"
+		type="bachue:tipoEntradaTrazabilidadTramiteRegistroNodoCentral" />
+</xsd:schema>

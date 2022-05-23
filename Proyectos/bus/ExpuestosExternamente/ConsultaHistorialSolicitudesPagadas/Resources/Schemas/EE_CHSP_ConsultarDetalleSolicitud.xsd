@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/consultahistorialsolicitudespagadas/consultardetallesolicitud/v1" 
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:condetsol="https://www.supernotariado.gov.co/schemas/bachue/ee/consultahistorialsolicitudespagadas/consultardetallesolicitud/v1"
+          elementFormDefault="qualified" version="1.3">
+	<xs:element name="entradaConsultarDetalleSolicitud" type="condetsol:tipoEntradaConsultarDetalleSolicitud"/>
+	<xs:element name="salidaConsultarDetalleSolicitud" type="condetsol:tipoSalidaConsultarDetalleSolicitud"/>
+	<xs:complexType name="solicitanteType">
+		<xs:sequence>
+			<xs:element name="tipoDocumento" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="tipoPersona" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="numeroDocumento" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaConsultarDetalleSolicitud">
+		<xs:sequence>
+			<xs:element name="modulo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="solicitante" type="condetsol:solicitanteType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="nir" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaConsultarDetalleSolicitud">
+		<xs:sequence>
+			<xs:element name="turnos" type="condetsol:turnosType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="turnosType">
+		<xs:sequence>
+			<xs:element name="turno" type="condetsol:turnoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="turnoType">
+		<xs:sequence>
+			<xs:element name="nir" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="turno" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionServicio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descricionSubServicio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fechaServicio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

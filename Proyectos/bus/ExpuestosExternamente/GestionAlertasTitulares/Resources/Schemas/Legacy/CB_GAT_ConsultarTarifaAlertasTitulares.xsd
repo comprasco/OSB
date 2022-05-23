@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ConsultarTarifaAlertasTitulares"
+	targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/consultartarifaalertastitulares/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionalertastitulares/consultartarifaalertastitulares/v1" elementFormDefault="qualified" version="1.3">
+<xsd:complexType name="tipoEntradaConsultarTarifaAlertasTitulares">
+	<xsd:sequence>
+		<xsd:element name="modulo" type="xsd:string"/>
+		<xsd:element name="cantidadAlertasNuevas" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="tipoDocumento" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="numeroDocumento" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="entradaConsultarTarifaAlertasTitulares" type="bachue:tipoEntradaConsultarTarifaAlertasTitulares"/>
+
+<xsd:complexType name="tipoSalidaConsultarTarifaAlertasTitulares">
+	<xsd:sequence>
+		<xsd:element name="tarifas">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element ref="bachue:tarifa" minOccurs="0"
+							maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:element name="alertasInscrtitas" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="tarifaNuevasAlertas" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="codigoMensaje">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="200"/>
+					<xsd:enumeration value="404"/>
+				<xsd:enumeration value="500"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="tarifa">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="rango" type="xsd:string"/>
+			<xsd:element name="valor" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="salidaConsultarTarifaAlertasTitulares" type="bachue:tipoSalidaConsultarTarifaAlertasTitulares"/>
+</xsd:schema>

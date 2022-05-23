@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1"
+	targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1"
+	xmlns:bachueCDI="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarDatosImueble/v1"
+	xmlns:bachueCP="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarPropietarios/v1"
+	xmlns:bachueCDA="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarDireccionesAnteriores/v1"
+	xmlns:bachueCM="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarMatriculas/v1"
+	xmlns:bachueCDB="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarDatosBasicos/v1"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import
+				namespace="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarDatosImueble/v1"
+				schemaLocation="../Schemas/Legacy/CB_I_consultarDatosInmueble.xsd" />
+			<import
+				namespace="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarPropietarios/v1"
+				schemaLocation="../Schemas/Legacy/CB_I_consultarPropietarios.xsd" />
+			<import
+				namespace="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarDireccionesAnteriores/v1"
+				schemaLocation="../Schemas/Legacy/CB_I_consultarDireccionesAnteriores.xsd" />
+			<import
+				namespace="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarMatriculas/v1"
+				schemaLocation="../Schemas/Legacy/CB_I_consultarMatriculas.xsd" />
+			<import
+				namespace="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/consultarDatosBasicos/v1"
+				schemaLocation="../Schemas/Legacy/CB_I_consultarDatosBasicos.xsd" />
+		</schema>
+	</wsdl:types>
+	<!-- INICIO sección Message -->
+	<!-- 1 messages ConsultarDatosInmueble . -->
+	<wsdl:message name="ConsultarDatosInmueble_Request">
+		<wsdl:part name="entrada"
+			element="bachueCDI:entradaDatosInmueble"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConsultarDatosInmueble_Response">
+		<wsdl:part name="salida"
+			element="bachueCDI:salidaDatosInmueble"></wsdl:part>
+	</wsdl:message>
+
+	<!-- 2 messages ConsultarPropietarios . -->
+	<wsdl:message name="ConsultarPropietarios_Request">
+		<wsdl:part name="entrada"
+			element="bachueCP:entradaDatosPropietario"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConsultarPropietarios_Response">
+		<wsdl:part name="salida"
+			element="bachueCP:salidaDatosPropietario"></wsdl:part>
+	</wsdl:message>
+
+	<!-- 3 messages ConsultarDireccionesAnteriores. -->
+	<wsdl:message
+		name="ConsultarDireccionesAnteriores_Request">
+		<wsdl:part name="entrada"
+			element="bachueCDA:entradaDireccionesAnteriores"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="ConsultarDireccionesAnteriores_Response">
+		<wsdl:part name="salida"
+			element="bachueCDA:salidaDireccionesAnteriores"></wsdl:part>
+	</wsdl:message>
+
+	<!-- 4 messages ConsultarMatriculas -->
+	<wsdl:message name="ConsultarMatriculas_Request">
+		<wsdl:part name="entrada"
+			element="bachueCM:entradaConsultaMatriculas"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConsultarMatriculas_Response">
+		<wsdl:part name="salida"
+			element="bachueCM:salidaConsultaMatriculas"></wsdl:part>
+	</wsdl:message>
+
+	<!-- 5 messages ConsultarDatosBasicos -->
+	<wsdl:message name="ConsultarDatosBasicos_Request">
+		<wsdl:part name="entrada"
+			element="bachueCDB:entradaDatosBasicos"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConsultarDatosBasicos_Response">
+		<wsdl:part name="salida"
+			element="bachueCDB:salidaDatosBasicos"></wsdl:part>
+	</wsdl:message>
+	<!-- FIN sección Message -->
+
+	<!-- INICIO SBB_CB_Inmuebles -->
+	<wsdl:portType name="SBB_CB_Inmuebles">
+		<!-- 1 Inicio Operacion consultarDatosInmueble -->
+		<wsdl:operation name="consultarDatosInmueble">
+			<wsdl:input
+				message="bachue:ConsultarDatosInmueble_Request"></wsdl:input>
+			<wsdl:output
+				message="bachue:ConsultarDatosInmueble_Response"></wsdl:output>
+		</wsdl:operation>
+		<!-- Fin Operacion consultarDatosInmueble -->
+		<!-- 2 Inicio Operacion consultarPropietarios -->
+		<wsdl:operation name="consultarPropietarios">
+			<wsdl:input message="bachue:ConsultarPropietarios_Request"></wsdl:input>
+			<wsdl:output
+				message="bachue:ConsultarPropietarios_Response"></wsdl:output>
+		</wsdl:operation>
+		<!-- Fin Operacion consultarPropietarios -->
+		<!-- 3 Inicio Operacion consultarDireccionesAnteriores -->
+		<wsdl:operation name="consultarDireccionesAnteriores">
+			<wsdl:input
+				message="bachue:ConsultarDireccionesAnteriores_Request"></wsdl:input>
+			<wsdl:output
+				message="bachue:ConsultarDireccionesAnteriores_Response"></wsdl:output>
+		</wsdl:operation>
+		<!-- Fin Operacion consultarDireccionesAnteriores -->
+		<!-- 4 Inicio Operacion consultarMatriculas -->
+		<wsdl:operation name="consultarMatriculas">
+			<wsdl:input message="bachue:ConsultarMatriculas_Request"></wsdl:input>
+			<wsdl:output
+				message="bachue:ConsultarMatriculas_Response"></wsdl:output>
+		</wsdl:operation>
+		<!-- Fin Operacion ConsultarMatriculas -->
+		<!-- 5 Inicio Operacion consultarDatosBasicos -->
+		<wsdl:operation name="consultarDatosBasicos">
+			<wsdl:input message="bachue:ConsultarDatosBasicos_Request"></wsdl:input>
+			<wsdl:output
+				message="bachue:ConsultarDatosBasicos_Response"></wsdl:output>
+		</wsdl:operation>
+		<!-- Fin Operacion consultarDatosBasicos -->
+	</wsdl:portType>
+
+	<!-- INICIO WSDL:binding -->
+	<wsdl:binding name="SBB_CB_InmueblesSOAP12Binding"
+		type="bachue:SBB_CB_Inmuebles">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="consultarDatosInmueble">
+			<soap12:operation style="document"
+				soapAction="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1/consultarDatosInmueble" />
+			<wsdl:input>
+				<soap12:body use="literal" parts="entrada" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" parts="salida" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="consultarPropietarios">
+			<soap12:operation style="document"
+				soapAction="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1/consultarPropietarios" />
+			<wsdl:input>
+				<soap12:body use="literal" parts="entrada" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" parts="salida" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="consultarDireccionesAnteriores">
+			<soap12:operation style="document"
+				soapAction="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1/consultarDireccionesAnteriores" />
+			<wsdl:input>
+				<soap12:body use="literal" parts="entrada" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" parts="salida" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="consultarMatriculas">
+			<soap12:operation style="document"
+				soapAction="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1/consultarMatriculas" />
+			<wsdl:input>
+				<soap12:body use="literal" parts="entrada" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" parts="salida" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="consultarDatosBasicos">
+			<soap12:operation style="document"
+				soapAction="https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1/consultarDatosBasicos" />
+			<wsdl:input>
+				<soap12:body use="literal" parts="entrada" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" parts="salida" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<!-- FIN WSDL:binding -->
+
+	<wsdl:service name="SBB_CB_Inmuebles">
+		<wsdl:port name="SBB_CB_InmueblesPort"
+			binding="bachue:SBB_CB_InmueblesSOAP12Binding">
+			<soap12:address location="http://www.example.com" />
+		</wsdl:port>
+	</wsdl:service>
+	<!-- Últimas modificaciones 2020-03-27 11:37 -->
+</wsdl:definitions>

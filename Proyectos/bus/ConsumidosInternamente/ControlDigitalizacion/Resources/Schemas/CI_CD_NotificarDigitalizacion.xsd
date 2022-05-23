@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ci/controldigitalizacion/notificardigitalizacion/v1" 
+            xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:notdig="https://www.supernotariado.gov.co/schemas/bachue/ci/controldigitalizacion/notificardigitalizacion/v1"
+            elementFormDefault="qualified" version="1.3">
+	<xs:element name="entradaNotificarDigitalizacion" type="notdig:tipoEntradaNotificarDigitalizacion"/>
+	<xs:element name="salidaNotificarDigitalizacion" type="notdig:tipoSalidaNotificarDigitalizacion"/>
+	<xs:complexType name="tipoEntradaNotificarDigitalizacion">
+		<xs:sequence>
+			<xs:element name="sistemaOrigen" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="identificadorTramite" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="estado" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaNotificarDigitalizacion">
+		<xs:sequence>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

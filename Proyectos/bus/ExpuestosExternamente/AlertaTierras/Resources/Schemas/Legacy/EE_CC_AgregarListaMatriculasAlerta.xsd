@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActivarAlertaTierras"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/agregarListaMatriculasAlerta/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/agregarListaMatriculasAlerta/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaAgregarListaMatriculasAlerta">
+    <xsd:sequence>
+      <xsd:element name="idAlerta" type="xsd:int" minOccurs="1" />
+      <xsd:element name="listaMatriculas" minOccurs="1" >
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="matricula" maxOccurs="unbounded" minOccurs="1">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="codCirculoRegistral" type="xsd:string" minOccurs="1" />
+                  <xsd:element name="numMatriculaInmobiliaria" type="xsd:int" minOccurs="1" />                  
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaAgregarListaMatriculasAlerta" type="bachue:tipoEntradaAgregarListaMatriculasAlerta"/>
+  <xsd:complexType name="tipoSalidaAgregarListaMatriculasAlerta">
+    <xsd:sequence>
+      <xsd:element name="codigo" type="xsd:string" minOccurs="1" />
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaAgregarListaMatriculasAlerta" type="bachue:tipoSalidaAgregarListaMatriculasAlerta"/>
+</xsd:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ConsumidosInternamente/ConsultarCatalogos/Resources/WSDLs/SDI_CI_ConsultaCatalogos"/>
+            <con:binding>
+                <con:name>SDI_CI_ConsultaCatalogosSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ci/consultacatalogos/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fff8.N73fc23d1.0.170d57a2e01.N7f16" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="ConsultarCatalogos">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="Route_ConsultarCatalogos">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fff8.N73fc23d1.0.170d57a2e01.N7ee1</con2:id>
+                                        <con1:service ref="ConsumidosInternamente/ConsultarCatalogos/Pipelines/Local/PL_ConsultarCatalogos" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarCatalogos</con1:operation>
+                                        <con1:outboundTransform/>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

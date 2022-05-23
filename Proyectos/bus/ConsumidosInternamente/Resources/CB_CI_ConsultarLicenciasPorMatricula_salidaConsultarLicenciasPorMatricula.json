@@ -1,0 +1,16 @@
+{
+  "estado" : "estado61",
+  "licencia" : {
+    "numMatriculaInmobiliaria" : "numMatriculaInmobiliaria62",
+    "numeroLicencia" : "numeroLicencia63",
+    "numeroRadicacion" : "numeroRadicacion64",
+    "fechaRadicacion" : "2020-01-08T12:41:48.271",
+    "observacion" : "observacion65",
+    "documento" : "NjY=",
+    "vigencia" : "vigencia67",
+    "tipoAutorizacion" : "tipoAutorizacion68",
+    "fechaEjecutoria" : "2020-01-08T12:41:48.272"
+  },
+  "codigoMensaje" : 69,
+  "descripcionMensaje" : "descripcionMensaje70"
+}

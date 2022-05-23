@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ConsultarSaldo"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarsaldo/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarsaldo/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaConsultarSaldo">
+		<xsd:sequence>		
+			<xsd:element name="modulo" type="xsd:string"/>
+			<xsd:element name="IDCuentaCupo" type="xsd:string"/>
+			<xsd:element name="admin" type="bachue:tipoAdminCSI"/>
+			<xsd:element name="usuario" type="bachue:tipoUsuarioCSI"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoAdminCSI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocAdmin" type="xsd:string"/>
+			<xsd:element name="numDocAdmin" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoUsuarioCSI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocUsuario" type="xsd:string"/>
+			<xsd:element name="numDocUsuario" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+
+	<xsd:element name="entradaConsultarSaldo" type="bachue:tipoEntradaConsultarSaldo"/>
+
+	<xsd:complexType name="tipoSalidaConsultarSaldo">
+		<xsd:sequence>
+			<xsd:element name="saldoActual" type="xsd:decimal"/>
+			<xsd:element name="ultimaRecargaFecha" type="xsd:dateTime"/>
+			<xsd:element name="ultimaRecargaValor" type="xsd:decimal"/>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaConsultarSaldo" type="bachue:tipoSalidaConsultarSaldo"/>
+</xsd:schema>

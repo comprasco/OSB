@@ -1,0 +1,14 @@
+<view_states>
+   <function arity="1" name="func">
+      <source_tree_view last.visible.row="5" last.visible.path="/sourceRoot[[0]]/ejecutarBusquedaResponse[[0]]/return[[0]]/tipoResultadoCompleto[[3]]" first.visible.path="/sourceRoot[[0]]/ejecutarBusquedaResponse[[0]]" expanded.paths="/sourceRoot[[0]]/ejecutarBusquedaResponse[[0]]&#xA;/sourceRoot[[0]]/ejecutarBusquedaResponse[[0]]/return[[0]]" first.visible.row="0" selected.paths=""/>
+      <target_tree_view last.visible.row="20" last.visible.path="/TargetRoot[[0]]/salidaDatosBasicos[[0]]/numeroConsulta[[4]]" first.visible.path="/TargetRoot[[0]]/salidaDatosBasicos[[0]]" expanded.paths="/TargetRoot[[0]]/salidaDatosBasicos[[0]]&#xA;/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[2]]" first.visible.row="0" selected.paths=""/>
+   </function>
+   <function arity="2" name="func">
+      <source_tree_view last.visible.row="2" last.visible.path="/sourceRoot[[0]]/ejecutarBusquedaResponse[[1]]" first.visible.path="/sourceRoot[[0]]/ejecutarBusquedaResponse[[0]]" expanded.paths="/sourceRoot[[0]]/ejecutarBusquedaResponse[[0]]" first.visible.row="0" selected.paths=""/>
+      <target_tree_view last.visible.row="18" last.visible.path="/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[1]]/propietarios[[15]]" first.visible.path="/TargetRoot[[0]]/salidaDatosBasicos[[0]]" expanded.paths="/TargetRoot[[0]]/salidaDatosBasicos[[0]]&#xA;/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[1]]" first.visible.row="0" selected.paths=""/>
+   </function>
+   <function arity="3" name="func">
+      <source_tree_view last.visible.row="2" last.visible.path="/sourceRoot[[0]]/cantidadMatriculas[[2]]" first.visible.path="/sourceRoot[[0]]/ejecutarBusquedaResponse[[0]]" expanded.paths="" first.visible.row="0" selected.paths="/sourceRoot[[0]]/cantidadMatriculas[[2]]"/>
+      <target_tree_view last.visible.row="18" last.visible.path="/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[1]]/propietarios[[15]]" first.visible.path="/TargetRoot[[0]]/salidaDatosBasicos[[0]]" expanded.paths="/TargetRoot[[0]]/salidaDatosBasicos[[0]]&#xA;/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[1]]&#xA;/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[1]]/propietarios[[15]]&#xA;/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[1]]/propietarios[[15]]/Conditional[[2]]&#xA;/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[1]]/propietarios[[15]]/Conditional[[2]]/Conditional[[1]]" first.visible.row="0" selected.paths="/TargetRoot[[0]]/salidaDatosBasicos[[0]]/matriculas[[1]]/propietarios[[15]]/Conditional[[2]]/Conditional[[1]]/Conditional[[1]]"/>
+   </function>
+</view_states>

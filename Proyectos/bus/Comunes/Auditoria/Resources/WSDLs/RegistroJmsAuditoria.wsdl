@@ -1,0 +1,20 @@
+<wsdl:definitions name="RegistroJmsAuditoria" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/Comunes/RegistroJmsAuditoria" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/Comunes/RegistroJmsAuditoria" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:imp1="http://www.supernotariado.gov.co/schemas/bachue/auditoria/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <plt:partnerLinkType name="ProducirJmsAuditoria_plt">
+    <plt:role name="ProducirJmsAuditoria_role">
+      <plt:portType name="tns:ProducirJmsAuditoria_ptt"/>
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+        <import namespace="http://www.supernotariado.gov.co/schemas/bachue/auditoria/v1" schemaLocation="../Schemas/Auditoria.xsd"/>
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="ProducirJmsAuditoria_msg">
+        <wsdl:part name="body" element="imp1:mensajeAuditoria"/>
+    </wsdl:message>
+    <wsdl:portType name="ProducirJmsAuditoria_ptt">
+        <wsdl:operation name="ProducirJmsAuditoria">
+            <wsdl:input message="tns:ProducirJmsAuditoria_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,105 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/consultatrazabilidad/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/consultatrazabilidad/v1"
+                  xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/consultatrazabilidad/consultartrazabilidad/v1"
+                  xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/cb/consultatrazabilidad/consultaActosTurno/v1"
+                  xmlns:bachue3="https://www.supernotariado.gov.co/schemas/bachue/cb/consultatrazabilidad/consultaDetalleCertificado/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/consultatrazabilidad/consultartrazabilidad/v1"
+              schemaLocation="../Schemas/Legacy/CB_CT_ConsultarTrazabilidad.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/consultatrazabilidad/consultaActosTurno/v1"
+              schemaLocation="../Schemas/Legacy/CB_CT_ConsultaActosTurno.xsd"/>
+              
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/consultatrazabilidad/consultaDetalleCertificado/v1"
+              schemaLocation="../Schemas/Legacy/CB_CT_ConsultaDetalleCertificado.xsd"/>
+              
+    </schema>
+    
+  </wsdl:types>
+  
+  <wsdl:message name="ConsultarTrazabilidad_Request">
+    <wsdl:part name="entrada" element="bachue1:entradaConsultarTrazabilidad"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultarTrazabilidad_Response">
+    <wsdl:part name="salida" element="bachue1:salidaConsultarTrazabilidad"/>
+  </wsdl:message>
+  
+   <wsdl:message name="ConsultaActosTurno_Request">
+    <wsdl:part name="entrada" element="bachue2:entradaConsultaActosTurno"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaActosTurno_Response">
+    <wsdl:part name="salida" element="bachue2:salidaConsultaActosTurno"/>
+  </wsdl:message>
+  
+  <wsdl:message name="ConsultaDetalleCertificado_Request">
+    <wsdl:part name="entrada" element="bachue3:entradaConsultaDetalleCertificado"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaDetalleCertificado_Response">
+    <wsdl:part name="salida" element="bachue3:salidaConsultaDetalleCertificado"/>
+  </wsdl:message>
+  
+  <wsdl:portType name="SDI_CB_ConsultaTrazabilidad">
+    
+    <wsdl:operation name="ConsultarTrazabilidad">
+      <wsdl:input message="bachue:ConsultarTrazabilidad_Request"/>
+      <wsdl:output message="bachue:ConsultarTrazabilidad_Response"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="ConsultaActosTurno">
+      <wsdl:input message="bachue:ConsultaActosTurno_Request"/>
+      <wsdl:output message="bachue:ConsultaActosTurno_Response"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="ConsultaDetalleCertificado">
+      <wsdl:input message="bachue:ConsultaDetalleCertificado_Request"/>
+      <wsdl:output message="bachue:ConsultaDetalleCertificado_Response"/>
+    </wsdl:operation>
+    
+  </wsdl:portType>
+  
+  <wsdl:binding name="SDI_CB_ConsultaTrazabilidadSOAP12Binding" type="bachue:SDI_CB_ConsultaTrazabilidad">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    
+    <wsdl:operation name="ConsultarTrazabilidad">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultatrazabilidad/v1/ConsultarTrazabilidad"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="ConsultaActosTurno">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultatrazabilidad/v1/ConsultaActosTurno"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="ConsultaDetalleCertificado">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/consultatrazabilidad/v1/ConsultaDetalleCertificado"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+  </wsdl:binding>
+  <wsdl:service name="SDI_CB_ConsultaTrazabilidad">
+    <wsdl:port name="SDI_CB_ConsultaTrazabilidadPort" binding="bachue:SDI_CB_ConsultaTrazabilidadSOAP12Binding">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

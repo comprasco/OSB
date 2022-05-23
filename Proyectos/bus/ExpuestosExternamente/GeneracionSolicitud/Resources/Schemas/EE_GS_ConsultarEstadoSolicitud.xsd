@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ConsultarEstadoSolicitud"
+	targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/generacionsolicitud/consultarestadosolicitud/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/generacionsolicitud/consultarestadosolicitud/v1" elementFormDefault="qualified" version="1.3">
+<xsd:complexType name="tipoEntradaConsultarEstadoSolicitud">
+    <xsd:sequence>
+      <xsd:element name="modulo" type="xsd:string"/>
+      <xsd:element name="solicitante" type="bachue:tipoSolicitanteCESI"/>
+      <xsd:element name="NIR" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="tipoSolicitanteCESI">
+    <xsd:sequence>
+      <xsd:element name="tipoDocumento">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CC"/>
+            <xsd:enumeration value="CE"/>
+            <xsd:enumeration value="NIT"/>
+            <xsd:enumeration value="PS"/>
+            <xsd:enumeration value="TI"/>
+            <xsd:enumeration value="NU"/>
+            <xsd:enumeration value="SE"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="numeroDocumento" type="xsd:string"/>
+      <xsd:element name="tipoPersona" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaConsultarEstadoSolicitud" type="bachue:tipoEntradaConsultarEstadoSolicitud"/>
+  <xsd:complexType name="tipoSalidaConsultarEstadoSolicitud">
+    <xsd:sequence>
+      <xsd:element name="NIR" type="xsd:string"/>
+      <xsd:element name="idEtapa" type="xsd:string"/>
+      <xsd:element name="nombreEtapa" type="xsd:string"/>
+      <xsd:element name="idMotivo" type="xsd:string"/>
+      <xsd:element name="descripcionMotivo" type="xsd:string"/>
+      <xsd:element name="estado" type="xsd:string"/>
+      <xsd:element name="fechaFin" type="xsd:dateTime"/>
+      <xsd:element name="codigoMensaje" type="xsd:integer"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaConsultarEstadoSolicitud" type="bachue:tipoSalidaConsultarEstadoSolicitud"/>
+</xsd:schema>

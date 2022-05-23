@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ce/notificacionregistro/notificarregistro/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:notreg="https://www.supernotariado.gov.co/schemas/bachue/ce/notificacionregistro/notificarregistro/v1">
+	<xs:element name="entradaNotificarRegistro" type="notreg:tipoEntradaNotificarRegistro"/>
+	<xs:element name="salidaNotificarRegistro" type="notreg:tipoSalidaNotificarRegistro"/>
+	<xs:complexType name="matricula">
+		<xs:sequence>
+			<xs:element name="numeroMatricula" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="estado" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaRegistro" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaNotificarRegistro">
+		<xs:sequence>
+			<xs:element name="gobernacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="idTramite" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="matriculas" type="notreg:tipoMatricula" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoMatricula">
+		<xs:sequence>
+			<xs:element name="matricula" type="notreg:matricula" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaNotificarRegistro">
+		<xs:sequence>
+			<xs:element name="codMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="descMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

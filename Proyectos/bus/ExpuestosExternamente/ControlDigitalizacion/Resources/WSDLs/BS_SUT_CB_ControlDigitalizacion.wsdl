@@ -1,0 +1,38 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/controldigitalizacion/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/controldigitalizacion/v1" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/cb/controldigitalizacion/notificardigitalizacion/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/controldigitalizacion/notificardigitalizacion/v1" schemaLocation="../Schemas/Legacy/CB_CD_NotificarDigitalizacion.xsd"/>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="NotificarDigitalizacion_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaNotificarDigitalizacion"/>
+	</wsdl:message>
+	<wsdl:message name="NotificarDigitalizacion_Response">
+		<wsdl:part name="salida" element="bachue1:salidaNotificarDigitalizacion"/>
+	</wsdl:message>
+
+	<wsdl:portType name="SUT_CB_ControlDigitalizacion">
+		<wsdl:operation name="NotificarDigitalizacion">
+			<wsdl:input message="bachue:NotificarDigitalizacion_Request"/>
+			<wsdl:output message="bachue:NotificarDigitalizacion_Response"/>
+		</wsdl:operation>
+	</wsdl:portType>
+ <wsdl:binding name="SUT_CB_ControlDigitalizacionSOAP12Binding" type="bachue:SUT_CB_ControlDigitalizacion">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="NotificarDigitalizacion">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/cb/controldigitalizacion/v1/NotificarDigitalizacion"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SUT_CB_ControlDigitalizacion">
+  <wsdl:port name="SUT_CB_ControlDigitalizacionPort" binding="bachue:SUT_CB_ControlDigitalizacionSOAP12Binding">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns0="http://facade.uaecd.gov.co/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://facade.uaecd.gov.co/" name="WSCertificadoCatastralCL" targetNamespace="http://facade.uaecd.gov.co/">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://facade.uaecd.gov.co/types/" targetNamespace="http://facade.uaecd.gov.co/types/" elementFormDefault="qualified">
+            <import namespace="http://facade.uaecd.gov.co/"/>
+            <complexType name="Registro">
+                <sequence>
+                    <element name="matricula" type="string" nillable="true"/>
+                    <element name="pdfCertificado" type="base64Binary" nillable="true"/>
+                    <element name="cedulaCatastral" type="string" nillable="true"/>
+                    <element name="direccion" type="string" nillable="true"/>
+                    <element name="chip" type="string" nillable="true"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://facade.uaecd.gov.co/types/" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://facade.uaecd.gov.co/" elementFormDefault="qualified">
+            <import namespace="http://facade.uaecd.gov.co/types/"/>
+            <element name="getCertificadoElement">
+                <complexType>
+                    <sequence>
+                        <element name="direccion" type="string" nillable="true"/>
+                        <element name="chip" type="string" nillable="true"/>
+                        <element name="cedulaCatastral" type="string" nillable="true"/>
+                        <element name="correousuario" type="string" nillable="true"/>
+                        <element name="clave" type="string" nillable="true"/>
+                        <element name="ipRemoto" type="string" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="getCertificadoResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="ns1:Registro" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+    <message name="WSCertificadoCatastralCL_getCertificado">
+        <part name="parameters" element="tns:getCertificadoElement"/>
+    </message>
+    <message name="WSCertificadoCatastralCL_getCertificadoResponse">
+        <part name="parameters" element="tns:getCertificadoResponseElement"/>
+    </message>
+    <portType name="WSCertificadoCatastralCL">
+        <operation name="getCertificado">
+            <input message="tns:WSCertificadoCatastralCL_getCertificado"/>
+            <output message="tns:WSCertificadoCatastralCL_getCertificadoResponse"/>
+        </operation>
+    </portType>
+    <binding name="WSCertificadoCatastralCLSoapHttp" type="tns:WSCertificadoCatastralCL">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getCertificado">
+            <soap:operation soapAction="http://facade.uaecd.gov.co//getCertificado"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="WSCertificadoCatastralCL">
+        <port name="WSCertificadoCatastralCLSoapHttpPort" binding="tns:WSCertificadoCatastralCLSoapHttp">
+            <soap:address location="http://servicios.catastrobogota.gov.co/WSCertificadoCatastroCL/WSCertificadoCatastralCLSoapHttpPort"/>
+        </port>
+    </service>
+</definitions>

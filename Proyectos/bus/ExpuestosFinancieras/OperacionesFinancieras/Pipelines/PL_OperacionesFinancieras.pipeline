@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosFinancieras/OperacionesFinancieras/Resources/WSDLs/SBB_EF_OperacionesFinancieras"/>
+            <con:binding>
+                <con:name>SBB_EF_OperacionesFinancierasSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ef/operacionesfinancieras/v2</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57cb87.N3d87dd3a.0.16ae1a8452c.N8000" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="ConsultarEstadoLiquidacion">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteToEstadoLiquidacion">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57cbf1.5a04c054.0.16b6701a695.N7f9d</con2:id>
+                                        <con1:service ref="ExpuestosFinancieras/OperacionesFinancieras/Pipelines/Local/PL_ConsultarEstadoLiquidacion" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarEstadoLiquidacion</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.39043246.0.1746f8d90c7.N7a1f</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConsultarTarifaServicio">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteToTarifaServicio">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57cbf1.5a04c054.0.16b6701a695.N7f6a</con2:id>
+                                        <con1:service ref="ExpuestosFinancieras/OperacionesFinancieras/Pipelines/Local/PL_ConsultarTarifaServicio" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarTarifaServicio</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.39043246.0.1746f8d90c7.N79ec</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="GenerarLiquidacion">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteToGenerarLiquidacion">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57cbf1.5a04c054.0.16b6701a695.N7f37</con2:id>
+                                        <con1:service ref="ExpuestosFinancieras/OperacionesFinancieras/Pipelines/Local/PL_GenerarLiquidacion" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>GenerarLiquidacion</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.39043246.0.1746f8d90c7.N79b9</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="NotificarPago">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteToNotificarPago">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57cbf1.5a04c054.0.16b6701a695.N7f04</con2:id>
+                                        <con1:service ref="ExpuestosFinancieras/OperacionesFinancieras/Pipelines/Local/PL_NotificarPago" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>NotificarPago</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.39043246.0.1746f8d90c7.N7986</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ObtenerPDFLiquidacion">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteToObtenerPDF">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57cbf1.5a04c054.0.16b6701a695.N7ed1</con2:id>
+                                        <con1:service ref="ExpuestosFinancieras/OperacionesFinancieras/Pipelines/Local/PL_ObtenerPDFLiquidacion" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ObtenerPDFLiquidacion</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.39043246.0.1746f8d90c7.N7953</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ActualizarDatosSolicitante">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteToActualizarDatos">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.N6a4bedf.0.16e140b6513.N7e49</con2:id>
+                                        <con1:service ref="ExpuestosFinancieras/OperacionesFinancieras/Pipelines/Local/PL_ActualizarDatosSolicitante" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ActualizarDatosSolicitante</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.39043246.0.1746f8d90c7.N7920</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

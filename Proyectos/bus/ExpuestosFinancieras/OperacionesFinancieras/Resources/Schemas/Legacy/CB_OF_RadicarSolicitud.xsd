@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="RadicarSolicitud"
+    targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/radicarsolicitud/v1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/operacionesfinancieras/radicarsolicitud/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaRadicarSolicitud">
+		<xsd:annotation>
+			<xsd:appinfo>Bachue</xsd:appinfo>
+			<xsd:documentation xml:lang="es">El esquema define los datos de entrada para la operación Generar_Liquidacion</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="oripSolicitud" minOccurs="0" maxOccurs="1" nillable="true">
+				<xsd:annotation>
+					<xsd:documentation>Código de ORIP donde se realiza la solicitud. Este campo es opcional y se diligencia cuando aplique</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+<xsd:element name="tipoPersona">
+				<xsd:annotation>
+					<xsd:documentation>Código del tipo de persona definido en la tabla COL_TipoPersona</xsd:documentation>
+				</xsd:annotation>       
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+
+			<xsd:element name="tipoDocSolicitante">
+				<xsd:annotation>
+					<xsd:documentation>Código del tipo de documento de quien solicita el servicio de acuerdo a la información de la tabla col_interesadodocumentotipo</xsd:documentation>
+				</xsd:annotation>       
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numeroDocSolicitante">
+				<xsd:annotation>
+					<xsd:documentation>Número de documento de quien solicita el servicio</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="primerNombreSolicitante" minOccurs="0" maxOccurs="1" nillable="true">
+				<xsd:annotation>
+					<xsd:documentation>Primer nombre de quien solicita el servicio. El campo es opcional solamente para los puntos de recaudo de pines (Ej Baloto)</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="segundoNombreSolicitante" minOccurs="0" maxOccurs="1" nillable="true">
+				<xsd:annotation>
+					<xsd:documentation>Segundo nombre de quien solicita el servicio. El campo es opcional solamente para los puntos de recaudo de pines (Ej Baloto)</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="primerApellidoSolicitante" minOccurs="0" maxOccurs="1" nillable="true">
+				<xsd:annotation>
+					<xsd:documentation>Primer apellido de quien solicita el servicio. El campo es opcional solamente para los puntos de recaudo de pines (Ej Baloto)</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="segundoApellidoSolicitante" minOccurs="0" maxOccurs="1" nillable="true">
+				<xsd:annotation>
+					<xsd:documentation>Segundo apellido de quien solicita el servicio. El campo es opcional solamente para los puntos de recaudo de pines (Ej Baloto)</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="servicios">
+				<xsd:annotation>
+					<xsd:documentation>
+							Listado de los servicios solicitados para la generación de la liquidación
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="bachue:servicio" minOccurs="1"
+								maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>	
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Tipo complejo Servicio -->
+	<xsd:element name="servicio">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="tipoServicio">
+					<xsd:annotation>
+						<xsd:documentation>corresponde al tipo de servicio a prestar (definido en acc_proceso)</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="tipoSubServicio">
+					<xsd:annotation>
+						<xsd:documentation>corresponde al tipo de servicio a prestar (definido en acc_subproceso)</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="cantidadSolicitada">
+					<xsd:annotation>
+						<xsd:documentation>Cantidad solicitada de este servicio</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="valorServicio">
+					<xsd:annotation>
+						<xsd:documentation>Valor asociado servicio</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="criterios">
+					<xsd:annotation>
+						<xsd:documentation>
+							Listado de los criterios para el servicio a liquidar
+						</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="bachue:criterio" minOccurs="1"
+								maxOccurs="unbounded" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>	
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- Tipo complejo Criterios  -->
+	<xsd:element name="criterio">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="codigoCriterio">
+					<xsd:annotation>
+						<xsd:documentation>Esto corresponde al criterio o campo de la consulta. Entiendase también como el parámetro de la consulta (Estos criterios son los descritos en los casos de uso de consultas y certificados)</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="valorCriterio">
+					<xsd:annotation>
+						<xsd:documentation>Esto corresponde al valor que el usuario ingresa correspondiente al criterio</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="entradaRadicarSolicitud" type="bachue:tipoEntradaRadicarSolicitud"/>
+	
+	<xsd:complexType name="tipoSalidaRadicarSolicitud">
+		<xsd:annotation>
+			<xsd:appinfo>Bachue</xsd:appinfo>
+			<xsd:documentation xml:lang="es">El esquema define los datos de salida para la operación Generar_Liquidacion</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="nir">
+				<xsd:annotation>
+					<xsd:documentation>Número de identificación registral asociado a la liquidación generada</xsd:documentation>
+				</xsd:annotation>       
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+		<xsd:element name="codigoMensaje">
+				<xsd:annotation>
+					<xsd:documentation>Código del mensaje de resultado</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:enumeration value="200">
+							<xsd:annotation>
+								<xsd:documentation>No hubo error</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="409">
+							<xsd:annotation>
+								<xsd:documentation>Hubo Error</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="descripcionMensaje" minOccurs="0" maxOccurs="1" nillable="true">
+				<xsd:annotation>
+					<xsd:documentation>Descripción del error. Vacío si no hubo error.</xsd:documentation>
+				</xsd:annotation>       
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="salidaRadicarSolicitud" type="bachue:tipoSalidaRadicarSolicitud"/>
+</xsd:schema>

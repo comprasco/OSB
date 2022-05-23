@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="true" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/GestionAlertasTitulares/Resources/WSDLs/SDI_EE_GestionAlertasTitulares"/>
+            <con:binding>
+                <con:name>SDI_EE_GestionAlertasTitularesSOAP12Binding</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ee/gestionalertastitulares/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57fffe.20ca04b7.0.16dbda0cc04.N79dc" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="ConsultarTarifaAlertasTitulares">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode1">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.20ca04b7.0.16dbda0cc04.N7978</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionAlertasTitulares/Pipelines/Local/PL_ConsultarTarifaAlertasTitulares" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarTarifaAlertasTitulares</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7de5</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ConsultarAlerta">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode2">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.20ca04b7.0.16dbda0cc04.N7944</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionAlertasTitulares/Pipelines/Local/PL_ConsultarAlerta" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ConsultarAlerta</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7db2</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="InactivarAlerta">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode3">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.20ca04b7.0.16dbda0cc04.N7910</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionAlertasTitulares/Pipelines/Local/PL_InactivarAlerta" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>InactivarAlerta</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7d7f</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ValidarSolicitudAlertaIndividual">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode4">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.20ca04b7.0.16dbda0cc04.N78dc</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionAlertasTitulares/Pipelines/Local/PL_ValidarSolicitudAlertaIndividual" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ValidarSolicitudAlertaIndividual</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7d4c</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ValidarSolicitudAlertaMasiva">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode5">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.20ca04b7.0.16dbda0cc04.N78a8</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionAlertasTitulares/Pipelines/Local/PL_ValidarSolicitudAlertaMasiva" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ValidarSolicitudAlertaMasiva</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7d19</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ActualizarContactoAlerta">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteNode6">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57fffe.20ca04b7.0.16dbda0cc04.N7874</con2:id>
+                                        <con1:service ref="ExpuestosExternamente/GestionAlertasTitulares/Pipelines/Local/PL_ActualizarContactoAlerta" xsi:type="con:PipelineRef"/>
+                                        <con1:operation>ActualizarContactoAlerta</con1:operation>
+                                        <con1:outboundTransform>
+                                            <con3:replace varName="header" contents-only="true" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                                <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7ce6</con2:id>
+                                                <con3:expr>
+                                                    <con2:xqueryText>$inbound/*</con2:xqueryText>
+                                                </con3:expr>
+                                            </con3:replace>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

@@ -1,0 +1,102 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/ee/entregaproducto/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ee/entregaproducto/v1" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/verificarproducto/v1" xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerproducto/v1" xmlns:bachue3="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerturnosrefpago/v1" xmlns:bachue4="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerrecibocaja/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/verificarproducto/v1" schemaLocation="../Schemas/EE_EP_VerificarProducto.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerproducto/v1" schemaLocation="../Schemas/EE_EP_ObtenerProducto.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerturnosrefpago/v1" schemaLocation="../Schemas/EE_EP_ObtenerTurnosRefPago.xsd"/>
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/entregaproducto/obtenerrecibocaja/v1" schemaLocation="../Schemas/EE_EP_ObtenerReciboCaja.xsd"/>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="VerificarProducto_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaVerificarProducto"/>
+	</wsdl:message>
+	<wsdl:message name="VerificarProducto_Response">
+		<wsdl:part name="salida" element="bachue1:salidaVerificarProducto"/>
+	</wsdl:message>
+	
+	<wsdl:message name="ObtenerProducto_Request">
+		<wsdl:part name="entrada" element="bachue2:entradaObtenerProducto"/>
+	</wsdl:message>
+	<wsdl:message name="ObtenerProducto_Response">
+		<wsdl:part name="salida" element="bachue2:salidaObtenerProducto"/>
+	</wsdl:message>
+	
+	<wsdl:message name="ObtenerTurnosRefPago_Request">
+		<wsdl:part name="entrada" element="bachue3:entradaObtenerTurnosRefPago"/>
+	</wsdl:message>
+	<wsdl:message name="ObtenerTurnosRefPago_Response">
+		<wsdl:part name="salida" element="bachue3:salidaObtenerTurnosRefPago"/>
+	</wsdl:message>
+
+	<wsdl:message name="ObtenerReciboCaja_Request">
+		<wsdl:part name="entrada" element="bachue4:entradaObtenerReciboCaja"/>
+	</wsdl:message>
+	<wsdl:message name="ObtenerReciboCaja_Response">
+		<wsdl:part name="salida" element="bachue4:salidaObtenerReciboCaja"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="SBB_EE_EntregaProducto">
+		<wsdl:operation name="VerificarProducto">
+			<wsdl:input message="bachue:VerificarProducto_Request"/>
+			<wsdl:output message="bachue:VerificarProducto_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerProducto">
+			<wsdl:input message="bachue:ObtenerProducto_Request"/>
+			<wsdl:output message="bachue:ObtenerProducto_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerTurnosRefPago">
+			<wsdl:input message="bachue:ObtenerTurnosRefPago_Request"/>
+			<wsdl:output message="bachue:ObtenerTurnosRefPago_Response"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerReciboCaja">
+			<wsdl:input message="bachue:ObtenerReciboCaja_Request"/>
+			<wsdl:output message="bachue:ObtenerReciboCaja_Response"/>
+		</wsdl:operation>
+		
+	</wsdl:portType>
+ <wsdl:binding name="SBB_EE_EntregaProductoSOAP12Binding" type="bachue:SBB_EE_EntregaProducto">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="VerificarProducto">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/ee/entregaproducto/v1/VerificarProducto"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ObtenerProducto">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/ee/entregaproducto/v1/ObtenerProducto"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ObtenerTurnosRefPago">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/ee/entregaproducto/v1/ObtenerTurnosRefPago"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="ObtenerReciboCaja">
+   <soap12:operation style="document" soapAction="https://www.supernotariado.gov.co/services/bachue/ee/entregaproducto/v1/ObtenerReciboCaja"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SBB_EE_EntregaProducto">
+  <wsdl:port name="SBB_EE_EntregaProductoPort" binding="bachue:SBB_EE_EntregaProductoSOAP12Binding">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

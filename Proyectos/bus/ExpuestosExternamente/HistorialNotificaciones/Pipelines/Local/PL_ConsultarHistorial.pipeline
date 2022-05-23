@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/typesystem/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ExpuestosExternamente/HistorialNotificaciones/Resources/WSDLs/SDI_EE_HistorialNotificaciones"/>
+            <con:binding>
+                <con:name>SDI_EE_HistorialNotificaciones</con:name>
+                <con:namespace>https://www.supernotariado.gov.co/services/bachue/ee/historialNotificaciones/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-N3f57ffe7.c541022.0.172e317aea4.N7fcf">
+        <con:pipeline type="error" name="error-N3f57ffe7.c541022.0.172e317aea4.N7fcf">
+            <con:stage id="_StageId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f3e" name="ERH_PipelineLog" xmlns:con1="http://www.bea.com/wli/sb/stages/logging/config" xmlns:sch="http://itau.com.co/services/common/auditory/v2/schemas" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:comment>Error Handler Pipeline</con:comment>
+                <con:context/>
+                <con:actions>
+                    <con5:assign varName="codeFault" xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f3d</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>fn:data($fault/ctx:errorCode)</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="descFault" xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f3c</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>if($fault/ctx:details)then
+fn:concat('REASON: ',fn:data($fault/ctx:reason),' - DEATIL: ',fn:data($fault/ctx:details))
+else
+fn:concat('REASON: ',fn:data($fault/ctx:reason))</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con3:replace varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f3b</con2:id>
+                        <con3:location>
+                            <con2:xpathText>./*</con2:xpathText>
+                        </con3:location>
+                        <con3:expr>
+                            <con2:xqueryTransform>
+                                <con2:resource ref="ExpuestosExternamente/HistorialNotificaciones/Resources/Xqueries/Out_ConsultarHistorialFault"/>
+                                <con2:param name="descripcionMensaje">
+                                    <con2:path>concat(data($codeFault), ' ', data($descFault))</con2:path>
+                                </con2:param>
+                                <con2:param name="codigoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/CodigosRespuesta', 'Tipo', 'ErrorOSB', 'Codigo', 'default')</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con3:expr>
+                    </con3:replace>
+                    <con5:assign varName="responseFailDatetime" xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:comment>Fecha de response del proxy</con2:comment>
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f3a</con2:id>
+                        <con2:locked>true</con2:locked>
+                        <con5:expr>
+                            <con2:xqueryText>fn:current-dateTime()</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="responsePayloadProxy" xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:comment>Copia del responseOriginal</con2:comment>
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f39</con2:id>
+                        <con2:locked>true</con2:locked>
+                        <con5:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con1:replace varName="body" contents-only="false" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f38</con2:id>
+                        <con1:location>
+                            <con2:xpathText>./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform>
+                                <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                                <con2:param name="servicio">
+                                    <con2:path>$targetName</con2:path>
+                                </con2:param>
+                                <con2:param name="fechaHora">
+                                    <con2:path>$responseFailDatetime</con2:path>
+                                </con2:param>
+                                <con2:param name="dominio">
+                                    <con2:path>$dominio</con2:path>
+                                </con2:param>
+                                <con2:param name="usuario">
+                                    <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                                </con2:param>
+                                <con2:param name="tipoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '4', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="operacion">
+                                    <con2:path>$targetOperation</con2:path>
+                                </con2:param>
+                                <con2:param name="mensaje">
+                                    <con2:path>$responsePayloadProxy/*</con2:path>
+                                </con2:param>
+                                <con2:param name="terminal">
+                                    <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'EE', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="UUID">
+                                    <con2:path>data($uuid)</con2:path>
+                                </con2:param>
+                                <con2:param name="tamano">
+                                    <con2:path>string-length(data($responsePayloadProxy))</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                    <con3:route xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f37</con2:id>
+                        <con3:service ref="Comunes/Auditoria/BusinessServices/RegistroJmsAuditoria" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con3:operation>ProducirJmsAuditoria</con3:operation>
+                        <con3:outboundTransform/>
+                    </con3:route>
+                    <con5:assign varName="responseHeaderProxy" xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:comment>Copia del responseOriginal</con2:comment>
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f36</con2:id>
+                        <con2:locked>true</con2:locked>
+                        <con5:expr>
+                            <con2:xqueryText>$header</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="body" xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:comment>Copia del responseOriginal</con2:comment>
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f35</con2:id>
+                        <con2:locked>true</con2:locked>
+                        <con5:expr>
+                            <con2:xqueryText>$responsePayloadProxy</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="header" xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:comment>Copia del response header Original</con2:comment>
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f34</con2:id>
+                        <con2:locked>true</con2:locked>
+                        <con5:expr>
+                            <con2:xqueryText>$responseHeaderProxy</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:ifThenElse xmlns:con6="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f33</con2:id>
+                        <con5:case id="_BranchId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f32">
+                            <con5:condition>
+                                <con2:xqueryText>fn:matches(fn:data($responseSuccess),'true')</con2:xqueryText>
+                            </con5:condition>
+                            <con5:actions>
+                                <con2:reply>
+                                    <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f31</con2:id>
+                                </con2:reply>
+                            </con5:actions>
+                        </con5:case>
+                        <con5:default>
+                            <con2:reply isError="true">
+                                <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7f30</con2:id>
+                            </con2:reply>
+                        </con5:default>
+                    </con5:ifThenElse>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57ffe7.c541022.0.172e317aea4.N7e00" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7dff" name="STG_VariablesComunes" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context/>
+                <con:actions>
+                    <con1:assign varName="uuid" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dfe</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>fn-bea:uuid()</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="requestProxyDatetime" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dfd</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>fn:current-dateTime()</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="requestHeaderProxy" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dfc</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$header</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="requestPayloadProxy" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dfb</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con5:assign varName="responseSuccess" xmlns:con1="http://www.bea.com/wli/sb/stages/logging/config" xmlns:sch="http://itau.com.co/services/common/auditory/v2/schemas" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dfa</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>fn:true()</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con1:assign varName="targetName" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7df9</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>'HistorialNotificaciones'</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="targetOperation" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7df8</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>'ConsultarHistorial'</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="dominio" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7df7</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>dvm:lookup('Comunes/DVMs/DominiosNegocio', 'Prefijo', 'EE', 'Valor', 'default')</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con5:assign varName="nameCabecera" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N72a5</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>$header/*:endpoint/ctx:transport/ctx:request/tp:headers/tp:user-header/@name='x-forwarded-for'</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="valueCabecera" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N72a2</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>$header/*:endpoint/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='x-forwarded-for']/@value</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="IP_BUS_PUERTO" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N729f</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>$header/*:endpoint/ctx:transport/ctx:request/tp:headers/http:Host</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="IP_BUS" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N729c</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>fn:substring-before($IP_BUS_PUERTO, ':')</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="clientaddress" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57fff7.N7de81a52.0.1746e2ccf3f.N7299</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>$header/*:endpoint/ctx:transport/ctx:request/http:client-address</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="IDUSUARIO" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57fef4.N214bddb2.0.174bb554d89.N7633</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)</con2:xqueryText>
+                        </con1:expr>
+                    </con5:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7df6" name="STG_AuditarEntradaProxy" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7df5</con2:id>
+                        <con1:location>
+                            <con2:xpathText>./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform>
+                                <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                                <con2:param name="servicio">
+                                    <con2:path>$targetName</con2:path>
+                                </con2:param>
+                                <con2:param name="fechaHora">
+                                    <con2:path>$requestProxyDatetime</con2:path>
+                                </con2:param>
+                                <con2:param name="dominio">
+                                    <con2:path>$dominio</con2:path>
+                                </con2:param>
+                                <con2:param name="usuario">
+                                    <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                                </con2:param>
+                                <con2:param name="tipoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '1', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="operacion">
+                                    <con2:path>$targetOperation</con2:path>
+                                </con2:param>
+                                <con2:param name="mensaje">
+                                    <con2:path>$requestPayloadProxy/*</con2:path>
+                                </con2:param>
+                                <con2:param name="terminal">
+                                    <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'EE', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="UUID">
+                                    <con2:path>data($uuid)</con2:path>
+                                </con2:param>
+                                <con2:param name="tamano">
+                                    <con2:path>string(string-length($body))</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                    <con3:route>
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7df4</con2:id>
+                        <con3:service ref="Comunes/Auditoria/BusinessServices/RegistroJmsAuditoria" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con3:operation>ProducirJmsAuditoria</con3:operation>
+                        <con3:outboundTransform/>
+                    </con3:route>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7df3" name="STG_ValidarMensaje" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context>
+                    <con2:userNsDecl prefix="ws1" namespace="http://ws.servicios.corebachue.bachue.supernotariado.gov.co/"/>
+                    <con2:userNsDecl prefix="v12" namespace="https://www.supernotariado.gov.co/services/bachue/cb/certificadotradicionpdf/obtenerPDF/v1"/>
+                    <con2:userNsDecl prefix="v11" namespace="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/consultarHistoricoPropietarios/v1"/>
+                    <con2:userNsDecl prefix="v14" namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/mutacionesTercerOrden/consultaCambioTercerOrden/v1"/>
+                    <con2:userNsDecl prefix="v13" namespace="https://www.supernotariado.gov.co/services/bachue/ee/cb/certificadotradicionpdf/obtenerPDF/v1"/>
+                    <con2:userNsDecl prefix="v1" namespace="https://www.supernotariado.gov.co/services/bachue/cb/SBB_CB_HistoricoPropietarios/consultarHistoricoPropiedades/v1"/>
+                    <con2:userNsDecl prefix="v15" namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/historialNotificaciones/consultarHistorial/v1"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="body" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7df2</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$requestPayloadProxy</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:validate>
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7df1</con2:id>
+                        <con1:schema ref="ExpuestosExternamente/HistorialNotificaciones/Resources/Schemas/EE_HN_consultarHistorial"/>
+                        <con1:schemaElement xmlns:v1="https://www.supernotariado.gov.co/schemas/bachue/ee/historialNotificaciones/consultarHistorial/v1">v1:entradaConsultarHistorial</con1:schemaElement>
+                        <con1:varName>body</con1:varName>
+                        <con1:location>
+                            <con2:xpathText>./v15:entradaConsultarHistorial</con2:xpathText>
+                        </con1:location>
+                    </con1:validate>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7df0" name="STGGenerico">
+                <con:context>
+                    <con2:userNsDecl prefix="v11" namespace="https://www.supernotariado.gov.co/schemas/bachue/ee/historialNotificaciones/consultarHistorial/v1"/>
+                    <con2:userNsDecl prefix="v1" namespace="https://www.supernotariado.gov.co/schemas/bachue/cn/mensajero/consultarenvio/v1"/>
+                    <con4:variable name="ConsultarEnvioRs" path="$ConsultarEnvioRs" asChild="false" xmlns:con4="http://www.bea.com/wli/sb/typesystem/config">
+                        <con4:schema ref="ExpuestosExternamente/Mensajero/Resources/Schemas/Legacy/CN_MB_ConsultarEnvio" element="salidaConsultarEnvio"/>
+                    </con4:variable>
+                </con:context>
+                <con:actions>
+                    <con1:wsCallout>
+                        <con2:id>_ActionId-N3f57ffef.17fedabd.0.172e8796846.N7f25</con2:id>
+                        <con1:service ref="ExpuestosExternamente/Mensajero/BusinessServices/BS_SUT_CN_Mensajero" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation>ConsultarEnvio</con1:operation>
+                        <con1:request>
+                            <con1:body wrapped="false">ConsultarEnvioRq</con1:body>
+                        </con1:request>
+                        <con1:response>
+                            <con1:body wrapped="false">ConsultarEnvioRs</con1:body>
+                        </con1:response>
+                        <con1:requestTransform>
+                            <con5:transport-headers xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                                <con2:id>_ActionId-N3f57ffef.2e76faf7.0.172e8b36c68.N7fcd</con2:id>
+                                <con5:header-set>outbound-request</con5:header-set>
+                                <con5:header value="expression" name="SOAPAction">
+                                    <con2:xqueryText>'https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1/consultarDatosInmueble'</con2:xqueryText>
+                                </con5:header>
+                                <con5:header value="expression" name="x-forwarded-for">
+                                    <con2:xqueryText>$ConcatenarCabecera</con2:xqueryText>
+                                </con5:header>
+                                <con5:header value="expression" name="x-usuario-peticion">
+                                    <con2:xqueryText>$IDUSUARIO</con2:xqueryText>
+                                </con5:header>
+                            </con5:transport-headers>
+                            <con1:assign varName="ConsultarEnvioRq">
+                                <con2:id>_ActionId-N3f57ffef.2e76faf7.0.172e8b36c68.N7fca</con2:id>
+                                <con1:expr>
+                                    <con2:xqueryTransform>
+                                        <con2:resource ref="ExpuestosExternamente/HistorialNotificaciones/Resources/Xqueries/In_ConsultarHistorial_to_CN_ConsultarEnvio"/>
+                                        <con2:param name="payloadRequest">
+                                            <con2:path>$requestPayloadProxy/*</con2:path>
+                                        </con2:param>
+                                    </con2:xqueryTransform>
+                                </con1:expr>
+                            </con1:assign>
+                        </con1:requestTransform>
+                        <con1:responseTransform/>
+                    </con1:wsCallout>
+                    <con1:assign varName="nir">
+                        <con2:id>_ActionId-N3f57ffef.N9b77e0d.0.172f2d9807d.N7ffe</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;nir/></con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:foreach>
+                        <con2:id>_ActionId-N3f57ffef.N49b1779c.0.172f2e10401.N7ffe</con2:id>
+                        <con1:variable>ConsultarEnvioRs</con1:variable>
+                        <con1:expression>
+                            <con2:xpathText>./v1:listaMensajes/v1:mensaje</con2:xpathText>
+                        </con1:expression>
+                        <con1:value-variable>mensaje</con1:value-variable>
+                        <con1:actions>
+                            <con1:insert varName="nir">
+                                <con2:id>_ActionId-N3f57ffef.N49b1779c.0.172f2e10401.N7ffb</con2:id>
+                                <con1:where>first-child</con1:where>
+                                <con1:expr>
+                                    <con2:xqueryText>&lt;messageNir>{$mensaje/*:nir/text()}&lt;/messageNir></con2:xqueryText>
+                                </con1:expr>
+                            </con1:insert>
+                        </con1:actions>
+                    </con1:foreach>
+                    <con1:assign varName="TrazabilidadRs">
+                        <con2:id>_ActionId-N3f57ffef.N282a3063.0.172f3142d72.N7f9c</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;TrazabilidadRs/></con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:foreach>
+                        <con2:id>_ActionId-N3f57ffef.N49b1779c.0.172f2e10401.N7ff6</con2:id>
+                        <con1:variable>nir</con1:variable>
+                        <con1:expression>
+                            <con2:xpathText>$nir/*:messageNir</con2:xpathText>
+                        </con1:expression>
+                        <con1:value-variable>nirRq</con1:value-variable>
+                        <con1:actions>
+                            <con1:wsCallout>
+                                <con2:id>_ActionId-N3f57ffef.2e76faf7.0.172e8b36c68.N7fc7</con2:id>
+                                <con1:service ref="ExpuestosExternamente/ConsultaTrazabilidad/BusinessServices/BS_SDI_CB_ConsultaTrazabilidad" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                <con1:operation>ConsultarTrazabilidad</con1:operation>
+                                <con1:request>
+                                    <con1:body wrapped="false">ConsultarTrazabilidadRq</con1:body>
+                                </con1:request>
+                                <con1:response>
+                                    <con1:body wrapped="false">ConsultarTrazabilidadRs</con1:body>
+                                </con1:response>
+                                <con1:requestTransform>
+                                    <con5:transport-headers xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                                        <con2:id>_ActionId-N3f57ffef.2e76faf7.0.172e8b36c68.N7f93</con2:id>
+                                        <con5:header-set>outbound-request</con5:header-set>
+                                        <con5:header value="expression" name="SOAPAction">
+                                            <con2:xqueryText>'https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1/consultarDatosInmueble'</con2:xqueryText>
+                                        </con5:header>
+                                        <con5:header value="expression" name="x-forwarded-for">
+                                            <con2:xqueryText>$ConcatenarCabecera</con2:xqueryText>
+                                        </con5:header>
+                                        <con5:header value="expression" name="x-usuario-peticion">
+                                            <con2:xqueryText>$IDUSUARIO</con2:xqueryText>
+                                        </con5:header>
+                                    </con5:transport-headers>
+                                    <con1:assign varName="ConsultarTrazabilidadRq">
+                                        <con2:id>_ActionId-N3f57ffef.2e76faf7.0.172e8b36c68.N7f90</con2:id>
+                                        <con1:expr>
+                                            <con2:xsltTransform>
+                                                <con2:resource ref="ExpuestosExternamente/HistorialNotificaciones/Resources/XSLT/In_CN_ConsultarEnvio_to_CB_ConsultarTrazabilidad.xqy"/>
+                                                <con2:input>$body/v11:entradaConsultarHistorial</con2:input>
+                                                <con2:param name="Nir">
+                                                    <con2:path>$nirRq</con2:path>
+                                                </con2:param>
+                                            </con2:xsltTransform>
+                                        </con1:expr>
+                                    </con1:assign>
+                                </con1:requestTransform>
+                                <con1:responseTransform>
+                                    <con1:insert varName="TrazabilidadRs">
+                                        <con2:id>_ActionId-N3f57ffef.N282a3063.0.172f3142d72.N7f67</con2:id>
+                                        <con1:location>
+                                            <con2:xpathText>.</con2:xpathText>
+                                        </con1:location>
+                                        <con1:where>first-child</con1:where>
+                                        <con1:expr>
+                                            <con2:xqueryText>$ConsultarTrazabilidadRs</con2:xqueryText>
+                                        </con1:expr>
+                                    </con1:insert>
+                                </con1:responseTransform>
+                            </con1:wsCallout>
+                        </con1:actions>
+                    </con1:foreach>
+                    <con1:assign varName="listaDocumento">
+                        <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7ffe</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;listaDocumento/></con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:foreach>
+                        <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7fc6</con2:id>
+                        <con1:variable>ConsultarEnvioRs</con1:variable>
+                        <con1:expression>
+                            <con2:xpathText>./v1:listaMensajes/v1:mensaje/v1:documentos/v1:documento</con2:xpathText>
+                        </con1:expression>
+                        <con1:value-variable>documento</con1:value-variable>
+                        <con1:actions>
+                            <con1:insert varName="listaDocumento">
+                                <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7fc5</con2:id>
+                                <con1:where>first-child</con1:where>
+                                <con1:expr>
+                                    <con2:xqueryText><![CDATA[<documento>
+<dID>{$documento/*:dID/text()}</dID>
+<dDocName>{$documento/*:dDocName/text()}</dDocName>
+</documento>]]></con2:xqueryText>
+                                </con1:expr>
+                            </con1:insert>
+                        </con1:actions>
+                    </con1:foreach>
+                    <con1:assign varName="BusquedaDocumentosRs">
+                        <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7f73</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>&lt;BusquedaDocumentosRs/></con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:foreach>
+                        <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7f82</con2:id>
+                        <con1:variable>listaDocumento</con1:variable>
+                        <con1:expression>
+                            <con2:xpathText>$listaDocumento/*:documento</con2:xpathText>
+                        </con1:expression>
+                        <con1:value-variable>DocumentoRq</con1:value-variable>
+                        <con1:actions>
+                            <con1:wsCallout>
+                                <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7f81</con2:id>
+                                <con1:service ref="ConsumidosInternamente/BusquedaDocumentos/BusinessServices/BS_SUT_CO_BusquedaDocumentos" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                <con1:operation>Consultar</con1:operation>
+                                <con1:request>
+                                    <con1:body wrapped="false">ConsultarRq</con1:body>
+                                </con1:request>
+                                <con1:response>
+                                    <con1:body wrapped="false">ConsultarRs</con1:body>
+                                </con1:response>
+                                <con1:requestTransform>
+                                    <con5:transport-headers xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                                        <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7f80</con2:id>
+                                        <con5:header-set>outbound-request</con5:header-set>
+                                        <con5:header value="expression" name="SOAPAction">
+                                            <con2:xqueryText>'https://www.supernotariado.gov.co/services/bachue/cb/inmuebles/v1/consultarDatosInmueble'</con2:xqueryText>
+                                        </con5:header>
+                                        <con5:header value="expression" name="x-forwarded-for">
+                                            <con2:xqueryText>$ConcatenarCabecera</con2:xqueryText>
+                                        </con5:header>
+                                        <con5:header value="expression" name="x-usuario-peticion">
+                                            <con2:xqueryText>$IDUSUARIO</con2:xqueryText>
+                                        </con5:header>
+                                    </con5:transport-headers>
+                                    <con1:assign varName="ConsultarRq">
+                                        <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7f7f</con2:id>
+                                        <con1:expr>
+                                            <con2:xsltTransform>
+                                                <con2:resource ref="ExpuestosExternamente/HistorialNotificaciones/Resources/XSLT/In_CN_ConsultarEnvio_to_Consultar"/>
+                                                <con2:input>$body/v11:entradaConsultarHistorial</con2:input>
+                                                <con2:param name="dID">
+                                                    <con2:path>$DocumentoRq/dID</con2:path>
+                                                </con2:param>
+                                                <con2:param name="dDocName">
+                                                    <con2:path>$DocumentoRq/dDocName</con2:path>
+                                                </con2:param>
+                                            </con2:xsltTransform>
+                                        </con1:expr>
+                                    </con1:assign>
+                                </con1:requestTransform>
+                                <con1:responseTransform>
+                                    <con1:insert varName="BusquedaDocumentosRs">
+                                        <con2:id>_ActionId-N3f57fef1.6c7fe0c3.0.17306e66006.N7f7e</con2:id>
+                                        <con1:location>
+                                            <con2:xpathText>.</con2:xpathText>
+                                        </con1:location>
+                                        <con1:where>first-child</con1:where>
+                                        <con1:expr>
+                                            <con2:xqueryText>$ConsultarRs</con2:xqueryText>
+                                        </con1:expr>
+                                    </con1:insert>
+                                </con1:responseTransform>
+                            </con1:wsCallout>
+                        </con1:actions>
+                    </con1:foreach>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7de5" name="STG_RequestTarget" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context>
+                    <con2:userNsDecl prefix="v11" namespace="https://www.supernotariado.gov.co/services/bachue/ee/cb/certificadotradicionpdf/obtenerPDF/v1"/>
+                    <con2:userNsDecl prefix="v1" namespace="https://www.supernotariado.gov.co/services/bachue/cb/certificadotradicionpdf/obtenerPDF/v1"/>
+                    <con2:userNsDecl prefix="ns1" namespace="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionPredio/v1"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="requestTargetDatetime" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7de4</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>fn:current-dateTime()</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="requestPayloadTarget" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7de3</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7de2" name="STG_AuditarEntradaTarget" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7de1</con2:id>
+                        <con1:location>
+                            <con2:xpathText>./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform>
+                                <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                                <con2:param name="servicio">
+                                    <con2:path>concat('Legacy/', $targetName)</con2:path>
+                                </con2:param>
+                                <con2:param name="fechaHora">
+                                    <con2:path>$requestTargetDatetime</con2:path>
+                                </con2:param>
+                                <con2:param name="dominio">
+                                    <con2:path>$dominio</con2:path>
+                                </con2:param>
+                                <con2:param name="usuario">
+                                    <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                                </con2:param>
+                                <con2:param name="tipoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '2', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="operacion">
+                                    <con2:path>concat('Legacy/', $targetOperation)</con2:path>
+                                </con2:param>
+                                <con2:param name="mensaje">
+                                    <con2:path>$requestPayloadTarget/*</con2:path>
+                                </con2:param>
+                                <con2:param name="terminal">
+                                    <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'EE', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="UUID">
+                                    <con2:path>data($uuid)</con2:path>
+                                </con2:param>
+                                <con2:param name="tamano">
+                                    <con2:path>string(string-length($body))</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                    <con3:route>
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7de0</con2:id>
+                        <con3:service ref="Comunes/Auditoria/BusinessServices/RegistroJmsAuditoria" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con3:operation>ProducirJmsAuditoria</con3:operation>
+                        <con3:outboundTransform/>
+                    </con3:route>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7ddf" name="STG_RequestBody" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context/>
+                <con:actions>
+                    <con1:assign varName="body" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dde</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$requestPayloadTarget</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57ffe7.c541022.0.172e317aea4.N7ddd" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7ddc" name="CommonVariables" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context/>
+                <con:actions>
+                    <con1:assign varName="responsePayloadTarget" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7ddb</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7dda" name="STG_AuditarSalidaTarget" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dd9</con2:id>
+                        <con1:location>
+                            <con2:xpathText>./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform>
+                                <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                                <con2:param name="servicio">
+                                    <con2:path>concat('Legacy/', $targetName)</con2:path>
+                                </con2:param>
+                                <con2:param name="fechaHora">
+                                    <con2:path>$responseTargetDatetime</con2:path>
+                                </con2:param>
+                                <con2:param name="dominio">
+                                    <con2:path>$dominio</con2:path>
+                                </con2:param>
+                                <con2:param name="usuario">
+                                    <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                                </con2:param>
+                                <con2:param name="tipoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '3', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="operacion">
+                                    <con2:path>concat('Legacy/',$targetOperation)</con2:path>
+                                </con2:param>
+                                <con2:param name="mensaje">
+                                    <con2:path>$responsePayloadTarget/*</con2:path>
+                                </con2:param>
+                                <con2:param name="terminal">
+                                    <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'EE', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="UUID">
+                                    <con2:path>data($uuid)</con2:path>
+                                </con2:param>
+                                <con2:param name="tamano">
+                                    <con2:path>string-length(data($responsePayloadTarget))</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                    <con3:route>
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dd8</con2:id>
+                        <con3:service ref="Comunes/Auditoria/BusinessServices/RegistroJmsAuditoria" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con3:operation>ProducirJmsAuditoria</con3:operation>
+                        <con3:outboundTransform/>
+                    </con3:route>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7dd7" name="STGGenerico">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7dd4" name="STG_ResponseTarget" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context>
+                    <con2:userNsDecl prefix="v11" namespace="https://www.supernotariado.gov.co/services/bachue/ee/cb/certificadotradicionpdf/obtenerPDF/v1"/>
+                    <con2:userNsDecl prefix="v1" namespace="https://www.supernotariado.gov.co/services/bachue/cb/certificadotradicionpdf/obtenerPDF/v1"/>
+                    <con2:userNsDecl prefix="ns1" namespace="https://www.supernotariado.gov.co/services/bachue/cb/consultamigracion/consultarMigracionPredio/v1"/>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="body" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dd3</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$responsePayloadTarget</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:replace varName="body">
+                        <con2:id>_ActionId-N3f57ffef.2a160c6e.0.1730a939ccb.N7ecd</con2:id>
+                        <con1:location>
+                            <con2:xpathText>./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform>
+                                <con2:resource ref="ExpuestosExternamente/HistorialNotificaciones/Resources/Xqueries/Out_CN_ConsultarEnvio_and_ConsultarTrazabilidad_and_Consultar_to_CN_ConsultarHistorial"/>
+                                <con2:param name="payloadResponse_ConsultarTrazabilidad">
+                                    <con2:path>$TrazabilidadRs</con2:path>
+                                </con2:param>
+                                <con2:param name="payloadResponse_Consultar">
+                                    <con2:path>$BusquedaDocumentosRs</con2:path>
+                                </con2:param>
+                                <con2:param name="payloadResponse_ConsultarEnvio">
+                                    <con2:path>$ConsultarEnvioRs</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                    <con1:assign varName="responseProxyDatetime" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dd1</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>fn:current-dateTime()</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="responsePayloadProxy" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dd0</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="responseHeaderProxy" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dcf</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$header</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7dce" name="STG_AuditarSalidaProxy" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="false" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dcd</con2:id>
+                        <con1:location>
+                            <con2:xpathText>./*</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryTransform>
+                                <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/ProducirColaAuditoria"/>
+                                <con2:param name="servicio">
+                                    <con2:path>$targetName</con2:path>
+                                </con2:param>
+                                <con2:param name="fechaHora">
+                                    <con2:path>$responseProxyDatetime</con2:path>
+                                </con2:param>
+                                <con2:param name="dominio">
+                                    <con2:path>$dominio</con2:path>
+                                </con2:param>
+                                <con2:param name="usuario">
+                                    <con2:path>if (data($inbound/ctx:security/ctx:messageLevelClient/ctx:username) !='') then
+data($inbound/ctx:security/ctx:messageLevelClient/ctx:username)
+else 'OSB_Bachue'</con2:path>
+                                </con2:param>
+                                <con2:param name="tipoMensaje">
+                                    <con2:path>dvm:lookup('Comunes/DVMs/TipoMensaje', 'Momento', '4', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="operacion">
+                                    <con2:path>$targetOperation</con2:path>
+                                </con2:param>
+                                <con2:param name="mensaje">
+                                    <con2:path>$responsePayloadProxy/*</con2:path>
+                                </con2:param>
+                                <con2:param name="terminal">
+                                    <con2:path>if (data($inbound/ctx:transport/ctx:uri))then
+data($inbound/ctx:transport/ctx:uri)
+else
+dvm:lookup('Comunes/DVMs/Terminales', 'IP', 'EE', 'Valor', 'default')</con2:path>
+                                </con2:param>
+                                <con2:param name="UUID">
+                                    <con2:path>data($uuid)</con2:path>
+                                </con2:param>
+                                <con2:param name="tamano">
+                                    <con2:path>string-length(data($responsePayloadProxy))</con2:path>
+                                </con2:param>
+                            </con2:xqueryTransform>
+                        </con1:expr>
+                    </con1:replace>
+                    <con3:route>
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dcc</con2:id>
+                        <con3:service ref="Comunes/Auditoria/BusinessServices/RegistroJmsAuditoria" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con3:operation>ProducirJmsAuditoria</con3:operation>
+                        <con3:outboundTransform/>
+                    </con3:route>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f57ffe7.c541022.0.172e317aea4.N7dcb" name="STG_Response" xmlns:con1="http://www.bea.com/wli/sb/stages/logging/config" xmlns:sch="http://itau.com.co/services/common/auditory/v2/schemas" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config">
+                <con:comment>Stage de response Final del proxy</con:comment>
+                <con:context/>
+                <con:actions>
+                    <con5:assign varName="header">
+                        <con2:comment>Copia del response header Original</con2:comment>
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dca</con2:id>
+                        <con2:locked>true</con2:locked>
+                        <con5:expr>
+                            <con2:xqueryText>$responseHeaderProxy</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:assign varName="body">
+                        <con2:comment>Copia del responseOriginal</con2:comment>
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dc9</con2:id>
+                        <con2:locked>true</con2:locked>
+                        <con5:expr>
+                            <con2:xqueryText>$responsePayloadProxy</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con5:ifThenElse>
+                        <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dc8</con2:id>
+                        <con5:case id="_BranchId-N3f57ffe7.c541022.0.172e317aea4.N7dc7">
+                            <con5:condition>
+                                <con2:xqueryText>fn:matches(fn:data($responseSuccess),'true')</con2:xqueryText>
+                            </con5:condition>
+                            <con5:actions>
+                                <con2:reply>
+                                    <con2:comment>Response</con2:comment>
+                                    <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dc6</con2:id>
+                                </con2:reply>
+                            </con5:actions>
+                        </con5:case>
+                        <con5:default>
+                            <con2:reply isError="true">
+                                <con2:id>_ActionId-N3f57ffe7.c541022.0.172e317aea4.N7dc5</con2:id>
+                            </con2:reply>
+                        </con5:default>
+                    </con5:ifThenElse>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="Pipeline Pair Node2" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:request>request-N3f57ffe7.c541022.0.172e317aea4.N7e00</con:request>
+                <con:response>response-N3f57ffe7.c541022.0.172e317aea4.N7ddd</con:response>
+            </con:pipeline-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

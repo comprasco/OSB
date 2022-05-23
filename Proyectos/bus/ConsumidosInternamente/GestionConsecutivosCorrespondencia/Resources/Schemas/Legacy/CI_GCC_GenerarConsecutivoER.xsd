@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActivarAlertaTierras"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoER/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoER/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaGenerarConsecutivoER">
+    <xsd:sequence>
+      <xsd:element name="tipoDocumentoSolicitante" minOccurs="1">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="CC"/>
+                  <xsd:enumeration value="CE"/>
+                  <xsd:enumeration value="NIT"/>
+                  <xsd:enumeration value="NUIP"/>
+                  <xsd:enumeration value="PS"/>
+                  <xsd:enumeration value="TI"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+      <xsd:element name="numeroDocumentoSolicitante" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="primerNombreSolicitante" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="segundoNombreSolicitante" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="primerApellidoSolicitante" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="segundoApellidoSolicitante" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="departamentoSolicitante" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ciudadSolicitante" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="correoElectronicoSolicitante" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="origen" minOccurs="1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaGenerarConsecutivoER" type="bachue:tipoEntradaGenerarConsecutivoER"/>
+  <xsd:complexType name="tipoSalidaGenerarConsecutivoER">
+    <xsd:sequence>
+      <xsd:element name="numeroConsecutivoER" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="codigoMensaje" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaGenerarConsecutivoER"
+               type="bachue:tipoSalidaGenerarConsecutivoER"/>
+</xsd:schema>

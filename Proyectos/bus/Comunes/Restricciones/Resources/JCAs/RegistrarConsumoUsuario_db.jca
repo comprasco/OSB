@@ -1,0 +1,13 @@
+<adapter-config name="RegistrarConsumoUsuario" adapter="db" wsdlLocation="../WSDLs/RegistrarConsumoUsuario.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="eis/DB/EE" location="eis/DB/EE"/>
+  <endpoint-interaction portType="RegistrarConsumoUsuario_ptt" operation="RegistrarConsumoUsuario">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="ADM_OSB_AUDITORIA"/>
+      <property name="PackageName" value="PKG_RESTRICCION_EXTERNOS"/>
+      <property name="ProcedureName" value="PROC_REGISTRAR_CONSUMO_USUARIO"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

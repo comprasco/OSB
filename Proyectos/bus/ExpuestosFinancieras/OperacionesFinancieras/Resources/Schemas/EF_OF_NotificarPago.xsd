@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="NotificarPago"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ef/operacionesfinancieras/notificarpago/v2"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ef/operacionesfinancieras/notificarpago/v2" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaNotificarPago">
+		<xsd:sequence>
+			<xsd:element name="codigoEntidadRecaudadora" type="xsd:string"/>
+			<xsd:element name="codigoPuntoRecaudoEntidad" type="xsd:string"/>
+			<xsd:element name="codigoTipoRecaudo" type="xsd:string"/>
+			<xsd:element name="fechaTransaccion" type="xsd:dateTime"/>
+			<xsd:element name="fechaBancaria" type="xsd:dateTime"/>
+			<xsd:element name="codigoTransaccionRecaudador" type="xsd:string"/>
+			<xsd:element name="montoTransaccion" type="xsd:decimal"/>
+			<xsd:element name="numeroReferenciaBachue" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaNotificarPago" type="bachue:tipoEntradaNotificarPago"/>
+
+	<xsd:complexType name="tipoSalidaNotificarPago">
+		<xsd:sequence>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaNotificarPago" type="bachue:tipoSalidaNotificarPago"/>
+</xsd:schema>

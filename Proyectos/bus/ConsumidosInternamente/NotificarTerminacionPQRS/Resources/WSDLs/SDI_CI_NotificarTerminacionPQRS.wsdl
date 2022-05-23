@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ci/notificarTerminacionPQRS/v1"
+  targetNamespace="https://www.supernotariado.gov.co/services/bachue/ci/notificarTerminacionPQRS/v1"
+  xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/ci/notificarTerminacionPQRS/terminacionTramite/v1"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/notificarTerminacionPQRS/terminacionTramite/v1"
+           schemaLocation="../Schemas/Legacy/CI_NTPQRS_TerminacionTramite.xsd" />
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="TerminacionTramite_Request">
+		<wsdl:part name="entrada" element="bachue1:entradaTerminacionTramite"/>
+	</wsdl:message>
+	<wsdl:message name="TerminacionTramite_Response">
+		<wsdl:part name="salida" element="bachue1:salidaTerminacionTramite"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="SDI_CI_NotificarTerminacionPQRS">
+		<wsdl:operation name="TerminacionTramite">
+			<wsdl:input message="bachue:TerminacionTramite_Request"/>
+			<wsdl:output message="bachue:TerminacionTramite_Response"/>
+		</wsdl:operation>
+	</wsdl:portType>
+ <wsdl:binding name="SDI_CI_NotificarTerminacionPQRS" type="bachue:SDI_CI_NotificarTerminacionPQRS">
+  <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="TerminacionTramite">
+   <soap12:operation style="document"
+                     soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/notificarTerminacionPQRS/terminacionTramite/v1"/>
+   <wsdl:input>
+    <soap12:body use="literal" parts="entrada"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap12:body use="literal" parts="salida"/>
+   </wsdl:output>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="SDI_CI_NotificarTerminacionPQRS">
+  <wsdl:port name="SDI_CI_NotificarTerminacionPQRSPort" binding="bachue:SDI_CI_NotificarTerminacionPQRS">
+   <soap12:address location="http://www.example.com"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

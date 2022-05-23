@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ConsultarNuevasMatriculas"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/nuevasMatriculas/consultarNuevasMatriculas/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/nuevasMatriculas/consultarNuevasMatriculas/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaConsultarNuevasMatriculas">
+		<xsd:sequence>
+			<xsd:element name="agrupacionEspacial" minOccurs="0">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="codDepartamento" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="codMunicipio" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="codCirculoRegistral" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="fechaInicial" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="fechaFinal" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+     </xsd:sequence>
+    </xsd:complexType>
+   </xsd:element>
+  </xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="entradaConsultarNuevasMatriculas" type="bachue:tipoEntradaConsultarNuevasMatriculas"/>
+
+	<xsd:complexType name="tipoSalidaConsultarNuevasMatriculas">
+		<xsd:sequence>
+			<xsd:element name="codDepartamento" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="codMunicipio" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="codCirculoRegistral" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="nuevasMatriculas" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+      <xsd:element name="nuevaMatricula" minOccurs="0" maxOccurs="unbounded">
+       <xsd:complexType>
+        <xsd:sequence>
+         <xsd:element name="anotacionPredio" minOccurs="0">
+          <xsd:complexType>
+           <xsd:sequence>
+            <xsd:element name="numMatriculaInmobiliaria" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="codNaturalezaJuridicaFolio" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="nomNaturalezaJuridicaFolio" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NUPRE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="comentario" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="fechaAnotacion" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="DRR" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="codigoRegistralDerecho" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="propietarios" minOccurs="0">
+             <xsd:complexType>
+              <xsd:sequence>
+               <xsd:element name="propietario" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                 <xsd:sequence>
+                  <xsd:element name="tipoPersona" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                  <xsd:element name="tipoDocumentoPersona" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                  <xsd:element name="numDocumentoPersona" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                  <xsd:element name="porcentajeParticipacion" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                 </xsd:sequence>
+                </xsd:complexType>
+               </xsd:element>
+              </xsd:sequence>
+             </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="fuentesAdministrativas" minOccurs="0">
+             <xsd:complexType>
+              <xsd:sequence>
+               <xsd:element name="fuenteAdministrativa" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                 <xsd:sequence>
+                  <xsd:element name="numDocumentoPublico" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                  <xsd:element name="tipoDocumentoPublico" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                  <xsd:element name="fechaDocumento" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+                 </xsd:sequence>
+                </xsd:complexType>
+               </xsd:element>
+              </xsd:sequence>
+             </xsd:complexType>
+            </xsd:element>
+           </xsd:sequence>
+          </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="listaPublicidades" minOccurs="0">
+          <xsd:complexType>
+           <xsd:sequence>
+            <xsd:element name="publicidad" minOccurs="0" maxOccurs="unbounded">
+             <xsd:complexType>
+              <xsd:sequence>
+               <xsd:element name="numAnotacion" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+               <xsd:element name="comentario" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+               <xsd:element name="fechaAnotacion" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+               <xsd:element name="codNaturalezaJuridicaFolio" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+               <xsd:element name="nomNaturalezaJuridicaFolio" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+               <xsd:element name="dominioDRR" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+               <xsd:element name="intervinientes" minOccurs="0">
+             <xsd:complexType>
+              <xsd:sequence>
+               <xsd:element name="interviniente" minOccurs="0" maxOccurs="unbounded">
+                   <xsd:complexType>
+                    <xsd:sequence>
+                     <xsd:element name="tipoDocumentoPersona" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                     <xsd:element name="numDocumentoPersona" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                     <xsd:element name="primerNombre" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                     <xsd:element name="segundoNombre" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                     <xsd:element name="primerApellido" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                     <xsd:element name="segundoApellido" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                     <xsd:element name="razonSocial" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                     <xsd:element name="rolInterviniente" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                     <xsd:element name="tipoParteInteresada" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    </xsd:sequence>
+                   </xsd:complexType>
+                  </xsd:element>
+                 </xsd:sequence>
+             </xsd:complexType>
+            </xsd:element>
+              </xsd:sequence>
+             </xsd:complexType>
+            </xsd:element>
+           </xsd:sequence>
+          </xsd:complexType>
+         </xsd:element>
+        </xsd:sequence>
+       </xsd:complexType>
+      </xsd:element>
+     </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+   <xsd:element name="codMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="salidaConsultarNuevasMatriculas" type="bachue:tipoSalidaConsultarNuevasMatriculas"/>
+</xsd:schema>

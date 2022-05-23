@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="NotificarPago"
+elementFormDefault="qualified" xmlns=""
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/impuestosgobernaciones/notificarpago/v1"
+xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/impuestosgobernaciones/notificarpago/v1">
+<xsd:complexType name="tipoEntradaNotificarPago">
+	<xsd:annotation>
+		<xsd:appinfo>Bachue</xsd:appinfo>
+		<xsd:documentation xml:lang="es">Servicio que permite
+			notificar el pago de impuestos de registro por parte de las
+			gobernaciones</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="idTramite">
+			<xsd:annotation>
+				<xsd:documentation>Código asociado al trámite generado desde la SNR
+					(NIR)</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="reciboPago" minOccurs="0" maxOccurs="1" nillable="true">
+			<xsd:annotation>
+				<xsd:documentation>Documento serializado del recibo de pago
+					(pdf)
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:base64Binary">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="fechaPago">
+			<xsd:annotation>
+				<xsd:documentation>Fecha de pago en que se realiza el pago
+					(aaaa-mm-dd)</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:date">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="referenciaPago">
+			<xsd:annotation>
+				<xsd:documentation>Número de referencia de pago de impuesto de
+					registro emitido por la Entdiad Bancaria</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="valorTotalPago">
+			<xsd:annotation>
+				<xsd:documentation>Valor total del pago registrado
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+	
+<xsd:element name="entradaNotificarPago" type="bachue:tipoEntradaNotificarPago"/>
+	
+<xsd:complexType name="tipoSalidaNotificarPago">
+	<xsd:annotation>
+		<xsd:appinfo>Bachue</xsd:appinfo>
+		<xsd:documentation xml:lang="es">Mensaje de Salida de notificación del pago de impuestos en la gobernación</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="codigoMensaje">
+			<xsd:annotation>
+				<xsd:documentation>Código asociado al resultado de la operación (200 OK, 409, Error)</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		
+		<xsd:element name="descripcionMensaje">
+			<xsd:annotation>
+				<xsd:documentation>Descripcion del mensaje</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+	
+<xsd:element name="salidaNotificarPago" type="bachue:tipoSalidaNotificarPago"/>
+</xsd:schema>

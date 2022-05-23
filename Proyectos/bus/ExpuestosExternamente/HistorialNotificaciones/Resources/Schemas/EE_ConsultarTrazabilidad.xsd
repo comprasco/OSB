@@ -1,0 +1,15 @@
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/hn/consultatrazabilidad/consultartrazabilidad/v1"
+           elementFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ConsultarTrazabilidad="https://www.supernotariado.gov.co/schemas/bachue/cb/consultatrazabilidad/consultartrazabilidad/v1">
+  
+  <xs:import namespace="https://www.supernotariado.gov.co/schemas/bachue/cb/consultatrazabilidad/consultartrazabilidad/v1"
+             schemaLocation="../../../ConsultaTrazabilidad/Resources/Schemas/Legacy/CB_CT_ConsultarTrazabilidad.xsd"/>
+  <xs:element name="GeneralList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ConsultarTrazabilidad:salidaConsultarTrazabilidad" minOccurs="1" maxOccurs="unbounded"/>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

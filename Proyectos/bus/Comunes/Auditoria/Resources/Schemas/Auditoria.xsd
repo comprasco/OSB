@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.supernotariado.gov.co/schemas/bachue/auditoria/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:aud="http://www.supernotariado.gov.co/schemas/bachue/auditoria/v1">
+	<xs:element name="mensajeAuditoria" type="aud:AuditoriaType"/>
+	<xs:complexType name="AuditoriaType">
+		<xs:sequence>
+			<xs:element name="UUID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="tipoMensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fechaHora" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="tamano" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="terminal" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="dominio" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="usuario" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="servicio" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="operacion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="mensaje" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="Comunes/Auditoria/Resources/WSDLs/InsertarAuditoriaDB-concrete"/>
+            <con:binding>
+                <con:name>Consume_Message_ptt-binding</con:name>
+                <con:namespace>http://xmlns.oracle.com/pcbpel/adapter/jms/BachueOSB/Comunes/InsertarAuditoriaDB</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-a14b43f.N16314f9a.0.16c95d2a586.N7ffc">
+            <con:stage id="_StageId-a14b43f.N16314f9a.0.16c95d2a586.N7ffa" name="InsertAuditoriaDB">
+                <con:context>
+                    <con2:userNsDecl prefix="v1" namespace="http://www.supernotariado.gov.co/schemas/bachue/auditoria/v1"/>
+                </con:context>
+                <con:actions>
+                    <con1:wsCallout>
+                        <con2:id>_ActionId-a14b43f.N16314f9a.0.16c95d2a586.N7ff6</con2:id>
+                        <con1:service ref="Comunes/Auditoria/BusinessServices/BS_dbAuditoriaOSB_db" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation>dbAuditoriaOSB</con1:operation>
+                        <con1:request>
+                            <con1:body wrapped="false">JmsAuditoriaReq</con1:body>
+                        </con1:request>
+                        <con1:response>
+                            <con1:body wrapped="false">JmsAuditoriaRes</con1:body>
+                        </con1:response>
+                        <con1:requestTransform>
+                            <con1:assign varName="JmsAuditoriaReq">
+                                <con2:id>_ActionId-a14b43f.N16314f9a.0.16c95d2a586.N7fed</con2:id>
+                                <con1:expr>
+                                    <con2:xqueryTransform>
+                                        <con2:resource ref="Comunes/Auditoria/Resources/Xqueries/In_JmsAuditoria_to_SP_INS_AUDITORIA"/>
+                                        <con2:param name="mensajeJMS">
+                                            <con2:path>$body/v1:mensajeAuditoria</con2:path>
+                                        </con2:param>
+                                    </con2:xqueryTransform>
+                                </con1:expr>
+                            </con1:assign>
+                        </con1:requestTransform>
+                        <con1:responseTransform>
+                            <con1:replace varName="body">
+                                <con2:id>_ActionId-a14b43f.N16314f9a.0.16c95d2a586.N7fea</con2:id>
+                                <con1:location>
+                                    <con2:xpathText>./*</con2:xpathText>
+                                </con1:location>
+                                <con1:expr>
+                                    <con2:xqueryText>$JmsAuditoriaRes</con2:xqueryText>
+                                </con1:expr>
+                            </con1:replace>
+                        </con1:responseTransform>
+                    </con1:wsCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-a14b43f.N16314f9a.0.16c95d2a586.N7ffb">
+            <con:stage id="_StageId-a14b43f.N16314f9a.0.16c95d2a586.N7ff9" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="Pipeline Pair Node1">
+                <con:request>request-a14b43f.N16314f9a.0.16c95d2a586.N7ffc</con:request>
+                <con:response>response-a14b43f.N16314f9a.0.16c95d2a586.N7ffb</con:response>
+            </con:pipeline-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

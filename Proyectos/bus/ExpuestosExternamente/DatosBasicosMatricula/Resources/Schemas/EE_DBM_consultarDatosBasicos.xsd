@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="DatosBasicosMatricula"
+	targetNamespace="http://www.gobiernoenlinea.gov.co/GEL-XML/1.0/schemas/integracion/supernotariado/bachue"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="http://www.gobiernoenlinea.gov.co/GEL-XML/1.0/schemas/integracion/supernotariado/bachue"
+	elementFormDefault="qualified" version="1.3">
+	<xsd:complexType
+		name="tipoEntradaDatosBasicosMatricula">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="es">El esquema define los
+				datos de entrada para la operacion de consulta de datos Básicos que
+				permite encontrar una lista de matrículas inmobiliarias con algunos
+				datos de sus propietarios
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence minOccurs="0" maxOccurs="1">
+			<xsd:element name="convenio">
+				<xsd:annotation>
+					<xsd:documentation>Nombre del convenio que la SNR tenga con Bachué.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="codDepartamento">
+				<xsd:annotation>
+					<xsd:documentation>Código del departamento según DANE.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="codMunicipio">
+				<xsd:annotation>
+					<xsd:documentation>Código de municipio según DANE.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="criterioBusqueda" minOccurs="1"
+				maxOccurs="1" nillable="true">
+				<xsd:annotation>
+					<xsd:documentation>
+						Corresponde al tipo de búsqueda o firltro que el
+						usuario utiliza
+						para realizar la consulta
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="numPredial">
+							<xsd:annotation>
+								<xsd:documentation>El Sistema busca por la cédula Catastral que
+									ingrese el consumidor
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="numPredialAnterior">
+							<xsd:annotation>
+								<xsd:documentation>El Sistema busca por el número predial
+									versión anterior que
+									ingrese el consumidor
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="matricula">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por Matrícula del
+									propietario, teniendo en cuenta que los tres primeros
+									caracteres correspondan al código del círculo
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="NUPRE">
+							<xsd:annotation>
+								<xsd:documentation>NUPRE</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="numeroDocumentoCC">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por Cédula de Ciudadanía del
+									propietario
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="numeroDocumentoCE">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por Cédula de Extranjería
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="numeroDocumentoNUIP">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por Numero Unico de
+									Identificación Personal
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="numeroDocumentoPA">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por Pasaporte
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="numeroDocumentoTI">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por Tarjeta de Identidad
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="numeroDocumentoNIT">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por Número de Identificación
+									Tributaria del propietario
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="nombres">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por nombres
+									del propietario
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="razonSocial">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por razon social
+									del
+									propietario
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="direccion">
+							<xsd:annotation>
+								<xsd:documentation>El sistema busca por dirección del predio
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="valorCriterioBusqueda" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Campo que identifica el valor del criterio de
+						búsqueda dependiendo del campo criterio de búsqueda Ver
+						NOC_02_MapeoElementos_Bachue-OSB-NOC.xlsx
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tipoSalidaDatosBasicosMatricula">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="es">El esquema define los
+				datos de salida para la operacion ConsultarDatosBasicos que
+				permite
+				encontrar una lista de matrículas inmobiliarias con algunos
+				datos de
+				sus propietarios
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="cantidadMatriculas">
+				<xsd:annotation>
+					<xsd:documentation>Cantidad de Matrículas encontradas
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+			<xsd:element name="matriculas" minOccurs="0"
+				maxOccurs="unbounded" type="bachue:tipoMatricula" />
+			<xsd:element name="fechaHoraConsulta">
+				<xsd:annotation>
+					<xsd:documentation>la fecha y hora en la que hubo una respuesta de
+						la consulta.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:dateTime" />
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numeroConsulta">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde a una seuencia o id que identifica
+						cada consulta.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:long" />
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="codMensaje">
+				<xsd:annotation>
+					<xsd:documentation>200 cuando no hay error, 409 por errores de
+						validación de campos de entrada o validación de negocio y 500
+						cuando existen errores de sistema
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer" />
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="descripcionMensaje">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde a al mensaje de error para los casos
+						en qeue la consulta no fue exitosa, vacío cuando la consulta es
+						exitosa
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tipoMatricula">
+		<xsd:sequence>
+			<xsd:element name="estadoMatricula">
+				<xsd:annotation>
+					<xsd:documentation>Estado de la matrícula. Solo aplica para ORIPS
+						no migradas
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+                        <xsd:element name="estadoMatriculaAnt">
+				<xsd:annotation>
+					<xsd:documentation>Estado de la matrícula Anterior a la actualizacion
+                                        por consumo de ServicioConsultaCertificadoTradicion.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numMatriculaInmobiliaria">
+				<xsd:annotation>
+					<xsd:documentation>Folio de matrícula inmobiliaria del predio. 
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="codCirculoRegistral">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al número identificador de la ORIP
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="nomCirculoRegistral">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al nombre de la ORIP
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numPredial">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al chip para los predios de Bogotá,
+						cédula o referencia catastral.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="estadoNUPRE">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde a los estados del NUPRE: G (Gestor,
+						R(Registro), C (Autoridad catastral), T(Temporal). 
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="NUPRE">
+				<xsd:annotation>
+					<xsd:documentation>Numero predial único </xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="direccionPredio">
+				<xsd:annotation>
+					<xsd:documentation>Dirección lugar del predio </xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="codDepartamento">
+				<xsd:annotation>
+					<xsd:documentation>Coresponde al código DANE</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="nomDepartamento">
+				<xsd:annotation>
+					<xsd:documentation>Departamento al que pertenece el predio 
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="codMunicipio">
+				<xsd:annotation>
+					<xsd:documentation>Coresponde al código DANE - Alfanumérico 5, 2
+						del codDepartamento y 3 de municipio
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="nomMunicipio">
+				<xsd:annotation>
+					<xsd:documentation>Municipio al que pertenece el predio 
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="tipoPredio">
+				<xsd:annotation>
+					<xsd:documentation>Tipo de predio: Rural o Urbano 
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="propietarios" minOccurs="0"
+				maxOccurs="unbounded" type="bachue:tipoPropietario" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tipoPropietario">
+		<xsd:sequence>
+			<xsd:element name="tipoDocumentoPersona">
+				<xsd:annotation>
+					<xsd:documentation>Tipos de documento posibles de un propietario:
+						CC, CE, PA, TI, NUIP
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numDocumentoPersona">
+				<xsd:annotation>
+					<xsd:documentation>Número de documento del propietario cuando es:
+						tipo de persona: Natural
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="numNIT">
+				<xsd:annotation>
+					<xsd:documentation>Número de Identificación Tributaria
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="primerApellido">
+				<xsd:annotation>
+					<xsd:documentation>primer apellido del propietario
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="segundoApellido">
+				<xsd:annotation>
+					<xsd:documentation>segundo apellido del propietario
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="primerNombre">
+				<xsd:annotation>
+					<xsd:documentation>primer nombre del propietario
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="segundoNombre">
+				<xsd:annotation>
+					<xsd:documentation>segundo nombre del propietario
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="razonSocial">
+				<xsd:annotation>
+					<xsd:documentation>razon social del propietario</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="porcentajeParticipacion">
+				<xsd:annotation>
+					<xsd:documentation>porcentaje de participación</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="entradaDatosBasicos"
+		type="bachue:tipoEntradaDatosBasicosMatricula">
+	</xsd:element>
+	<xsd:element name="salidaDatosBasicos"
+		type="bachue:tipoSalidaDatosBasicosMatricula">
+	</xsd:element>
+	<!-- Últimas modificaciones 2020-02-14 14:27 -->
+</xsd:schema>

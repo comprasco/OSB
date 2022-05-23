@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="InscribirAlertaCabecera"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/inscribirAlertaCabecera/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/inscribirAlertaCabecera/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaInscribirAlertaCabecera">
+    <xsd:sequence>
+      <xsd:element name="tipoAlerta" type="xsd:string" minOccurs="1" />
+    <xsd:element name="idEntidad" minOccurs="1"  type="xsd:int"/>
+        <xsd:element name="procesoNroRadicado" type="xsd:string" minOccurs="1" />
+        <xsd:element name="procesoFechaRadicado" type="xsd:dateTime" minOccurs="1" />
+        <xsd:element name="oficinaOrigen" type="xsd:string" minOccurs="1" />
+        <xsd:element name="codTipoDocumentoPublico" type="xsd:string" minOccurs="1" />
+        <xsd:element name="fechaDocumento" type="xsd:dateTime" minOccurs="1" />
+        <xsd:element name="docNumero" type="xsd:string" minOccurs="1" />
+        <xsd:element name="docIdSGD" type="xsd:string" minOccurs="1" />
+        <xsd:element name="docNameSGD" type="xsd:string" minOccurs="1" />
+        <xsd:element name="nitComunidadEtnica" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="creadoSNR" type="xsd:string" minOccurs="1" />
+        <xsd:element name="idUsuario" type="xsd:string" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaInscribirAlertaCabecera" type="bachue:tipoEntradaInscribirAlertaCabecera"/>
+  <xsd:complexType name="tipoSalidaInscribirAlertaCabecera">
+    <xsd:sequence>
+      <xsd:element name="codigo" type="xsd:string" minOccurs="1" />
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="1" />
+      <xsd:element name="idAlerta" type="xsd:int" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaInscribirAlertaCabecera" type="bachue:tipoSalidaInscribirAlertaCabecera"/>
+</xsd:schema>

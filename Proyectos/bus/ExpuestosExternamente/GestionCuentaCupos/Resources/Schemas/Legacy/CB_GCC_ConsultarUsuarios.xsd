@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ConsultarUsuarios"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarusuarios/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestioncuentacupos/consultarusuarios/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaConsultarUsuarios">
+		<xsd:sequence>		
+			<xsd:element name="modulo" type="xsd:string"/>
+			<xsd:element name="IDCuentaCupo" type="xsd:string"/>
+			<xsd:element name="admin" type="bachue:tipoAdminCUSI"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoAdminCUSI">
+		<xsd:sequence>
+			<xsd:element name="tipoDocAdmin" type="xsd:string"/>
+			<xsd:element name="numDocAdmin" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaConsultarUsuarios" type="bachue:tipoEntradaConsultarUsuarios"/>
+
+	<xsd:complexType name="tipoSalidaConsultarUsuarios">
+		<xsd:sequence>
+			<xsd:element name="usuarios">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="usuario" type="bachue:tipoUsuarioCUSO" minOccurs="0"
+								maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoUsuarioCUSO">
+		<xsd:sequence>
+			<xsd:element name="tipoDocUsuario" type="xsd:string"/>
+			<xsd:element name="numDocUsuario" type="xsd:string"/>
+			<xsd:element name="primerNombreUsuario" type="xsd:string"/>
+			<xsd:element name="segundoNombreUsuario" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="primerApellidoUsuario" type="xsd:string"/>
+			<xsd:element name="segundoApellidoUsuario" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="correoElectronicoCorporativoUsuario" type="xsd:string"/>
+			<xsd:element name="estado" type="xsd:string"/>
+			<xsd:element name="fechaCreacion" type="xsd:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="fechaCancelacion" type="xsd:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="estado" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaConsultarUsuarios" type="bachue:tipoSalidaConsultarUsuarios"/>
+</xsd:schema>

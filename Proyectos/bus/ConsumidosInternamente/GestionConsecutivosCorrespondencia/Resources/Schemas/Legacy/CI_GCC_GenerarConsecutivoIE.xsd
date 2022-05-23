@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActivarAlertaTierras"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoIE/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ci/gestionConsecutivosCorrespondencia/generarConsecutivoIE/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaGenerarConsecutivoIE">
+    <xsd:sequence>
+      <xsd:element name="asunto" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="numeroFolios" minOccurs="1" type="xsd:int"/>
+      <xsd:element name="primerNombreDestinatario" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="segundoNombreDestinatario" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="primerApellidoDestinatario" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="segundoApellidoDestinatario" minOccurs="0" type="xsd:string"/>
+      
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaGenerarConsecutivoIE" type="bachue:tipoEntradaGenerarConsecutivoIE"/>
+  <xsd:complexType name="tipoSalidaGenerarConsecutivoIE">
+    <xsd:sequence>
+      <xsd:element name="numeroConsecutivoIE" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="codigoMensaje" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaGenerarConsecutivoIE"
+               type="bachue:tipoSalidaGenerarConsecutivoIE"/>
+</xsd:schema>

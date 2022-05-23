@@ -1,0 +1,117 @@
+<wsdl:definitions targetNamespace="https://www.supernotariado.gov.co/services/bachue/ci/solicitudTramite/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/ci/solicitudTramite/v1"
+                  xmlns:bachue2="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteActuacionesAdm/v1"
+                  xmlns:bachue3="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteCorreccion/v1"
+                  xmlns:bachue4="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteDevolucion/v1"
+                  xmlns:bachue5="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteSegundaInstancia/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteActuacionesAdm/v1"
+              schemaLocation="../Schemas/Legacy/CI_ST_IniciarTramiteActuacionesAdm.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteCorreccion/v1"
+              schemaLocation="../Schemas/Legacy/CI_ST_IniciarTramiteCorreccion.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteDevolucion/v1"
+              schemaLocation="../Schemas/Legacy/CI_ST_IniciarTramiteDevolucion.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteSegundaInstancia/v1"
+              schemaLocation="../Schemas/Legacy/CI_ST_IniciarTramiteSegundaInstancia.xsd"/>
+    </schema>
+    
+  </wsdl:types>
+  <wsdl:message name="IniciarTramiteActuacionesAdm_Request">
+    <wsdl:part name="entrada" element="bachue2:entradaIniciarTramiteActuacionesAdm"/>
+  </wsdl:message>
+  <wsdl:message name="IniciarTramiteActuacionesAdm_Response">
+    <wsdl:part name="salida" element="bachue2:salidaIniciarTramiteActuacionesAdm"/>
+  </wsdl:message>
+  <wsdl:message name="IniciarTramiteCorreccion_Request">
+    <wsdl:part name="entrada" element="bachue3:entradaIniciarTramiteCorreccion"/>
+  </wsdl:message>
+  <wsdl:message name="IniciarTramiteCorreccion_Response">
+    <wsdl:part name="salida" element="bachue3:salidaIniciarTramiteCorreccion"/>
+  </wsdl:message>
+  <wsdl:message name="IniciarTramiteDevolucion_Request">
+    <wsdl:part name="entrada" element="bachue4:entradaIniciarTramiteDevolucion"/>
+  </wsdl:message>
+  <wsdl:message name="IniciarTramiteDevolucion_Response">
+    <wsdl:part name="salida" element="bachue4:salidaIniciarTramiteDevolucion"/>
+  </wsdl:message>
+  <wsdl:message name="IniciarTramiteSegundaInstancia_Request">
+    <wsdl:part name="entrada" element="bachue5:entradaIniciarTramiteSegundaInstancia"/>
+  </wsdl:message>
+  <wsdl:message name="IniciarTramiteSegundaInstancia_Response">
+    <wsdl:part name="salida" element="bachue5:salidaIniciarTramiteSegundaInstancia"/>
+  </wsdl:message>
+  
+  <wsdl:portType name="SAN_CI_SolicitudTramite">
+    <wsdl:operation name="IniciarTramiteActuacionesAdm">
+      <wsdl:input message="bachue:IniciarTramiteActuacionesAdm_Request"/>
+      <wsdl:output message="bachue:IniciarTramiteActuacionesAdm_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarTramiteCorreccion">
+      <wsdl:input message="bachue:IniciarTramiteCorreccion_Request"/>
+      <wsdl:output message="bachue:IniciarTramiteCorreccion_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarTramiteDevolucion">
+      <wsdl:input message="bachue:IniciarTramiteDevolucion_Request"/>
+      <wsdl:output message="bachue:IniciarTramiteDevolucion_Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarTramiteSegundaInstancia">
+      <wsdl:input message="bachue:IniciarTramiteSegundaInstancia_Request"/>
+      <wsdl:output message="bachue:IniciarTramiteSegundaInstancia_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <wsdl:binding name="SAN_CI_SolicitudTramite" type="bachue:SAN_CI_SolicitudTramite">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="IniciarTramiteActuacionesAdm">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteActuacionesAdm/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarTramiteCorreccion">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteCorreccion/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarTramiteDevolucion">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteDevolucion/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarTramiteSegundaInstancia">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/schemas/bachue/ci/solicitudTramite/iniciarTramiteSegundaInstancia/v1"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+      
+  </wsdl:binding>
+  <wsdl:service name="SAN_CI_SolicitudTramite">
+    <wsdl:port name="SAN_CI_SolicitudTramitePort" binding="bachue:SAN_CI_SolicitudTramite">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

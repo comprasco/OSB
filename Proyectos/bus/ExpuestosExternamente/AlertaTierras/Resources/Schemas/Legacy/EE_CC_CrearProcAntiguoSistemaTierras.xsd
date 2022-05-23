@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ActivarAlertaTierras"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/crearProcAntiguoSistemaTierras/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/alertaTierras/crearProcAntiguoSistemaTierras/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaCrearProcAntiguoSistemaTierras">
+    <xsd:sequence>
+      <xsd:element name="idAlerta" type="xsd:int" minOccurs="1"/>
+      <xsd:element name="codCirculoRegistral" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="codPais" type="xsd:int" minOccurs="1"/>
+      <xsd:element name="codDepartamento" type="xsd:int" minOccurs="1"/>
+      <xsd:element name="codMunicipio" type="xsd:int" minOccurs="1"/>
+      
+      <xsd:element name="tipoPredio" minOccurs="1">
+      <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RURAL"/>
+            <xsd:enumeration value="URBANO"/>
+          </xsd:restriction>
+      </xsd:simpleType>
+      </xsd:element>
+              
+      <xsd:element name="numLibro" type="xsd:int" minOccurs="1"/>
+      <xsd:element name="numTomo" type="xsd:int" minOccurs="1"/>
+      
+      <xsd:element name="idTipoPartida" minOccurs="1">
+       <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="PAR"/>
+            <xsd:enumeration value="IMPAR"/>
+          </xsd:restriction>
+      </xsd:simpleType>
+      </xsd:element>
+      
+      <xsd:element name="numPartida" type="xsd:int" minOccurs="1"/>
+      <xsd:element name="numFolio" type="xsd:int" minOccurs="1"/>
+      <xsd:element name="anio" type="bachue:anio" minOccurs="1"/>
+      <xsd:element name="nomPredio" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="numPredio" type="xsd:int" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="anio">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="1492"/>
+      <xsd:maxInclusive value="1980"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <xsd:element name="entradaCrearProcAntiguoSistemaTierras" type="bachue:tipoEntradaCrearProcAntiguoSistemaTierras"/>
+  <xsd:complexType name="tipoSalidaCrearProcAntiguoSistemaTierras">
+    <xsd:sequence>
+      <xsd:element name="codigo" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="idAntiguoSistemaTierras" type="xsd:int" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaCrearProcAntiguoSistemaTierras" type="bachue:tipoSalidaCrearProcAntiguoSistemaTierras"/>
+</xsd:schema>

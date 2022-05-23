@@ -1,0 +1,6 @@
+<view_states>
+   <function arity="1" name="func">
+      <source_tree_view last.visible.row="9" last.visible.path="/sourceRoot[[0]]/entradaConsultarHistoricoPropiedades[[0]]/convenio[[8]]" first.visible.path="/sourceRoot[[0]]/entradaConsultarHistoricoPropiedades[[0]]" expanded.paths="/sourceRoot[[0]]/entradaConsultarHistoricoPropiedades[[0]]" first.visible.row="0" selected.paths=""/>
+      <target_tree_view last.visible.row="18" last.visible.path="/TargetRoot[[0]]/consultarHistoricoPropietario[[0]]/entrada[[0]]/Conditional[[10]]" first.visible.path="/TargetRoot[[0]]/consultarHistoricoPropietario[[0]]/entrada[[0]]" expanded.paths="/TargetRoot[[0]]/consultarHistoricoPropietario[[0]]&#xA;/TargetRoot[[0]]/consultarHistoricoPropietario[[0]]/entrada[[0]]&#xA;/TargetRoot[[0]]/consultarHistoricoPropietario[[0]]/entrada[[0]]/Conditional[[4]]&#xA;/TargetRoot[[0]]/consultarHistoricoPropietario[[0]]/entrada[[0]]/Conditional[[5]]&#xA;/TargetRoot[[0]]/consultarHistoricoPropietario[[0]]/entrada[[0]]/Conditional[[6]]" first.visible.row="1" selected.paths="/TargetRoot[[0]]/consultarHistoricoPropietario[[0]]/entrada[[0]]/sistemaUsuario[[9]]"/>
+   </function>
+</view_states>

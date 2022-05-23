@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
+    <ns:reference>
+        <ns:interface src="BusinessService:ExpuestosFinancieras/OperacionesFinancieras/BusinessServices/BS_EscribirJmsNPRegLiquidacion"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ExpuestosFinancieras/OperacionesFinancieras/BusinessServices/BS_SUT_CO_BusquedaDocumentos"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ExpuestosFinancieras/OperacionesFinancieras/BusinessServices/BS_SBB_NP_OperacionesFinancieras"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ExpuestosFinancieras/OperacionesFinancieras/BusinessServices/BS_EscribirJmsCBRegPago"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:Comunes/Auditoria/BusinessServices/RegistroJmsAuditoria"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ExpuestosFinancieras/OperacionesFinancieras/BusinessServices/BS_SBB_CB_OperacionesFinancieras"/>
+    </ns:reference>
+</ns:composite>

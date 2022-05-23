@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:bachue="https://www.supernotariado.gov.co/services/bachue/cb/matriculasrelacionadas/v1"
+                  targetNamespace="https://www.supernotariado.gov.co/services/bachue/cb/matriculasrelacionadas/v1"
+                  xmlns:bachueCMD="https://www.supernotariado.gov.co/services/bachue/cb/matriculasrelacionadas/consultarMatriculasDerivadas/v1"
+                  xmlns:bachueCMM="https://www.supernotariado.gov.co/services/bachue/cb/matriculasrelacionadas/consultarMatriculasMatriz/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.supernotariado.gov.co/services/bachue/cb/matriculasrelacionadas/consultarMatriculasDerivadas/v1"
+              schemaLocation="../Schemas/Legacy/CB_MR_consultarMatriculasDerivadas.xsd"/>
+      <import namespace="https://www.supernotariado.gov.co/services/bachue/cb/matriculasrelacionadas/consultarMatriculasMatriz/v1"
+              schemaLocation="../Schemas/Legacy/CB_MR_consultarMatriculasMatriz.xsd"/>
+    </schema>
+  </wsdl:types>
+  <!-- INICIO WSDL:mesage -->
+  <wsdl:message name="ConsultarMatriculasDerivadas_Request">
+    <wsdl:part name="entrada" element="bachueCMD:entradaDatosMatriculasDerivadas"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarMatriculasDerivadas_Response">
+    <wsdl:part name="salida" element="bachueCMD:salidaDatosMatriculasDerivadas"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarMatriculasMatriz_Request">
+    <wsdl:part name="entrada" element="bachueCMM:entradaDatosMatriculasMatriz"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarMatriculasMatriz_Response">
+    <wsdl:part name="salida" element="bachueCMM:salidaDatosMatriculasMatriz"></wsdl:part>
+  </wsdl:message>
+  <!-- INICIO WSDL:portType -->
+  <wsdl:portType name="SBB_CB_Matriculas">
+    <!-- Inicio Operacion consultarMatriculasDerivadas -->
+    <wsdl:operation name="consultarMatriculasDerivadas">
+      <wsdl:input message="bachue:ConsultarMatriculasDerivadas_Request"></wsdl:input>
+      <wsdl:output message="bachue:ConsultarMatriculasDerivadas_Response"></wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Operacion consultarMatriculasDerivadas -->
+    <!-- Inicio Operacion consultarMatriculasMatriz -->
+    <wsdl:operation name="consultarMatriculasMatriz">
+      <wsdl:input message="bachue:ConsultarMatriculasMatriz_Request"></wsdl:input>
+      <wsdl:output message="bachue:ConsultarMatriculasMatriz_Response"></wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Operacion consultarMatriculasMatriz -->
+  </wsdl:portType>
+  <!-- INICIO WSDL:binding -->
+  <wsdl:binding name="SBB_CB_MatriculasRelacionadasSOAP12Binding" type="bachue:SBB_CB_Matriculas">
+    <!-- Inicio Binding MatriculasDerivadas -->
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarMatriculasDerivadas">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/matriculasrelacionadas/v1/consultarMatriculasDerivadas"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Binding MatriculasDerivadas -->
+    <!-- Inicio Binding MatriculasMatriz -->
+    <wsdl:operation name="consultarMatriculasMatriz">
+      <soap12:operation style="document"
+                        soapAction="https://www.supernotariado.gov.co/services/bachue/cb/matriculasrelacionadas/v1/consultarMatriculasMatriz"/>
+      <wsdl:input>
+        <soap12:body use="literal" parts="entrada"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="salida"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- Fin Binding MatriculasMatriz -->
+  </wsdl:binding>
+  <!-- FIN WSDL:binding -->
+  <wsdl:service name="SBB_CB_Matriculas">
+    <wsdl:port name="SBB_CB_MatriculasPort" binding="bachue:SBB_CB_MatriculasRelacionadasSOAP12Binding">
+      <soap12:address location="http://www.example.com"/>
+    </wsdl:port>
+  </wsdl:service>
+  <!-- Últimas modificaciones 2020-01-27 11:13 -->
+</wsdl:definitions>

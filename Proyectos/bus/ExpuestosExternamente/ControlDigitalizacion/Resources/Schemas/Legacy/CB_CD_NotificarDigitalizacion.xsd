@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="NotificarDigitalizacion"
+    targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/controldigitalizacion/notificardigitalizacion/v1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/controldigitalizacion/notificardigitalizacion/v1" elementFormDefault="qualified" version="1.3">
+<xsd:complexType name="tipoEntradaNotificarDigitalizacion">
+	<xsd:sequence>
+		<xsd:element name="sistemaOrigen" type="xsd:string"/>
+		<xsd:element name="identificadorTramite" type="xsd:string"/>
+		<xsd:element name="estado" type="xsd:string"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="entradaNotificarDigitalizacion" type="bachue:tipoEntradaNotificarDigitalizacion"/>
+
+<xsd:complexType name="tipoSalidaNotificarDigitalizacion">
+	<xsd:sequence>
+		<xsd:element name="codigoMensaje">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="200"/>
+					<xsd:enumeration value="409"/>
+					<xsd:enumeration value="500"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+
+		<xsd:element name="descripcionMensaje" type="xsd:string"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="salidaNotificarDigitalizacion" type="bachue:tipoSalidaNotificarDigitalizacion"/>
+</xsd:schema>

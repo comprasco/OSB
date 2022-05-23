@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="NotificarCambioCatastro"
+	targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ce/recepcionNotificacionCatastro/notificarCambioCatastro/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ce/recepcionNotificacionCatastro/notificarCambioCatastro/v1"
+	elementFormDefault="qualified" version="1.3">
+	<xsd:complexType
+		name="tipoEntradaNotificarCambioCatastro">
+		<xsd:sequence>
+			<xsd:element name="codCatastro" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="codTransaccion" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="operacionRegistro" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="fechaNotificacion" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="orips" minOccurs="0"
+				maxOccurs="unbounded" type="bachue:tipoORP" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tipoORP">
+		<xsd:sequence>
+			<xsd:element name="codCirculoRegistral" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>corresponde a la ORIP donde se ha registrado el
+						predio
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="3" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="matriculas" minOccurs="0"
+				maxOccurs="unbounded" type="bachue:tipoNumMatriculas" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="entradaNotificarCambioCatastro"
+		type="bachue:tipoEntradaNotificarCambioCatastro" />
+	<xsd:complexType name="tipoNumMatriculas">
+		<xsd:sequence>
+			<xsd:element name="numMatriculaInmobiliaria" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Corresponde al Número de Matrícula Inmobiliaria,
+						sin el código de la ORIPS
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType
+		name="tipoSalidaNotificarCambioCatastro">
+		<xsd:sequence>
+			<xsd:element name="estadoRegistro" type="xsd:string" minOccurs="0" />
+			<xsd:element name="fechaRegistro" type="xsd:dateTime" minOccurs="0" />
+			<xsd:element name="codMensaje" type="xsd:integer" minOccurs="0" />
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="salidaNotificarCambioCatastro"
+		type="bachue:tipoSalidaNotificarCambioCatastro" />
+</xsd:schema>

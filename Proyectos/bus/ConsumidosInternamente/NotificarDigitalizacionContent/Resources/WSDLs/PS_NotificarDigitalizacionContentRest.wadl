@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bachue1="https://www.supernotariado.gov.co/schemas/bachue/co/notificarDigitalizacionContent/notificarDigitalizacionContent/v1" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="PS_NotificarDigitalizacionContentRest">RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="https://www.supernotariado.gov.co/schemas/bachue/co/notificarDigitalizacionContent/notificarDigitalizacionContent/v1" schemaLocation="../Schemas/Legacy/CO_CP_NotificarDigitalizacionContent.xsd"/>
+        </schema>
+   </grammars>
+   <resources>
+      <resource path="/NotificarDigitalizacionContent">
+         <method name="GET" soa:wsdlOperation="NotificarDigitalizacionContent">
+            <request soa:paramElement="pns:entradaNotificarDigitalizacionContent" xmlns:pns="https://www.supernotariado.gov.co/schemas/bachue/co/notificarDigitalizacionContent/notificarDigitalizacionContent/v1">
+               <param name="sistemaOrigen" style="query" soa:expression="$msg.entrada/bachue1:sistemaOrigen" type="xsd:string"/>
+               <param name="identificadorTramite" style="query" soa:expression="$msg.entrada/bachue1:identificadorTramite" type="xsd:string"/>
+               <param name="estado" style="query" soa:expression="$msg.entrada/bachue1:estado" type="xsd:string"/>
+               <param name="docName" style="query" soa:expression="$msg.entrada/bachue1:docName" type="xsd:string"/>
+               <param name="dID" style="query" soa:expression="$msg.entrada/bachue1:dID" type="xsd:integer"/>
+               <param name="dDocType" style="query" soa:expression="$msg.entrada/bachue1:dDocType" type="xsd:string"/>
+               <param name="fechaEnviado" style="query" soa:expression="$msg.entrada/bachue1:fechaEnviado" type="xsd:date"/>
+               <param name="idTurno" style="query" soa:expression="$msg.entrada/bachue1:idTurno" type="xsd:string"/>
+               <param name="idTurnoVinculado" style="query" soa:expression="$msg.entrada/bachue1:idTurnoVinculado" type="xsd:string"/>
+               <param name="id_completitud" style="query" soa:expression="$msg.entrada/bachue1:id_completitud" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:salidaNotificarDigitalizacionContent" xmlns:cns="https://www.supernotariado.gov.co/schemas/bachue/co/notificarDigitalizacionContent/notificarDigitalizacionContent/v1"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

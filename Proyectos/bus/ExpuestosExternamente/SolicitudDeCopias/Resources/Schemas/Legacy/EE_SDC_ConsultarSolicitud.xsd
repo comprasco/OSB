@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="ObtenerReciboCaja"
+            targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/ee/solicituddecopias/consultarsolicitud/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/ee/solicituddecopias/consultarsolicitud/v1"
+            elementFormDefault="qualified" version="1.3">
+  <xsd:complexType name="tipoEntradaConsultarSolicitud">
+    <xsd:sequence>
+      <xsd:element name="NIR" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="entradaConsultarSolicitud" type="bachue:tipoEntradaConsultarSolicitud"/>
+  <xsd:complexType name="tipoSalidaConsultarSolicitud">
+    <xsd:sequence>
+      <xsd:element name="valorPago" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="referenciaPago" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="estado" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fechaLiquidacion" minOccurs="0" type="xsd:date"/>
+      <xsd:element name="fechaVencimientoPago" minOccurs="0" type="xsd:date"/>
+       <xsd:element name="codigo" minOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="200"/>
+            <xsd:enumeration value="500"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="mensaje" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salidaConsultarSolicitud" type="bachue:tipoSalidaConsultarSolicitud"/>
+</xsd:schema>

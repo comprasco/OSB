@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema id="RegistrarUsuario"
+		targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/registrarusuario/v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bachue="https://www.supernotariado.gov.co/schemas/bachue/cb/gestionusuarios/registrarusuario/v1" elementFormDefault="qualified" version="1.3">
+	<xsd:complexType name="tipoEntradaRegistrarUsuario">
+		<xsd:sequence>
+			<xsd:element name="numeroSolicitud" type="xsd:string"/>
+			<xsd:element name="loginUsuario" type="xsd:string"/>
+			<xsd:element name="tipoDocumento" type="xsd:string"/>
+			<xsd:element name="numeroDocumento" type="xsd:string"/>
+			<xsd:element name="primerNombreUsuario" type="xsd:string"/>
+			<xsd:element name="segundoNombreUsuario" type="xsd:string"/>
+			<xsd:element name="primerApellidoUsuario" type="xsd:string"/>
+			<xsd:element name="segundoApellidoUsuario" type="xsd:string"/>
+			<xsd:element name="correoElectronicoCorporativo" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="correoElectronicoPersonal" type="xsd:string"/>
+			<xsd:element name="tipoCambio">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Creacion"/>
+						<xsd:enumeration value="Modificacion"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="segundoFactor">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Huella"/>
+						<xsd:enumeration value="SegundaClave"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="codigosRoles">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="codigoRol" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="codigosORIPs">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="codigoORIP" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="codigoConvenio" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="idEntidadExterna" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+			<xsd:element name="estadoUsuario" minOccurs="1" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="A"/>
+						<xsd:enumeration value="P"/>
+						<xsd:enumeration value="L"/>
+						<xsd:enumeration value="I"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="cargo">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string" />
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="justificacionCambio" type="xsd:string"/>	
+			<xsd:element name="fechaInicio" type="xsd:dateTime"/>	
+			<xsd:element name="fechaFin" type="xsd:dateTime"/>	
+			<xsd:element name="fechaVigenciaSegundaClave" type="xsd:dateTime"/>	
+			<xsd:element name="idPolitica" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="entradaRegistrarUsuario" type="bachue:tipoEntradaRegistrarUsuario"/>
+
+	<xsd:complexType name="tipoSalidaRegistrarUsuario">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded"> 
+			<xsd:element name="codigoMensaje" type="xsd:integer"/>
+			<xsd:element name="descripcionMensaje" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="salidaRegistrarUsuario" type="bachue:tipoSalidaRegistrarUsuario"/>
+</xsd:schema>

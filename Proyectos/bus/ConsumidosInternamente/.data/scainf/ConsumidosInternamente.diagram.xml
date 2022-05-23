@@ -1,0 +1,1673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="PS_BusquedaDocumentos">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="3746" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="3739" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_BusquedaDocumentos" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_CierreAperturaExpediente">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="3565" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="3558" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_CierreAperturaExpediente" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_ConsultarDatosRegistrales">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="3186" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="3179" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_ConsultarDatosRegistrales" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_ConsultarCatalogos">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="3066" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="3059" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_ConsultarCatalogos" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_ConsultarCatastrosGIS">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="2946" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="2939" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_ConsultarCatastrosGIS" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_ControlDigitalizacion">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="2801" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="2794" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_ControlDigitalizacion" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_CreadorTurno">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="2681" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="2674" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_CreadorTurno" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_EnviarCorrespondenciaFisica">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="2561" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="2554" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_EnviarCorrespondenciaFisica" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_ObtenerEECorrespondencia">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="2441" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="2434" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_ObtenerEECorrespondencia" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_GestionUsuariosRest">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="1667" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="1660" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_GestionUsuariosRest" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_GestionUsuariosSOAP">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="2243" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="2236" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_GestionUsuariosSOAP" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_LicenciasCuradurias">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="1321" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="1314" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_LicenciasCuradurias" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_Mensajero">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="1140" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="1133" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_Mensajero" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_Notificador">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="961" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="954" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_Notificador" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_NotificarCorrespondencia">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="841" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="834" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_NotificarCorrespondencia" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_OperacionesFinancieras">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="588" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="581" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_OperacionesFinancieras" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_RecepcionNotificacionBachue">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="161" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="154" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_RecepcionNotificacionBachue" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="PS_RelacionesDocumento">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="41" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="34" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="PS_RelacionesDocumento" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gReference name="BS_SUT_CO_BusquedaDocumentos">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="3546" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="3539" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CO_BusquedaDocumentos" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="RegistroJmsAuditoria">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="1828" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="1821" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="RegistroJmsAuditoria" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/jms_adapter_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CO_CierreAperturaExpediente">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="3367" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="3360" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CO_CierreAperturaExpediente" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SDI_CB_ConsultaDatosRegistrales">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="3211" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="3204" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SDI_CB_ConsultaDatosRegistrales" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SDI_CB_ConsultaCatalogos">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="3066" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="3059" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SDI_CB_ConsultaCatalogos" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SBB_GIS_consultarCatastrosGIS">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="2946" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="2939" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SBB_GIS_consultarCatastrosGIS" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CR_ControlDigitalizacion">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="2770" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="2763" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CR_ControlDigitalizacion" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CB_ControlDigitalizacion">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="2858" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="2851" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CB_ControlDigitalizacion" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CO_CreadorTurno">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="2681" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="2674" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CO_CreadorTurno" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CR_EnvioCorrespondenciaFisica">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="2586" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="2579" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CR_EnvioCorrespondenciaFisica" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CR_GeneracionIDsCorrespondencia">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="2441" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="2434" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CR_GeneracionIDsCorrespondencia" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CB_GestionUsuarios">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="1706" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="1699" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CB_GestionUsuarios" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SBB_CB_LicenciasCuradurias">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="1146" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="1139" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SBB_CB_LicenciasCuradurias" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CN_Mensajero">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="942" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="935" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CN_Mensajero" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CB_Notificador">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="786" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="779" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CB_Notificador" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CN_NotificadorCorrespondencia">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="641" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="634" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CN_NotificadorCorrespondencia" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SBB_NP_OperacionesFinancieras">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="441" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="434" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SBB_NP_OperacionesFinancieras" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SBB_CB_RecepcionNotificacionBachue">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="161" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="154" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SBB_CB_RecepcionNotificacionBachue" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="BS_SUT_CO_RelacionesDocumento">
+        <dgm:body borderWidth="2" arcRad="20" X="1496" Y="41" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1486" Y="34" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BS_SUT_CO_RelacionesDocumento" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gComponent name="PL_Consultar">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="3531" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="3524" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.883980353.BS_SUT_CO_BusquedaDocumentos" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_BusquedaDocumentos">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="3731" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="3724" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.1512160618.PL_Consultar" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_AperturaTurno">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="3411" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="3404" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1708866747.BS_SUT_CO_CierreAperturaExpediente" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_CierreTurno">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="3291" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="3284" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1708866747.BS_SUT_CO_CierreAperturaExpediente" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_CierreAperturaExpediente">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="3550" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="3543" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-1758068250.PL_CierreTurno" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-1758068250.PL_AperturaTurno" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ConsultarDatosRegistrales">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="3171" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="3164" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.1909715951.BS_SDI_CB_ConsultaDatosRegistrales" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ConsultarCatalogos">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="3051" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="3044" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-717882658.BS_SDI_CB_ConsultaCatalogos" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ConsultaCatalogos">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="3051" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="3044" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.767750957.PL_ConsultarCatalogos" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ConsultarCatastrosGIS">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="2931" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="2924" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1839731656.BS_SBB_GIS_consultarCatastrosGIS" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_NotificarDigitalizacion">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="2786" width="130" height="111">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="2779" width="150" height="127">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.748686594.BS_SUT_CR_ControlDigitalizacion" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.748686594.BS_SUT_CB_ControlDigitalizacion" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ControlDigitalizacion">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="2786" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="2779" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-847508343.PL_NotificarDigitalizacion" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_CrearTurno">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="2666" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="2659" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1987307352.BS_SUT_CO_CreadorTurno" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_CreadorTurno">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="2666" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="2659" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-1767050205.PL_CrearTurno" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_EnviarCorrespondenciaFisica">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="2546" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="2539" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.516732439.BS_SUT_CR_EnvioCorrespondenciaFisica" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerEECorrespondencia">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="2426" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="2419" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-348167670.BS_SUT_CR_GeneracionIDsCorrespondencia" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerAccesosPorRol">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="2306" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="2299" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerConveniosEntidad">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="1586" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="1579" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerEntidadesConvenio">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="1226" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="1219" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerModulosPorRol">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="2186" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="2179" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerORIPs">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="1466" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="1459" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerRoles">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="1706" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="1699" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerRolesComponente">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="1826" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="1819" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerRolesUsuario">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="1946" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="1939" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ObtenerUsuariosRolOrip">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="2066" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="2059" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_RegistrarUsuario">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="1346" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="1339" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.991341678.BS_SUT_CB_GestionUsuarios" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_GestionUsuarios">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="1652" width="130" height="161">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="1645" width="150" height="177">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerRolesComponente" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerEntidadesConvenio" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_RegistrarUsuario" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerORIPs" X="120" Y="90" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerConveniosEntidad" X="120" Y="115" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_GestionUsuariosSOAP">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="2228" width="130" height="161">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="2221" width="150" height="177">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerRolesUsuario" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerRolesComponente" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerUsuariosRolOrip" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerModulosPorRol" X="120" Y="90" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.-146944099.PL_ObtenerAccesosPorRol" X="120" Y="115" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_LicenciasCuradurias">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="1106" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="1099" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-688431430.BS_SBB_CB_LicenciasCuradurias" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_ConsultarEnvio">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="866" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="859" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1653788128.BS_SUT_CN_Mensajero" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_EnviarMensaje">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="986" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="979" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1653788128.BS_SUT_CN_Mensajero" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_Mensajero">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="1125" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="1118" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.1845939115.PL_ConsultarEnvio" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.1845939115.PL_EnviarMensaje" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_AcusarMensaje">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="746" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="739" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-2016180820.BS_SUT_CB_Notificador" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_Notificador">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="946" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="939" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.587323039.PL_AcusarMensaje" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_NotificarCorrespondencia">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="626" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="619" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.1280172939.BS_SUT_CN_NotificadorCorrespondencia" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_RegistrarAnulacion">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="506" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="499" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-2023277177.BS_SBB_NP_OperacionesFinancieras" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_RegistrarLiquidacion">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="386" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="379" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-2023277177.BS_SBB_NP_OperacionesFinancieras" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_RegistrarReciboCaja">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="266" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="259" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-2023277177.BS_SBB_NP_OperacionesFinancieras" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_OperacionesFinancieras">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="573" width="130" height="111">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="566" width="150" height="127">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.309999460.PL_RegistrarReciboCaja" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.309999460.PL_RegistrarLiquidacion" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.309999460.PL_RegistrarAnulacion" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_RecepcionNotificacionBachue">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="146" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="139" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1973631124.BS_SBB_CB_RecepcionNotificacionBachue" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_RelacionarDocumento">
+        <dgm:body borderWidth="2" arcRad="20" X="653" Y="26" width="130" height="86">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="643" Y="19" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.1439239811.BS_SUT_CO_RelacionesDocumento" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1703966370.RegistroJmsAuditoria" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="PL_RelacionesDocumento">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="26" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="19" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="pipeline.6051560.PL_RelacionarDocumento" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="PS_BusquedaDocumentos" target="PL_BusquedaDocumentos/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="3756" X2="264" Y2="3756"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_CierreAperturaExpediente" target="PL_CierreAperturaExpediente/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="3575" X2="264" Y2="3575"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_ConsultarDatosRegistrales" target="PL_ConsultarDatosRegistrales/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="3196" X2="643" Y2="3196"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_ConsultarCatalogos" target="PL_ConsultaCatalogos/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="3076" X2="264" Y2="3076"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_ConsultarCatastrosGIS" target="PL_ConsultarCatastrosGIS/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="2956" X2="643" Y2="2956"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_ControlDigitalizacion" target="PL_ControlDigitalizacion/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="2811" X2="264" Y2="2811"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_CreadorTurno" target="PL_CreadorTurno/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="2691" X2="264" Y2="2691"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_EnviarCorrespondenciaFisica" target="PL_EnviarCorrespondenciaFisica/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="2571" X2="643" Y2="2571"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_ObtenerEECorrespondencia" target="PL_ObtenerEECorrespondencia/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="2451" X2="643" Y2="2451"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_GestionUsuariosRest" target="PL_GestionUsuarios/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="1677" X2="264" Y2="1677"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_GestionUsuariosSOAP" target="PL_GestionUsuariosSOAP/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="2253" X2="264" Y2="2253"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_LicenciasCuradurias" target="PL_LicenciasCuradurias/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="1331" X2="544" Y2="1331"/>
+        <dgm:gSegment X1="544" Y1="1331" X2="544" Y2="1131"/>
+        <dgm:gSegment X1="544" Y1="1131" X2="643" Y2="1131"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_Mensajero" target="PL_Mensajero/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="1150" X2="264" Y2="1150"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_Notificador" target="PL_Notificador/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="971" X2="264" Y2="971"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_NotificarCorrespondencia" target="PL_NotificarCorrespondencia/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="851" X2="484" Y2="851"/>
+        <dgm:gSegment X1="484" Y1="851" X2="484" Y2="651"/>
+        <dgm:gSegment X1="484" Y1="651" X2="643" Y2="651"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_OperacionesFinancieras" target="PL_OperacionesFinancieras/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="598" X2="264" Y2="598"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_RecepcionNotificacionBachue" target="PL_RecepcionNotificacionBachue/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="171" X2="643" Y2="171"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PS_RelacionesDocumento" target="PL_RelacionesDocumento/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="51" X2="264" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_Consultar/businessservice.883980353.BS_SUT_CO_BusquedaDocumentos" target="BS_SUT_CO_BusquedaDocumentos" width="2">
+        <dgm:gSegment X1="793" Y1="3556" X2="1486" Y2="3556"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_Consultar/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="3581" X2="1132" Y2="3581"/>
+        <dgm:gSegment X1="1132" Y1="3581" X2="1132" Y2="1838"/>
+        <dgm:gSegment X1="1132" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_BusquedaDocumentos/pipeline.1512160618.PL_Consultar" target="PL_Consultar/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="3756" X2="469" Y2="3756"/>
+        <dgm:gSegment X1="469" Y1="3756" X2="469" Y2="3556"/>
+        <dgm:gSegment X1="469" Y1="3556" X2="643" Y2="3556"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_AperturaTurno/businessservice.-1708866747.BS_SUT_CO_CierreAperturaExpediente" target="BS_SUT_CO_CierreAperturaExpediente" width="2">
+        <dgm:gSegment X1="793" Y1="3436" X2="817" Y2="3436"/>
+        <dgm:gSegment X1="817" Y1="3436" X2="817" Y2="3377"/>
+        <dgm:gSegment X1="817" Y1="3377" X2="1486" Y2="3377"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_AperturaTurno/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="3461" X2="1117" Y2="3461"/>
+        <dgm:gSegment X1="1117" Y1="3461" X2="1117" Y2="1838"/>
+        <dgm:gSegment X1="1117" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_CierreTurno/businessservice.-1708866747.BS_SUT_CO_CierreAperturaExpediente" target="BS_SUT_CO_CierreAperturaExpediente" width="2">
+        <dgm:gSegment X1="793" Y1="3316" X2="1147" Y2="3316"/>
+        <dgm:gSegment X1="1147" Y1="3316" X2="1147" Y2="3377"/>
+        <dgm:gSegment X1="1147" Y1="3377" X2="1486" Y2="3377"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_CierreTurno/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="3341" X2="1102" Y2="3341"/>
+        <dgm:gSegment X1="1102" Y1="3341" X2="1102" Y2="1838"/>
+        <dgm:gSegment X1="1102" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_CierreAperturaExpediente/pipeline.-1758068250.PL_CierreTurno" target="PL_CierreTurno/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="3575" X2="439" Y2="3575"/>
+        <dgm:gSegment X1="439" Y1="3575" X2="439" Y2="3316"/>
+        <dgm:gSegment X1="439" Y1="3316" X2="643" Y2="3316"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_CierreAperturaExpediente/pipeline.-1758068250.PL_AperturaTurno" target="PL_AperturaTurno/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="3600" X2="454" Y2="3600"/>
+        <dgm:gSegment X1="454" Y1="3600" X2="454" Y2="3436"/>
+        <dgm:gSegment X1="454" Y1="3436" X2="643" Y2="3436"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultarDatosRegistrales/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="3196" X2="1087" Y2="3196"/>
+        <dgm:gSegment X1="1087" Y1="3196" X2="1087" Y2="1838"/>
+        <dgm:gSegment X1="1087" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultarDatosRegistrales/businessservice.1909715951.BS_SDI_CB_ConsultaDatosRegistrales" target="BS_SDI_CB_ConsultaDatosRegistrales" width="2">
+        <dgm:gSegment X1="793" Y1="3221" X2="1486" Y2="3221"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultarCatalogos/businessservice.-717882658.BS_SDI_CB_ConsultaCatalogos" target="BS_SDI_CB_ConsultaCatalogos" width="2">
+        <dgm:gSegment X1="793" Y1="3076" X2="1486" Y2="3076"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultarCatalogos/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="3101" X2="1072" Y2="3101"/>
+        <dgm:gSegment X1="1072" Y1="3101" X2="1072" Y2="1838"/>
+        <dgm:gSegment X1="1072" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultaCatalogos/pipeline.767750957.PL_ConsultarCatalogos" target="PL_ConsultarCatalogos/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="3076" X2="643" Y2="3076"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultarCatastrosGIS/businessservice.-1839731656.BS_SBB_GIS_consultarCatastrosGIS" target="BS_SBB_GIS_consultarCatastrosGIS" width="2">
+        <dgm:gSegment X1="793" Y1="2956" X2="1486" Y2="2956"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultarCatastrosGIS/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="2981" X2="1057" Y2="2981"/>
+        <dgm:gSegment X1="1057" Y1="2981" X2="1057" Y2="1838"/>
+        <dgm:gSegment X1="1057" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_NotificarDigitalizacion/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="2811" X2="1027" Y2="2811"/>
+        <dgm:gSegment X1="1027" Y1="2811" X2="1027" Y2="1838"/>
+        <dgm:gSegment X1="1027" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_NotificarDigitalizacion/businessservice.748686594.BS_SUT_CR_ControlDigitalizacion" target="BS_SUT_CR_ControlDigitalizacion" width="2">
+        <dgm:gSegment X1="793" Y1="2836" X2="1042" Y2="2836"/>
+        <dgm:gSegment X1="1042" Y1="2836" X2="1042" Y2="2780"/>
+        <dgm:gSegment X1="1042" Y1="2780" X2="1486" Y2="2780"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_NotificarDigitalizacion/businessservice.748686594.BS_SUT_CB_ControlDigitalizacion" target="BS_SUT_CB_ControlDigitalizacion" width="2">
+        <dgm:gSegment X1="793" Y1="2861" X2="1147" Y2="2861"/>
+        <dgm:gSegment X1="1147" Y1="2861" X2="1147" Y2="2868"/>
+        <dgm:gSegment X1="1147" Y1="2868" X2="1486" Y2="2868"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ControlDigitalizacion/pipeline.-847508343.PL_NotificarDigitalizacion" target="PL_NotificarDigitalizacion/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="2811" X2="643" Y2="2811"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_CrearTurno/businessservice.-1987307352.BS_SUT_CO_CreadorTurno" target="BS_SUT_CO_CreadorTurno" width="2">
+        <dgm:gSegment X1="793" Y1="2691" X2="1486" Y2="2691"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_CrearTurno/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="2716" X2="1012" Y2="2716"/>
+        <dgm:gSegment X1="1012" Y1="2716" X2="1012" Y2="1838"/>
+        <dgm:gSegment X1="1012" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_CreadorTurno/pipeline.-1767050205.PL_CrearTurno" target="PL_CrearTurno/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="2691" X2="643" Y2="2691"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_EnviarCorrespondenciaFisica/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="2571" X2="997" Y2="2571"/>
+        <dgm:gSegment X1="997" Y1="2571" X2="997" Y2="1838"/>
+        <dgm:gSegment X1="997" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_EnviarCorrespondenciaFisica/businessservice.516732439.BS_SUT_CR_EnvioCorrespondenciaFisica" target="BS_SUT_CR_EnvioCorrespondenciaFisica" width="2">
+        <dgm:gSegment X1="793" Y1="2596" X2="1486" Y2="2596"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerEECorrespondencia/businessservice.-348167670.BS_SUT_CR_GeneracionIDsCorrespondencia" target="BS_SUT_CR_GeneracionIDsCorrespondencia" width="2">
+        <dgm:gSegment X1="793" Y1="2451" X2="1486" Y2="2451"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerEECorrespondencia/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="2476" X2="982" Y2="2476"/>
+        <dgm:gSegment X1="982" Y1="2476" X2="982" Y2="1838"/>
+        <dgm:gSegment X1="982" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerAccesosPorRol/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="2331" X2="952" Y2="2331"/>
+        <dgm:gSegment X1="952" Y1="2331" X2="952" Y2="1716"/>
+        <dgm:gSegment X1="952" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerAccesosPorRol/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="2356" X2="967" Y2="2356"/>
+        <dgm:gSegment X1="967" Y1="2356" X2="967" Y2="1838"/>
+        <dgm:gSegment X1="967" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerConveniosEntidad/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="1611" X2="1177" Y2="1611"/>
+        <dgm:gSegment X1="1177" Y1="1611" X2="1177" Y2="1716"/>
+        <dgm:gSegment X1="1177" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerConveniosEntidad/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1636" X2="1162" Y2="1636"/>
+        <dgm:gSegment X1="1162" Y1="1636" X2="1162" Y2="1838"/>
+        <dgm:gSegment X1="1162" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerEntidadesConvenio/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="1251" X2="1267" Y2="1251"/>
+        <dgm:gSegment X1="1267" Y1="1251" X2="1267" Y2="1716"/>
+        <dgm:gSegment X1="1267" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerEntidadesConvenio/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1276" X2="1252" Y2="1276"/>
+        <dgm:gSegment X1="1252" Y1="1276" X2="1252" Y2="1838"/>
+        <dgm:gSegment X1="1252" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerModulosPorRol/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="2211" X2="922" Y2="2211"/>
+        <dgm:gSegment X1="922" Y1="2211" X2="922" Y2="1716"/>
+        <dgm:gSegment X1="922" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerModulosPorRol/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="2236" X2="937" Y2="2236"/>
+        <dgm:gSegment X1="937" Y1="2236" X2="937" Y2="1838"/>
+        <dgm:gSegment X1="937" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerORIPs/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="1491" X2="1207" Y2="1491"/>
+        <dgm:gSegment X1="1207" Y1="1491" X2="1207" Y2="1716"/>
+        <dgm:gSegment X1="1207" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerORIPs/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1516" X2="1192" Y2="1516"/>
+        <dgm:gSegment X1="1192" Y1="1516" X2="1192" Y2="1838"/>
+        <dgm:gSegment X1="1192" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerRoles/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="1731" X2="817" Y2="1731"/>
+        <dgm:gSegment X1="817" Y1="1731" X2="817" Y2="1716"/>
+        <dgm:gSegment X1="817" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerRoles/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1756" X2="1147" Y2="1756"/>
+        <dgm:gSegment X1="1147" Y1="1756" X2="1147" Y2="1838"/>
+        <dgm:gSegment X1="1147" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerRolesComponente/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="1851" X2="832" Y2="1851"/>
+        <dgm:gSegment X1="832" Y1="1851" X2="832" Y2="1716"/>
+        <dgm:gSegment X1="832" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerRolesComponente/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1876" X2="847" Y2="1876"/>
+        <dgm:gSegment X1="847" Y1="1876" X2="847" Y2="1838"/>
+        <dgm:gSegment X1="847" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerRolesUsuario/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="1971" X2="862" Y2="1971"/>
+        <dgm:gSegment X1="862" Y1="1971" X2="862" Y2="1716"/>
+        <dgm:gSegment X1="862" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerRolesUsuario/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1996" X2="877" Y2="1996"/>
+        <dgm:gSegment X1="877" Y1="1996" X2="877" Y2="1838"/>
+        <dgm:gSegment X1="877" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerUsuariosRolOrip/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="2091" X2="892" Y2="2091"/>
+        <dgm:gSegment X1="892" Y1="2091" X2="892" Y2="1716"/>
+        <dgm:gSegment X1="892" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ObtenerUsuariosRolOrip/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="2116" X2="907" Y2="2116"/>
+        <dgm:gSegment X1="907" Y1="2116" X2="907" Y2="1838"/>
+        <dgm:gSegment X1="907" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RegistrarUsuario/businessservice.991341678.BS_SUT_CB_GestionUsuarios" target="BS_SUT_CB_GestionUsuarios" width="2">
+        <dgm:gSegment X1="793" Y1="1371" X2="1237" Y2="1371"/>
+        <dgm:gSegment X1="1237" Y1="1371" X2="1237" Y2="1716"/>
+        <dgm:gSegment X1="1237" Y1="1716" X2="1486" Y2="1716"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RegistrarUsuario/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1396" X2="1222" Y2="1396"/>
+        <dgm:gSegment X1="1222" Y1="1396" X2="1222" Y2="1838"/>
+        <dgm:gSegment X1="1222" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuarios/pipeline.-146944099.PL_ObtenerRolesComponente" target="PL_ObtenerRolesComponente/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="1677" X2="619" Y2="1677"/>
+        <dgm:gSegment X1="619" Y1="1677" X2="619" Y2="1851"/>
+        <dgm:gSegment X1="619" Y1="1851" X2="643" Y2="1851"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuarios/pipeline.-146944099.PL_ObtenerEntidadesConvenio" target="PL_ObtenerEntidadesConvenio/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="1702" X2="559" Y2="1702"/>
+        <dgm:gSegment X1="559" Y1="1702" X2="559" Y2="1251"/>
+        <dgm:gSegment X1="559" Y1="1251" X2="643" Y2="1251"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuarios/pipeline.-146944099.PL_RegistrarUsuario" target="PL_RegistrarUsuario/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="1727" X2="574" Y2="1727"/>
+        <dgm:gSegment X1="574" Y1="1727" X2="574" Y2="1371"/>
+        <dgm:gSegment X1="574" Y1="1371" X2="643" Y2="1371"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuarios/pipeline.-146944099.PL_ObtenerORIPs" target="PL_ObtenerORIPs/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="1752" X2="589" Y2="1752"/>
+        <dgm:gSegment X1="589" Y1="1752" X2="589" Y2="1491"/>
+        <dgm:gSegment X1="589" Y1="1491" X2="643" Y2="1491"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuarios/pipeline.-146944099.PL_ObtenerConveniosEntidad" target="PL_ObtenerConveniosEntidad/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="1777" X2="604" Y2="1777"/>
+        <dgm:gSegment X1="604" Y1="1777" X2="604" Y2="1611"/>
+        <dgm:gSegment X1="604" Y1="1611" X2="643" Y2="1611"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuariosSOAP/pipeline.-146944099.PL_ObtenerRolesUsuario" target="PL_ObtenerRolesUsuario/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="2253" X2="439" Y2="2253"/>
+        <dgm:gSegment X1="439" Y1="2253" X2="439" Y2="1971"/>
+        <dgm:gSegment X1="439" Y1="1971" X2="643" Y2="1971"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuariosSOAP/pipeline.-146944099.PL_ObtenerRolesComponente" target="PL_ObtenerRolesComponente/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="2278" X2="454" Y2="2278"/>
+        <dgm:gSegment X1="454" Y1="2278" X2="454" Y2="1851"/>
+        <dgm:gSegment X1="454" Y1="1851" X2="643" Y2="1851"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuariosSOAP/pipeline.-146944099.PL_ObtenerUsuariosRolOrip" target="PL_ObtenerUsuariosRolOrip/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="2303" X2="469" Y2="2303"/>
+        <dgm:gSegment X1="469" Y1="2303" X2="469" Y2="2091"/>
+        <dgm:gSegment X1="469" Y1="2091" X2="643" Y2="2091"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuariosSOAP/pipeline.-146944099.PL_ObtenerModulosPorRol" target="PL_ObtenerModulosPorRol/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="2328" X2="484" Y2="2328"/>
+        <dgm:gSegment X1="484" Y1="2328" X2="484" Y2="2211"/>
+        <dgm:gSegment X1="484" Y1="2211" X2="643" Y2="2211"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_GestionUsuariosSOAP/pipeline.-146944099.PL_ObtenerAccesosPorRol" target="PL_ObtenerAccesosPorRol/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="2353" X2="499" Y2="2353"/>
+        <dgm:gSegment X1="499" Y1="2353" X2="499" Y2="2331"/>
+        <dgm:gSegment X1="499" Y1="2331" X2="643" Y2="2331"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_LicenciasCuradurias/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1131" X2="1282" Y2="1131"/>
+        <dgm:gSegment X1="1282" Y1="1131" X2="1282" Y2="1838"/>
+        <dgm:gSegment X1="1282" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_LicenciasCuradurias/businessservice.-688431430.BS_SBB_CB_LicenciasCuradurias" target="BS_SBB_CB_LicenciasCuradurias" width="2">
+        <dgm:gSegment X1="793" Y1="1156" X2="1486" Y2="1156"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultarEnvio/businessservice.-1653788128.BS_SUT_CN_Mensajero" target="BS_SUT_CN_Mensajero" width="2">
+        <dgm:gSegment X1="793" Y1="891" X2="1327" Y2="891"/>
+        <dgm:gSegment X1="1327" Y1="891" X2="1327" Y2="952"/>
+        <dgm:gSegment X1="1327" Y1="952" X2="1486" Y2="952"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_ConsultarEnvio/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="916" X2="1312" Y2="916"/>
+        <dgm:gSegment X1="1312" Y1="916" X2="1312" Y2="1838"/>
+        <dgm:gSegment X1="1312" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_EnviarMensaje/businessservice.-1653788128.BS_SUT_CN_Mensajero" target="BS_SUT_CN_Mensajero" width="2">
+        <dgm:gSegment X1="793" Y1="1011" X2="817" Y2="1011"/>
+        <dgm:gSegment X1="817" Y1="1011" X2="817" Y2="952"/>
+        <dgm:gSegment X1="817" Y1="952" X2="1486" Y2="952"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_EnviarMensaje/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="1036" X2="1297" Y2="1036"/>
+        <dgm:gSegment X1="1297" Y1="1036" X2="1297" Y2="1838"/>
+        <dgm:gSegment X1="1297" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_Mensajero/pipeline.1845939115.PL_ConsultarEnvio" target="PL_ConsultarEnvio/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="1150" X2="514" Y2="1150"/>
+        <dgm:gSegment X1="514" Y1="1150" X2="514" Y2="891"/>
+        <dgm:gSegment X1="514" Y1="891" X2="643" Y2="891"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_Mensajero/pipeline.1845939115.PL_EnviarMensaje" target="PL_EnviarMensaje/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="1175" X2="529" Y2="1175"/>
+        <dgm:gSegment X1="529" Y1="1175" X2="529" Y2="1011"/>
+        <dgm:gSegment X1="529" Y1="1011" X2="643" Y2="1011"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_AcusarMensaje/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="771" X2="1342" Y2="771"/>
+        <dgm:gSegment X1="1342" Y1="771" X2="1342" Y2="1838"/>
+        <dgm:gSegment X1="1342" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_AcusarMensaje/businessservice.-2016180820.BS_SUT_CB_Notificador" target="BS_SUT_CB_Notificador" width="2">
+        <dgm:gSegment X1="793" Y1="796" X2="1486" Y2="796"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_Notificador/pipeline.587323039.PL_AcusarMensaje" target="PL_AcusarMensaje/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="971" X2="499" Y2="971"/>
+        <dgm:gSegment X1="499" Y1="971" X2="499" Y2="771"/>
+        <dgm:gSegment X1="499" Y1="771" X2="643" Y2="771"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_NotificarCorrespondencia/businessservice.1280172939.BS_SUT_CN_NotificadorCorrespondencia" target="BS_SUT_CN_NotificadorCorrespondencia" width="2">
+        <dgm:gSegment X1="793" Y1="651" X2="1486" Y2="651"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_NotificarCorrespondencia/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="676" X2="1357" Y2="676"/>
+        <dgm:gSegment X1="1357" Y1="676" X2="1357" Y2="1838"/>
+        <dgm:gSegment X1="1357" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RegistrarAnulacion/businessservice.-2023277177.BS_SBB_NP_OperacionesFinancieras" target="BS_SBB_NP_OperacionesFinancieras" width="2">
+        <dgm:gSegment X1="793" Y1="531" X2="817" Y2="531"/>
+        <dgm:gSegment X1="817" Y1="531" X2="817" Y2="451"/>
+        <dgm:gSegment X1="817" Y1="451" X2="1486" Y2="451"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RegistrarAnulacion/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="556" X2="1372" Y2="556"/>
+        <dgm:gSegment X1="1372" Y1="556" X2="1372" Y2="1838"/>
+        <dgm:gSegment X1="1372" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RegistrarLiquidacion/businessservice.-2023277177.BS_SBB_NP_OperacionesFinancieras" target="BS_SBB_NP_OperacionesFinancieras" width="2">
+        <dgm:gSegment X1="793" Y1="411" X2="1402" Y2="411"/>
+        <dgm:gSegment X1="1402" Y1="411" X2="1402" Y2="451"/>
+        <dgm:gSegment X1="1402" Y1="451" X2="1486" Y2="451"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RegistrarLiquidacion/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="436" X2="1387" Y2="436"/>
+        <dgm:gSegment X1="1387" Y1="436" X2="1387" Y2="1838"/>
+        <dgm:gSegment X1="1387" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RegistrarReciboCaja/businessservice.-2023277177.BS_SBB_NP_OperacionesFinancieras" target="BS_SBB_NP_OperacionesFinancieras" width="2">
+        <dgm:gSegment X1="793" Y1="291" X2="1432" Y2="291"/>
+        <dgm:gSegment X1="1432" Y1="291" X2="1432" Y2="451"/>
+        <dgm:gSegment X1="1432" Y1="451" X2="1486" Y2="451"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RegistrarReciboCaja/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="316" X2="1417" Y2="316"/>
+        <dgm:gSegment X1="1417" Y1="316" X2="1417" Y2="1838"/>
+        <dgm:gSegment X1="1417" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_OperacionesFinancieras/pipeline.309999460.PL_RegistrarReciboCaja" target="PL_RegistrarReciboCaja/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="598" X2="439" Y2="598"/>
+        <dgm:gSegment X1="439" Y1="598" X2="439" Y2="291"/>
+        <dgm:gSegment X1="439" Y1="291" X2="643" Y2="291"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_OperacionesFinancieras/pipeline.309999460.PL_RegistrarLiquidacion" target="PL_RegistrarLiquidacion/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="623" X2="454" Y2="623"/>
+        <dgm:gSegment X1="454" Y1="623" X2="454" Y2="411"/>
+        <dgm:gSegment X1="454" Y1="411" X2="643" Y2="411"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_OperacionesFinancieras/pipeline.309999460.PL_RegistrarAnulacion" target="PL_RegistrarAnulacion/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="648" X2="469" Y2="648"/>
+        <dgm:gSegment X1="469" Y1="648" X2="469" Y2="531"/>
+        <dgm:gSegment X1="469" Y1="531" X2="643" Y2="531"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RecepcionNotificacionBachue/businessservice.-1973631124.BS_SBB_CB_RecepcionNotificacionBachue" target="BS_SBB_CB_RecepcionNotificacionBachue" width="2">
+        <dgm:gSegment X1="793" Y1="171" X2="1486" Y2="171"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RecepcionNotificacionBachue/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="196" X2="1447" Y2="196"/>
+        <dgm:gSegment X1="1447" Y1="196" X2="1447" Y2="1838"/>
+        <dgm:gSegment X1="1447" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RelacionarDocumento/businessservice.1439239811.BS_SUT_CO_RelacionesDocumento" target="BS_SUT_CO_RelacionesDocumento" width="2">
+        <dgm:gSegment X1="793" Y1="51" X2="1486" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RelacionarDocumento/businessservice.-1703966370.RegistroJmsAuditoria" target="RegistroJmsAuditoria" width="2">
+        <dgm:gSegment X1="793" Y1="76" X2="1462" Y2="76"/>
+        <dgm:gSegment X1="1462" Y1="76" X2="1462" Y2="1838"/>
+        <dgm:gSegment X1="1462" Y1="1838" X2="1486" Y2="1838"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="PL_RelacionesDocumento/pipeline.6051560.PL_RelacionarDocumento" target="PL_RelacionarDocumento/__service__" width="2">
+        <dgm:gSegment X1="414" Y1="51" X2="643" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

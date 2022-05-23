@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="https://www.supernotariado.gov.co/schemas/bachue/np/operacionesfinancieras/registrarliquidacion/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:reli="https://www.supernotariado.gov.co/schemas/bachue/np/operacionesfinancieras/registrarliquidacion/v2">
+	<xs:element name="entradaRegistrarLiquidacion" type="reli:tipoEntradaRegistrarLiquidacion"/>
+	<xs:element name="salidaRegistrarLiquidacion" type="reli:tipoSalidaRegistrarLiquidacion"/>
+	<xs:complexType name="listasType">
+		<xs:sequence>
+			<xs:element name="lista" type="reli:listaType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listaType">
+		<xs:sequence>
+			<xs:element name="codigo" type="xs:string"/>
+			<xs:element name="valor" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEntradaRegistrarLiquidacion">
+		<xs:sequence>
+			<xs:element name="numeroReferencia" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="nir" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="valorTotalServicio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fechaLiquidacion" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="fechaVencimiento" type="xs:date" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoSalidaRegistrarLiquidacion">
+		<xs:sequence>
+			<xs:element name="listas" type="reli:listasType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="codigoMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="descripcionMensaje" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
